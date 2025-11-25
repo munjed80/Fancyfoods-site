@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>فانسي فودز | الموالح والمكسرات الفاخرة بالجملة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* --- المتغيرات اللونية (فخمة وراقية) --- */
+    :root {
+      --color-primary: #43A047;       /* أخضر غني */
+      --color-primary-dark: #2E7D32;  /* أخضر داكن للتباين */
+      --color-primary-light: #C8E6C9; /* أخضر فاتح للخلفيات */
+      --color-accent-gold: #FDD835;   /* ذهبي دافئ للإضاءة */
+      
+      --color-text-main: #1B3115;     /* نص زيتي غامق جداً */
+      --color-text-muted: #556B4F;    /* نص رمادي مخضر */
+      
+      --color-bg-body: #F9FAFB;       /* خلفية رمادية فاتحة جداً */
+      --color-white: #ffffff;
+      --color-border: #E5E7EB;
+    }
+
+    /* إعدادات عامة */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--color-bg-body);
+      color: var(--color-text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+    ul { list-style: none; }
+
+    /* الحاوية */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* --- الهيدر (Header) --- */
+    .site-header {
+      background-color: var(--color-white);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: var(--color-white);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+    }
+
+    .main-nav a {
+      margin: 0 5px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 8px;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+
+    .main-nav a:hover, .main-nav a.active {
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+    }
+
+    /* --- القسم الرئيسي (Hero) --- */
+    .hero {
+      padding: 80px 0;
+      background: radial-gradient(circle at top, #ffffff, #F1F8E9);
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero-sub {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      margin-top: 10px;
+    }
+
+    .hero-text {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary));
+      color: var(--color-white);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(46, 125, 50, 0.3);
+    }
+
+    /* --- الأقسام العامة --- */
+    .section { padding: 70px 0; }
+    
+    .section-head {
+      text-align: center;
+      margin-bottom: 50px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-head h2 {
+      font-size: 2.5rem;
+      color: var(--color-primary-dark);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-head h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--color-accent-gold);
+        margin: 10px auto 0;
+        border-radius: 2px;
+    }
+
+    /* --- شبكة المنتجات (Product Cards) --- */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: var(--color-white);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-color: var(--color-primary-light);
+    }
+
+    .card-img-holder {
+      height: 220px;
+      background-color: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-img-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .card-img-holder img {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--color-text-main);
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .card-features {
+      background: #F3F4F6;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    .card-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--color-text-main);
+    }
+
+    .card-features li:last-child { margin-bottom: 0; }
+    .card-features i { color: var(--color-primary); }
+
+    /* --- شريط التواصل (Contact Strip) --- */
+    .contact-strip {
+      background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+      border-radius: 24px;
+      padding: 50px 40px;
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      box-shadow: 0 15px 30px rgba(46, 125, 50, 0.2);
+      margin-top: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* زخرفة خلفية خفيفة */
+    .contact-strip::before {
+        content: '\f1bb'; /* أيقونة شجرة/نبتة */
+        font-family: "Font Awesome 6 Free"; 
+        font-weight: 900;
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        font-size: 150px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+    }
+
+    .contact-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: var(--color-accent-gold);
+    }
+
+    .contact-text p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+    }
+
+    .contact-btn {
+      background-color: var(--color-white);
+      color: var(--color-primary-dark);
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-size: 1.05rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      z-index: 2;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* --- الفوتر --- */
+    footer {
+      background-color: var(--color-primary-dark);
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 80px;
+      font-size: 0.9rem;
+    }
+
+    /* استجابة الشاشة (Mobile) */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.2rem; }
+      .nav-container { flex-direction: column; gap: 15px; }
+      .contact-strip { flex-direction: column; text-align: center; padding: 30px 20px; }
+      .contact-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <div class="logo-mark">F</div>
+        <div class="logo-text">فانسي فودز</div>
+      </div>
+      <nav class="main-nav">
+        <a href="#" class="active">المنتجات</a>
+        <a href="#">من نحن</a>
+        <a href="#">اتصل بنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">
+        فخامة المذاق..<br>
+        <span class="hero-sub">موالح ومكسرات بالجملة</span>
+      </h1>
+      <p class="hero-text">
+        نقدم للمتاجر والمحامص تشكيلة استثنائية من المكسرات المحمصة بعناية. 
+        جودة تبيض الوجه، وتوريد نلتزم به.
+      </p>
+      <a href="#products" class="hero-btn">تصفح التشكيلة <i class="fas fa-arrow-down" style="margin-right:8px;"></i></a>
+    </div>
+  </section>
+
+  <section id="products" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>منتجاتنا المميزة</h2>
+        <p>خيارات متعددة من التعبئة والتحميص تناسب هوية محلك</p>
+      </div>
+
+      <div class="products-grid">
+        
+        <article class="product-card">
+          <div class="card-img-holder">
+            <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="فستق حلبي">
+          </div>
+          <div class="card-content">
+            <span class="badge">الأكثر طلباً <i class="fas fa-star"></i></span>
+            <h3 class="card-title">فستق حلبي محمص</h3>
+            <p class="card-desc">فستق درجة أولى، تحميص احترافي يبرز النكهة الغنية. خيار أساسي لكل محمصة.</p>
+            <ul class="card-features">
+              <li><i class="fas fa-weight-hanging"></i> أحجام: 250غ - 10كغ</li>
+              <li><i class="fas fa-fire"></i> تحميص: خفيف / وسط / غامق</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="card-img-holder">
+            <img src="https://images.unsplash.com/photo-1595166929910-c0c59828ec53?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مكسرات مشكلة">
+          </div>
+          <div class="card-content">
+            <span class="badge">إكسترا</span>
+            <h3 class="card-title">مكسرات مشكلة فاخرة</h3>
+            <p class="card-desc">خليط ملكي من الكاجو، اللوز، والفستق. توازن مثالي بين القرمشة والطعم.</p>
+            <ul class="card-features">
+              <li><i class="fas fa-sliders-h"></i> نسب خلط قابلة للتعديل</li>
+              <li><i class="fas fa-check-circle"></i> متوفر مالح أو سادة</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="card-img-holder">
+            <img src="https://images.unsplash.com/photo-1528750373070-449e7943d780?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="بزر دوار الشمس">
+          </div>
+          <div class="card-content">
+            <span class="badge">سناك يومي</span>
+            <h3 class="card-title">بزر دوار الشمس (جامبو)</h3>
+            <p class="card-desc">حبات كبيرة سهلة التناول، نكهة مدخنة خفيفة أو مملحة حسب رغبة السوق.</p>
+            <ul class="card-features">
+              <li><i class="fas fa-leaf"></i> نكهات: ليمون، حار، جبنة</li>
+              <li><i class="fas fa-box-open"></i> أكياس تجزئة أو شوالات</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="card-img-holder">
+            <img src="https://images.unsplash.com/photo-1599351475753-4c95f46a2468?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ذرة مقرمشة">
+          </div>
+          <div class="card-content">
+            <span class="badge">مقرمشات</span>
+            <h3 class="card-title">ذرة محمصة مقرمشة</h3>
+            <p class="card-desc">سناك عصري ومطلوب بقوة. قرمشة عالية ونكهات قوية تجذب الشباب.</p>
+            <ul class="card-features">
+              <li><i class="fas fa-pepper-hot"></i> نكهات: باربيكيو، حار نار</li>
+              <li><i class="fas fa-store"></i> مثالي للأكشاك والسوبرماركت</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="contact-strip">
+      <div class="contact-text">
+        <h3>هل أنت تاجر جملة؟</h3>
+        <p>نحن شريكك للنجاح. نوفر لك الجودة الثابتة والأسعار المنافسة لتريح بالك.</p>
+      </div>
+      <button class="contact-btn">
+        <i class="fas fa-whatsapp" style="margin-left:8px;"></i> تواصل لطلب الأسعار
+      </button>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2023 فانسي فودز - الخيار الأول للمكسرات الفاخرة</p>
+    </div>
+  </footer>
+
+</body>
+</html>
