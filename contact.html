@@ -3,39 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اتصل بنا</title>
+<meta name="description" content="اتصل بنا - فانسي فودز. نحن هنا لخدمتك. واتساب، بريد إلكتروني، أو أرسل رسالة مباشرة">
+<title>اتصل بنا | فانسي فودز</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
-  body { margin:0; font-family:'Tajawal',sans-serif; background:#fafafa; color:#333; }
-  header { background:#fff; border-bottom:1px solid #eee; padding:15px 0; position:sticky; top:0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family:'Tajawal',sans-serif; background:#fafafa; color:#333; line-height: 1.6; }
+  header { background:#fff; border-bottom:1px solid #eee; padding:15px 0; position:sticky; top:0; z-index:100; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
   .container { width:90%; max-width:1100px; margin:auto; }
   .nav { display:flex; justify-content:space-between; align-items:center; }
-  .logo { display:flex; align-items:center; font-size:24px; font-weight:bold; color:#2f4f1f; }
-  .logo span { background:#2f4f1f; color:white; padding:5px 10px; border-radius:6px; margin-left:8px; }
-  nav a { margin-left:15px; text-decoration:none; color:#333; font-weight:600; }
-  nav a:hover { color:#2f4f1f; }
+  .logo { display:flex; align-items:center; font-size:24px; font-weight:800; color:#2f4f1f; text-decoration: none; }
+  .logo span { background:linear-gradient(135deg, #2f4f1f 0%, #4a7c2f 100%); color:white; padding:8px 12px; border-radius:8px; margin-left:10px; box-shadow: 0 2px 8px rgba(47,79,31,0.2); }
+  nav a { margin-left:15px; text-decoration:none; color:#333; font-weight:600; padding: 8px 15px; border-radius: 20px; transition: all 0.3s ease; }
+  nav a:hover { color:#2f4f1f; background: #f0f7f0; }
+  nav a.active { background: #2f4f1f; color: #fff; }
 
-  h1 { text-align:center; color:#2f4f1f; font-size:34px; padding:40px 0 10px; }
+  h1 { text-align:center; color:#2f4f1f; font-size:42px; font-weight: 800; padding:50px 0 20px; }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
   .info-box {
-    background:#fff; padding:20px; border-radius:12px;
-    border:1px solid #eee; margin-top:20px; line-height:1.9; font-size:17px;
+    background:#fff; padding:30px; border-radius:16px;
+    border:1px solid #eee; line-height:1.9; font-size:17px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .info-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #d1a054 0%, #7cb342 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .info-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  }
+  
+  .info-box:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .info-box h2 {
+    color: #2f4f1f;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  .info-box p {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .contact-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
   }
 
   footer {
-    background:#2f4f1f; color:#fff; text-align:center; padding:20px;
-    margin-top:40px; font-size:14px;
+    background:#2f4f1f; color:#fff; text-align:center; padding:30px;
+    margin-top:60px; font-size:14px;
   }
 
-  .contact-field { margin-bottom:10px; }
+  .contact-field { margin-bottom:15px; }
   .contact-field input, textarea {
-    width:100%; padding:12px; border:1px solid #ddd;
-    border-radius:8px; font-size:16px;
+    width:100%; padding:14px; border:2px solid #ddd;
+    border-radius:12px; font-size:16px; font-family: 'Tajawal', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-field input:focus, textarea:focus {
+    outline: none;
+    border-color: #2f4f1f;
+    box-shadow: 0 0 0 3px rgba(47,79,31,0.1);
   }
 
   .btn {
-    display:inline-block; background:#2f4f1f; color:white;
-    padding:12px 30px; border-radius:6px; margin-top:10px;
-    text-decoration:none; font-size:17px;
+    display:inline-block; background:linear-gradient(135deg, #2f4f1f 0%, #4a7c2f 100%); color:white;
+    padding:14px 35px; border-radius:30px; margin-top:10px;
+    text-decoration:none; font-size:18px; font-weight: 700;
+    border: none; cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(47,79,31,0.3);
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(47,79,31,0.4);
+  }
+  
+  .info-box.message-form {
+    margin-top: 25px;
+  }
+  
+  @media (max-width: 768px) {
+    h1 { font-size: 32px; padding: 40px 0 15px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav a { margin-left: 8px; padding: 6px 10px; font-size: 14px; }
+    .logo { font-size: 20px; }
   }
 </style>
 
@@ -44,12 +126,12 @@
 
 <header>
   <div class="container nav">
-    <div class="logo"><span>FF</span> فانسي فودز</div>
+    <a href="index.html" class="logo"><span>FF</span> فانسي فودز</a>
     <nav>
       <a href="index.html">الرئيسية</a>
       <a href="products.html">المنتجات</a>
       <a href="about.html">من نحن</a>
-      <a href="contact.html">اتصل بنا</a>
+      <a href="contact.html" class="active">اتصل بنا</a>
     </nav>
   </div>
 </header>
@@ -58,21 +140,28 @@
 
 <div class="container">
 
-  <div class="info-box">
-    <h2>معلومات التواصل (Arabic)</h2>
-    <p>واتساب: 963-XX-XXX-XXXX+</p>
-    <p>البريد: info@fancyfoods.com</p>
-    <p>العنوان: سوريا - (المدينة)</p>
+  <div class="contact-grid">
+    
+    <div class="info-box">
+      <div class="contact-icon">📱</div>
+      <h2>معلومات التواصل (Arabic)</h2>
+      <p><strong>واتساب:</strong> 963-XX-XXX-XXXX+</p>
+      <p><strong>البريد:</strong> info@fancyfoods.com</p>
+      <p><strong>العنوان:</strong> سوريا - (المدينة)</p>
+    </div>
+
+    <div class="info-box">
+      <div class="contact-icon">📧</div>
+      <h2>Contact Information (English)</h2>
+      <p><strong>WhatsApp:</strong> +963-XX-XXX-XXXX</p>
+      <p><strong>Email:</strong> info@fancyfoods.com</p>
+      <p><strong>Location:</strong> Syria – (City)</p>
+    </div>
+
   </div>
 
-  <div class="info-box">
-    <h2>Contact Information (English)</h2>
-    <p>WhatsApp: +963-XX-XXX-XXXX</p>
-    <p>Email: info@fancyfoods.com</p>
-    <p>Location: Syria – (City)</p>
-  </div>
-
-  <div class="info-box">
+  <div class="info-box message-form">
+    <div class="contact-icon">✉️</div>
     <h2>أرسل رسالة (Send a Message)</h2>
 
     <form action="mailto:info@fancyfoods.com" method="post" enctype="text/plain">
@@ -86,7 +175,7 @@
       </div>
 
       <div class="contact-field">
-        <textarea name="message" rows="5" placeholder="الرسالة / Message" required></textarea>
+        <textarea name="message" rows="6" placeholder="الرسالة / Message" required></textarea>
       </div>
 
       <button class="btn" type="submit">إرسال / Send</button>
