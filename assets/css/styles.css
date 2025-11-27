@@ -640,6 +640,7 @@ ul, ol {
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 10px;
+  color: var(--gold); /* Fallback for browsers that don't support background-clip: text */
   background: var(--gradient-gold);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
