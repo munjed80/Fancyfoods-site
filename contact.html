@@ -1,194 +1,321 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="اتصل بنا - فانسي فودز. نحن هنا لخدمتك. واتساب، بريد إلكتروني، أو أرسل رسالة مباشرة">
-<title>اتصل بنا | فانسي فودز</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family:'Tajawal',sans-serif; background:#fafafa; color:#333; line-height: 1.6; }
-  header { background:#fff; border-bottom:1px solid #eee; padding:15px 0; position:sticky; top:0; z-index:100; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-  .container { width:90%; max-width:1100px; margin:auto; }
-  .nav { display:flex; justify-content:space-between; align-items:center; }
-  .logo { display:flex; align-items:center; font-size:24px; font-weight:800; color:#2f4f1f; text-decoration: none; }
-  .logo span { background:linear-gradient(135deg, #2f4f1f 0%, #4a7c2f 100%); color:white; padding:8px 12px; border-radius:8px; margin-left:10px; box-shadow: 0 2px 8px rgba(47,79,31,0.2); }
-  nav a { margin-left:15px; text-decoration:none; color:#333; font-weight:600; padding: 8px 15px; border-radius: 20px; transition: all 0.3s ease; }
-  nav a:hover { color:#2f4f1f; background: #f0f7f0; }
-  nav a.active { background: #2f4f1f; color: #fff; }
-
-  h1 { text-align:center; color:#2f4f1f; font-size:42px; font-weight: 800; padding:50px 0 20px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Fancy Foods - We're here to serve you. WhatsApp, Email, or send us a message | اتصل بنا - فانسي فودز">
+  <title>Contact Us | اتصل بنا - Fancy Foods</title>
   
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-  }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
   
-  .info-box {
-    background:#fff; padding:30px; border-radius:16px;
-    border:1px solid #eee; line-height:1.9; font-size:17px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
   
-  .info-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #d1a054 0%, #7cb342 100%);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-  
-  .info-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-  }
-  
-  .info-box:hover::before {
-    transform: scaleX(1);
-  }
-  
-  .info-box h2 {
-    color: #2f4f1f;
-    font-size: 24px;
-    margin-bottom: 15px;
-    font-weight: 700;
-  }
-  
-  .info-box p {
-    margin-bottom: 8px;
-    color: #555;
-  }
-  
-  .contact-icon {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  footer {
-    background:#2f4f1f; color:#fff; text-align:center; padding:30px;
-    margin-top:60px; font-size:14px;
-  }
-
-  .contact-field { margin-bottom:15px; }
-  .contact-field input, textarea {
-    width:100%; padding:14px; border:2px solid #ddd;
-    border-radius:12px; font-size:16px; font-family: 'Tajawal', sans-serif;
-    transition: all 0.3s ease;
-  }
-  
-  .contact-field input:focus, textarea:focus {
-    outline: none;
-    border-color: #2f4f1f;
-    box-shadow: 0 0 0 3px rgba(47,79,31,0.1);
-  }
-
-  .btn {
-    display:inline-block; background:linear-gradient(135deg, #2f4f1f 0%, #4a7c2f 100%); color:white;
-    padding:14px 35px; border-radius:30px; margin-top:10px;
-    text-decoration:none; font-size:18px; font-weight: 700;
-    border: none; cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(47,79,31,0.3);
-  }
-  
-  .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(47,79,31,0.4);
-  }
-  
-  .info-box.message-form {
-    margin-top: 25px;
-  }
-  
-  @media (max-width: 768px) {
-    h1 { font-size: 32px; padding: 40px 0 15px; }
-    .contact-grid { grid-template-columns: 1fr; }
-    nav a { margin-left: 8px; padding: 6px 10px; font-size: 14px; }
-    .logo { font-size: 20px; }
-  }
-</style>
-
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 </head>
-<body>
+<body class="rtl">
 
-<header>
-  <div class="container nav">
-    <a href="index.html" class="logo"><span>FF</span> فانسي فودز</a>
-    <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="products.html">المنتجات</a>
-      <a href="about.html">من نحن</a>
-      <a href="contact.html" class="active">اتصل بنا</a>
-    </nav>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.svg" alt="Fancy Foods Logo" class="logo-icon">
+        <div class="logo-text">
+          <span class="logo-text-main" data-lang="ar">فانسي فودز</span>
+          <span class="logo-text-main" data-lang="en" style="display:none;">Fancy Foods</span>
+          <span class="logo-text-sub" data-lang="ar">مكسرات فاخرة</span>
+          <span class="logo-text-sub" data-lang="en" style="display:none;">Premium Nuts</span>
+        </div>
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Navigation -->
+      <nav class="nav">
+        <a href="index.html" class="nav-link" data-nav="home">الرئيسية</a>
+        <a href="products.html" class="nav-link" data-nav="products">المنتجات</a>
+        <a href="about.html" class="nav-link" data-nav="about">من نحن</a>
+        <a href="contact.html" class="nav-link active" data-nav="contact">اتصل بنا</a>
+        
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="ar">عربي</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
   </div>
 </header>
 
-<h1>اتصل بنا</h1>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <div class="page-header-content">
+      <!-- Arabic -->
+      <div data-lang="ar">
+        <h1 class="page-title">اتصل بنا</h1>
+        <p class="page-subtitle">نحن هنا لخدمتك والإجابة على جميع استفساراتك</p>
+      </div>
+      
+      <!-- English -->
+      <div data-lang="en" style="display:none;">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-subtitle">We're here to serve you and answer all your inquiries</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="container">
-
-  <div class="contact-grid">
+<!-- Contact Info Section -->
+<section class="section">
+  <div class="container">
+    <!-- Arabic Header -->
+    <div class="section-header" data-lang="ar">
+      <span class="section-badge">تواصل معنا</span>
+      <h2 class="section-title">معلومات التواصل</h2>
+      <p class="section-desc">يمكنك التواصل معنا عبر أي من الطرق التالية</p>
+    </div>
     
-    <div class="info-box">
-      <div class="contact-icon">📱</div>
-      <h2>معلومات التواصل (Arabic)</h2>
-      <p><strong>واتساب:</strong> 963-XX-XXX-XXXX+</p>
-      <p><strong>البريد:</strong> info@fancyfoods.com</p>
-      <p><strong>العنوان:</strong> سوريا - (المدينة)</p>
+    <!-- English Header -->
+    <div class="section-header" data-lang="en" style="display:none;">
+      <span class="section-badge">Get in Touch</span>
+      <h2 class="section-title">Contact Information</h2>
+      <p class="section-desc">You can reach us through any of the following methods</p>
     </div>
-
-    <div class="info-box">
-      <div class="contact-icon">📧</div>
-      <h2>Contact Information (English)</h2>
-      <p><strong>WhatsApp:</strong> +963-XX-XXX-XXXX</p>
-      <p><strong>Email:</strong> info@fancyfoods.com</p>
-      <p><strong>Location:</strong> Syria – (City)</p>
+    
+    <div class="contact-info-grid">
+      <!-- WhatsApp -->
+      <div class="contact-info-card" data-animate>
+        <div class="contact-info-icon">📱</div>
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h3>واتساب</h3>
+          <p>تواصل معنا مباشرة عبر الواتساب للاستفسارات السريعة</p>
+          <p><strong>+963-XX-XXX-XXXX</strong></p>
+        </div>
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h3>WhatsApp</h3>
+          <p>Contact us directly via WhatsApp for quick inquiries</p>
+          <p><strong>+963-XX-XXX-XXXX</strong></p>
+        </div>
+      </div>
+      
+      <!-- Email -->
+      <div class="contact-info-card" data-animate>
+        <div class="contact-info-icon">📧</div>
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h3>البريد الإلكتروني</h3>
+          <p>أرسل لنا بريداً إلكترونياً وسنرد عليك في أقرب وقت</p>
+          <p><strong>info@fancyfoods.com</strong></p>
+        </div>
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h3>Email</h3>
+          <p>Send us an email and we'll respond as soon as possible</p>
+          <p><strong>info@fancyfoods.com</strong></p>
+        </div>
+      </div>
+      
+      <!-- Location -->
+      <div class="contact-info-card" data-animate>
+        <div class="contact-info-icon">📍</div>
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h3>الموقع</h3>
+          <p>يمكنك زيارتنا في موقعنا الرئيسي</p>
+          <p><strong>سوريا - (المدينة)</strong></p>
+        </div>
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h3>Location</h3>
+          <p>You can visit us at our main location</p>
+          <p><strong>Syria - (City)</strong></p>
+        </div>
+      </div>
     </div>
-
   </div>
+</section>
 
-  <div class="info-box message-form">
-    <div class="contact-icon">✉️</div>
-    <h2>أرسل رسالة (Send a Message)</h2>
-
-    <form action="mailto:info@fancyfoods.com" method="post" enctype="text/plain">
-
-      <div class="contact-field">
-        <input type="text" name="name" placeholder="الاسم / Name" required>
-      </div>
-
-      <div class="contact-field">
-        <input type="email" name="email" placeholder="البريد / Email" required>
-      </div>
-
-      <div class="contact-field">
-        <textarea name="message" rows="6" placeholder="الرسالة / Message" required></textarea>
-      </div>
-
-      <button class="btn" type="submit">إرسال / Send</button>
-
-    </form>
-
+<!-- Contact Form Section -->
+<section class="section" style="background: var(--light-gray);">
+  <div class="container">
+    <!-- Arabic Header -->
+    <div class="section-header" data-lang="ar">
+      <span class="section-badge">راسلنا</span>
+      <h2 class="section-title">أرسل رسالة</h2>
+      <p class="section-desc">املأ النموذج التالي وسنتواصل معك في أقرب وقت</p>
+    </div>
+    
+    <!-- English Header -->
+    <div class="section-header" data-lang="en" style="display:none;">
+      <span class="section-badge">Message Us</span>
+      <h2 class="section-title">Send a Message</h2>
+      <p class="section-desc">Fill out the form below and we'll contact you soon</p>
+    </div>
+    
+    <div class="card" style="max-width: 700px; margin: 0 auto; padding: 40px;">
+      <form action="mailto:info@fancyfoods.com" method="post" enctype="text/plain">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label class="form-label" data-lang="ar">الاسم الكامل</label>
+          <label class="form-label" data-lang="en" style="display:none;">Full Name</label>
+          <input type="text" name="name" class="form-input" placeholder="" required>
+        </div>
+        
+        <!-- Email Field -->
+        <div class="form-group">
+          <label class="form-label" data-lang="ar">البريد الإلكتروني</label>
+          <label class="form-label" data-lang="en" style="display:none;">Email Address</label>
+          <input type="email" name="email" class="form-input" placeholder="" required>
+        </div>
+        
+        <!-- Phone Field -->
+        <div class="form-group">
+          <label class="form-label" data-lang="ar">رقم الهاتف</label>
+          <label class="form-label" data-lang="en" style="display:none;">Phone Number</label>
+          <input type="tel" name="phone" class="form-input" placeholder="">
+        </div>
+        
+        <!-- Subject Field -->
+        <div class="form-group">
+          <label class="form-label" data-lang="ar">الموضوع</label>
+          <label class="form-label" data-lang="en" style="display:none;">Subject</label>
+          <input type="text" name="subject" class="form-input" placeholder="" required>
+        </div>
+        
+        <!-- Message Field -->
+        <div class="form-group">
+          <label class="form-label" data-lang="ar">الرسالة</label>
+          <label class="form-label" data-lang="en" style="display:none;">Message</label>
+          <textarea name="message" class="form-textarea" placeholder="" required></textarea>
+        </div>
+        
+        <!-- Submit Button -->
+        <div style="text-align: center; margin-top: 30px;">
+          <button type="submit" class="btn btn-green" data-lang="ar">إرسال الرسالة</button>
+          <button type="submit" class="btn btn-green" data-lang="en" style="display:none;">Send Message</button>
+        </div>
+      </form>
+    </div>
   </div>
+</section>
 
-</div>
+<!-- Working Hours Section -->
+<section class="section">
+  <div class="container">
+    <div class="features-grid" style="max-width: 800px; margin: 0 auto;">
+      <!-- Working Hours -->
+      <div class="feature-card" data-animate>
+        <div class="feature-icon">🕐</div>
+        <div class="feature-content">
+          <h3 data-lang="ar">ساعات العمل</h3>
+          <h3 data-lang="en" style="display:none;">Working Hours</h3>
+          <p data-lang="ar">السبت - الخميس: 9:00 صباحاً - 6:00 مساءً<br>الجمعة: مغلق</p>
+          <p data-lang="en" style="display:none;">Saturday - Thursday: 9:00 AM - 6:00 PM<br>Friday: Closed</p>
+        </div>
+      </div>
+      
+      <!-- Quick Response -->
+      <div class="feature-card" data-animate>
+        <div class="feature-icon">⚡</div>
+        <div class="feature-content">
+          <h3 data-lang="ar">استجابة سريعة</h3>
+          <h3 data-lang="en" style="display:none;">Quick Response</h3>
+          <p data-lang="ar">نسعى للرد على جميع الاستفسارات خلال 24 ساعة في أيام العمل</p>
+          <p data-lang="en" style="display:none;">We strive to respond to all inquiries within 24 hours on business days</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer>
-  © 2025 Fancy Foods – All Rights Reserved
+<!-- CTA Section -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section">
+      <div class="cta-content">
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h2 class="cta-title">استعرض منتجاتنا</h2>
+          <p class="cta-text">تصفح مجموعتنا الواسعة من المكسرات والموالح الفاخرة</p>
+          <a href="products.html" class="btn btn-primary">عرض المنتجات</a>
+        </div>
+        
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h2 class="cta-title">Browse Our Products</h2>
+          <p class="cta-text">Explore our wide selection of premium nuts and snacks</p>
+          <a href="products.html" class="btn btn-primary">View Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Company Info -->
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom: 20px;">
+          <img src="assets/images/logo.svg" alt="Fancy Foods Logo" class="logo-icon">
+          <div class="logo-text">
+            <span class="logo-text-main" style="color: white;" data-lang="ar">فانسي فودز</span>
+            <span class="logo-text-main" style="color: white; display:none;" data-lang="en">Fancy Foods</span>
+          </div>
+        </a>
+        <p data-lang="ar">موردون للمكسرات والموالح الفاخرة للتجار والموزعين. الجودة هي أولويتنا.</p>
+        <p data-lang="en" style="display:none;">Premium wholesale nuts and snacks for traders and distributors. Quality is our priority.</p>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 data-lang="ar">روابط سريعة</h4>
+        <h4 data-lang="en" style="display:none;">Quick Links</h4>
+        <ul>
+          <li><a href="index.html" data-lang="ar">الرئيسية</a><a href="index.html" data-lang="en" style="display:none;">Home</a></li>
+          <li><a href="products.html" data-lang="ar">المنتجات</a><a href="products.html" data-lang="en" style="display:none;">Products</a></li>
+          <li><a href="about.html" data-lang="ar">من نحن</a><a href="about.html" data-lang="en" style="display:none;">About Us</a></li>
+          <li><a href="contact.html" data-lang="ar">اتصل بنا</a><a href="contact.html" data-lang="en" style="display:none;">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4 data-lang="ar">تواصل معنا</h4>
+        <h4 data-lang="en" style="display:none;">Contact Us</h4>
+        <ul>
+          <li>📱 +963-XX-XXX-XXXX</li>
+          <li>📧 info@fancyfoods.com</li>
+          <li data-lang="ar">📍 سوريا</li>
+          <li data-lang="en" style="display:none;">📍 Syria</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p data-lang="ar">© 2025 فانسي فودز – جميع الحقوق محفوظة</p>
+      <p data-lang="en" style="display:none;">© 2025 Fancy Foods – All Rights Reserved</p>
+    </div>
+  </div>
 </footer>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>

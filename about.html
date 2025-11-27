@@ -1,215 +1,372 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>Fancy Foods | About & Brokerage Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Fancy Foods - Wholesale nuts supplier and food brokerage services. Connecting serious food traders for rice, starch, coffee, spices and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Fancy Foods - Premium wholesale nuts supplier and food brokerage services | من نحن - فانسي فودز للمكسرات والموالح الفاخرة">
+  <title>About Us | من نحن - Fancy Foods</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      font-family:'Inter',-apple-system,"Segoe UI",Roboto,sans-serif;
-      background:#f4f5f7;color:#111827;line-height:1.7;
-    }
-    .container{max-width:1100px;margin:auto;padding:0 20px;}
-    .site-header{background:#fff;border-bottom:1px solid #e5e7eb;padding:12px 0;margin-bottom:10px;box-shadow: 0 2px 8px rgba(0,0,0,0.05);position:sticky;top:0;z-index:100;}
-    .nav-container{display:flex;justify-content:space-between;align-items:center;}
-    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#111827;}
-    .logo-mark{
-      width:36px;height:36px;border-radius:50%;
-      background:linear-gradient(135deg,#16a34a,#22c55e);
-      display:flex;align-items:center;justify-content:center;color:white;font-weight:800;
-      box-shadow: 0 2px 8px rgba(22,163,74,0.3);
-    }
-    .main-nav a{
-      margin:0 6px;padding:8px 16px;border-radius:30px;
-      text-decoration:none;color:#444;font-weight:600;transition:all 0.3s ease;
-    }
-    .main-nav a:hover{background:#e5f7ed;color:#065f46;}
-    .main-nav .active{background:#16a34a;color:white;}
-    .hero{background:linear-gradient(135deg, #e5f7ed 0%, #d1fae5 100%);padding:50px 0;margin-bottom:30px;position:relative;overflow:hidden;}
-    .hero::before{
-      content:'';position:absolute;top:0;left:0;right:0;bottom:0;
-      background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(22,163,74,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-      background-size:cover;opacity:0.5;
-    }
-    h1{font-size:2.5rem;margin-bottom:10px;font-weight:800;position:relative;}
-    .hero-sub{color:#16a34a;font-weight:700;font-size:1.1rem;}
-    .hero-lead{max-width:700px;color:#4b5563;margin-top:12px;font-size:1.05rem;position:relative;}
-    .section{padding:40px 0;}
-    .two-column{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;
-    }
-    .cards-row{
-      display:grid;gap:25px;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    }
-    .info-card{
-      background:#fff;border:1px solid #d1fae5;border-radius:16px;
-      padding:24px;box-shadow:0 8px 20px rgba(22,163,74,0.08);
-      transition:all 0.3s ease;position:relative;overflow:hidden;
-    }
-    .info-card::before{
-      content:'';position:absolute;top:0;left:0;width:100%;height:4px;
-      background:linear-gradient(90deg,#16a34a,#22c55e);
-      transform:scaleX(0);transition:transform 0.3s ease;
-    }
-    .info-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(22,163,74,0.15);}
-    .info-card:hover::before{transform:scaleX(1);}
-    .info-card h3{margin-bottom:12px;color:#16a34a;font-weight:700;font-size:1.3rem;}
-    .bullet-list li{
-      margin-bottom:8px;color:#374151;list-style:disc;margin-left:20px;padding-left:5px;
-    }
-    .numbered-list li{
-      margin-bottom:8px;color:#374151;list-style:decimal;margin-left:20px;padding-left:5px;
-    }
-    .btn-primary{
-      display:inline-block;margin-top:15px;padding:12px 24px;
-      background:linear-gradient(135deg,#16a34a,#22c55e);
-      color:white;text-decoration:none;border-radius:30px;font-weight:700;
-      transition:all 0.3s ease;box-shadow:0 4px 12px rgba(22,163,74,0.3);
-    }
-    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(22,163,74,0.4);}
-    h2{font-size:1.9rem;margin-bottom:15px;color:#16a34a;font-weight:800;}
-    .section h2{position:relative;padding-bottom:10px;}
-    .section h2::after{
-      content:'';position:absolute;bottom:0;right:0;width:60px;height:3px;
-      background:linear-gradient(90deg,#16a34a,#22c55e);border-radius:2px;
-    }
-    footer{
-      background:#fff;border-top:1px solid #e5e7eb;
-      padding:20px;text-align:center;margin-top:40px;font-size:0.9rem;
-    }
-    @media (max-width:768px){
-      h1{font-size:2rem;}
-      .hero{padding:40px 0;}
-      .main-nav a{margin:0 4px;padding:6px 12px;font-size:0.9rem;}
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 </head>
+<body class="rtl">
 
-<body>
-
-<header class="site-header">
-  <div class="container nav-container">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">F</div>
-      <strong>Fancy Foods</strong>
-    </a>
-    <nav class="main-nav">
-      <a href="index.html">Products (Arabic)</a>
-      <a href="about.html" class="active">About & Brokerage</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.svg" alt="Fancy Foods Logo" class="logo-icon">
+        <div class="logo-text">
+          <span class="logo-text-main" data-lang="ar">فانسي فودز</span>
+          <span class="logo-text-main" data-lang="en" style="display:none;">Fancy Foods</span>
+          <span class="logo-text-sub" data-lang="ar">مكسرات فاخرة</span>
+          <span class="logo-text-sub" data-lang="en" style="display:none;">Premium Nuts</span>
+        </div>
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Navigation -->
+      <nav class="nav">
+        <a href="index.html" class="nav-link" data-nav="home">الرئيسية</a>
+        <a href="products.html" class="nav-link" data-nav="products">المنتجات</a>
+        <a href="about.html" class="nav-link active" data-nav="about">من نحن</a>
+        <a href="contact.html" class="nav-link" data-nav="contact">اتصل بنا</a>
+        
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="ar">عربي</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
   </div>
 </header>
 
-<section class="hero">
+<!-- Page Header -->
+<section class="page-header">
   <div class="container">
-    <h1>About Fancy Foods<br><span class="hero-sub">Wholesale Nuts & Brokerage Services</span></h1>
-    <p class="hero-lead">
-      Fancy Foods supplies roasted nuts and seeds to shops and wholesalers, and also works as a trusted broker connecting
-      food traders with buyers and suppliers of rice, starch, coffee, spices and other dry commodities.
-    </p>
+    <div class="page-header-content">
+      <!-- Arabic -->
+      <div data-lang="ar">
+        <h1 class="page-title">من نحن</h1>
+        <p class="page-subtitle">تعرف على قصتنا ورؤيتنا في عالم المكسرات والموالح الفاخرة</p>
+      </div>
+      
+      <!-- English -->
+      <div data-lang="en" style="display:none;">
+        <h1 class="page-title">About Us</h1>
+        <p class="page-subtitle">Learn about our story and vision in the world of premium nuts and snacks</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container two-column">
-
-    <div>
-      <h2>Who we are</h2>
-      <p>
-        Fancy Foods began as a specialized supplier of nuts, seeds and roasted snacks: pistachios, mixed nuts,
-        sunflower seeds and crunchy corn. As our network grew, we expanded into brokerage for food traders.
-      </p>
-    </div>
-
-    <div>
-      <h2>What we do</h2>
-      <ul class="bullet-list">
-        <li>Supply nuts & roasted snacks for shops and wholesalers.</li>
-        <li>Act as a broker between serious food traders.</li>
-        <li>Help both sides clarify quantity, quality and delivery terms.</li>
-        <li>Follow deals until completion and commission settlement.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
+<!-- About Section -->
 <section class="section">
   <div class="container">
-
-    <h2>Brokerage Services</h2>
-    <p>We help traders find the right buyer or supplier for bulk food commodities.</p>
-
-    <div class="cards-row" style="margin-top:20px;">
-
-      <div class="info-card">
-        <h3>Products we cover</h3>
-        <ul class="bullet-list">
-          <li>Rice (origins & qualities)</li>
-          <li>Starch & flours</li>
-          <li>Coffee & related goods</li>
-          <li>Spices & blends</li>
-          <li>Other dry items upon request</li>
-        </ul>
+    <div class="about-content">
+      <div class="about-image">
+        <span class="about-image-icon">🥜</span>
       </div>
-
-      <div class="info-card">
-        <h3>How a deal works</h3>
-        <ol class="numbered-list">
-          <li>Trader contacts us with product + target price</li>
-          <li>We shortlist serious partners</li>
-          <li>We coordinate the negotiation</li>
-          <li>Terms are written and confirmed</li>
-          <li>Commission is paid after successful completion</li>
-        </ol>
+      
+      <div class="about-text">
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h2>قصتنا</h2>
+          <p>بدأت فانسي فودز كمورد متخصص في المكسرات والبزورات والوجبات الخفيفة المحمصة: الفستق، المكسرات المشكلة، بزر دوار الشمس والذرة المقرمشة.</p>
+          <p>مع نمو شبكتنا، توسعنا في خدمات الوساطة للتجار الغذائيين، لنصبح حلقة وصل موثوقة بين المشترين والموردين.</p>
+          
+          <ul class="about-list">
+            <li>أكثر من 15 عاماً من الخبرة في السوق</li>
+            <li>شبكة واسعة من الموردين الموثوقين</li>
+            <li>التزام تام بالجودة والمعايير العالية</li>
+            <li>خدمة عملاء متميزة ودعم مستمر</li>
+          </ul>
+        </div>
+        
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h2>Our Story</h2>
+          <p>Fancy Foods began as a specialized supplier of nuts, seeds, and roasted snacks: pistachios, mixed nuts, sunflower seeds, and crunchy corn.</p>
+          <p>As our network grew, we expanded into brokerage services for food traders, becoming a trusted link between buyers and suppliers.</p>
+          
+          <ul class="about-list">
+            <li>Over 15 years of market experience</li>
+            <li>Wide network of trusted suppliers</li>
+            <li>Full commitment to quality and high standards</li>
+            <li>Excellent customer service and ongoing support</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="info-card">
-        <h3>Why traders choose us</h3>
-        <ul class="bullet-list">
-          <li>We filter serious offers</li>
-          <li>We reduce misunderstandings</li>
-          <li>Transparent communication</li>
-          <li>Fast coordination</li>
-        </ul>
-      </div>
-
     </div>
   </div>
 </section>
 
+<!-- Services Section -->
+<section class="section" style="background: var(--light-gray);">
+  <div class="container">
+    <!-- Arabic Header -->
+    <div class="section-header" data-lang="ar">
+      <span class="section-badge">خدماتنا</span>
+      <h2 class="section-title">ماذا نقدم</h2>
+      <p class="section-desc">نقدم مجموعة متكاملة من الخدمات للتجار والموزعين</p>
+    </div>
+    
+    <!-- English Header -->
+    <div class="section-header" data-lang="en" style="display:none;">
+      <span class="section-badge">Our Services</span>
+      <h2 class="section-title">What We Offer</h2>
+      <p class="section-desc">We offer a complete range of services for traders and distributors</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Service 1: Wholesale Nuts -->
+      <div class="service-card" data-animate>
+        <div class="service-icon">🥜</div>
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h3>توريد المكسرات</h3>
+          <p>نوفر تشكيلة واسعة من المكسرات والبزورات الفاخرة للمحلات والموزعين.</p>
+          <ul>
+            <li>فستق حلبي فاخر</li>
+            <li>كاجو ولوز محمص</li>
+            <li>مكسرات مشكلة</li>
+            <li>بزورات متنوعة</li>
+          </ul>
+        </div>
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h3>Nuts Supply</h3>
+          <p>We provide a wide selection of premium nuts and seeds for shops and distributors.</p>
+          <ul>
+            <li>Premium Aleppo Pistachios</li>
+            <li>Roasted Cashews and Almonds</li>
+            <li>Mixed Nuts</li>
+            <li>Various Seeds</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Service 2: Brokerage -->
+      <div class="service-card" data-animate>
+        <div class="service-icon">🤝</div>
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h3>خدمات الوساطة</h3>
+          <p>نعمل كوسيط موثوق بين التجار الغذائيين لتسهيل الصفقات التجارية.</p>
+          <ul>
+            <li>أرز بمختلف الأنواع والجودات</li>
+            <li>نشا ودقيق</li>
+            <li>قهوة ومنتجات ذات صلة</li>
+            <li>توابل وخلطات</li>
+          </ul>
+        </div>
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h3>Brokerage Services</h3>
+          <p>We work as a trusted broker between food traders to facilitate business deals.</p>
+          <ul>
+            <li>Rice of various types and qualities</li>
+            <li>Starch and flour</li>
+            <li>Coffee and related products</li>
+            <li>Spices and blends</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Service 3: How it works -->
+      <div class="service-card" data-animate>
+        <div class="service-icon">📋</div>
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h3>كيف تعمل الصفقات</h3>
+          <p>نتبع عملية منظمة لضمان نجاح كل صفقة تجارية.</p>
+          <ul>
+            <li>التاجر يتواصل معنا بالمنتج والسعر المستهدف</li>
+            <li>نختار الشركاء الجادين</li>
+            <li>ننسق عملية التفاوض</li>
+            <li>تُكتب وتُؤكد الشروط</li>
+            <li>تُدفع العمولة بعد إتمام الصفقة</li>
+          </ul>
+        </div>
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h3>How Deals Work</h3>
+          <p>We follow an organized process to ensure the success of every business deal.</p>
+          <ul>
+            <li>Trader contacts us with product and target price</li>
+            <li>We shortlist serious partners</li>
+            <li>We coordinate the negotiation</li>
+            <li>Terms are written and confirmed</li>
+            <li>Commission is paid after completion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
 <section class="section">
-  <div class="container two-column">
-
-    <div>
-      <h2>Contact</h2>
-      <p>For wholesale or brokerage inquiries:</p>
-      <ul class="bullet-list">
-        <li>Email: info@fancyfoods.example</li>
-        <li>WhatsApp: +963-XX-XXX-XXXX</li>
-        <li>Location: Syria (City/Area)</li>
-      </ul>
+  <div class="container">
+    <!-- Arabic Header -->
+    <div class="section-header" data-lang="ar">
+      <span class="section-badge">مميزاتنا</span>
+      <h2 class="section-title">لماذا يختارنا التجار</h2>
+      <p class="section-desc">نحن ملتزمون بتقديم أفضل الخدمات والمنتجات لعملائنا</p>
     </div>
-
-    <div>
-      <h2>Arabic Products Page</h2>
-      <p>You can view our nuts & snacks lines here:</p>
-      <a href="index.html" class="btn-primary">Go to Arabic Products</a>
+    
+    <!-- English Header -->
+    <div class="section-header" data-lang="en" style="display:none;">
+      <span class="section-badge">Our Advantages</span>
+      <h2 class="section-title">Why Traders Choose Us</h2>
+      <p class="section-desc">We are committed to providing the best services and products for our clients</p>
     </div>
-
+    
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="feature-card" data-animate>
+        <div class="feature-icon">✓</div>
+        <div class="feature-content">
+          <h3 data-lang="ar">نفلتر العروض الجادة</h3>
+          <h3 data-lang="en" style="display:none;">We Filter Serious Offers</h3>
+          <p data-lang="ar">نتعامل فقط مع التجار والموردين الجادين والموثوقين.</p>
+          <p data-lang="en" style="display:none;">We only deal with serious and trusted traders and suppliers.</p>
+        </div>
+      </div>
+      
+      <!-- Feature 2 -->
+      <div class="feature-card" data-animate>
+        <div class="feature-icon">💬</div>
+        <div class="feature-content">
+          <h3 data-lang="ar">تواصل شفاف</h3>
+          <h3 data-lang="en" style="display:none;">Transparent Communication</h3>
+          <p data-lang="ar">نقلل سوء الفهم ونضمن وضوح التواصل بين جميع الأطراف.</p>
+          <p data-lang="en" style="display:none;">We reduce misunderstandings and ensure clear communication between all parties.</p>
+        </div>
+      </div>
+      
+      <!-- Feature 3 -->
+      <div class="feature-card" data-animate>
+        <div class="feature-icon">⚡</div>
+        <div class="feature-content">
+          <h3 data-lang="ar">تنسيق سريع</h3>
+          <h3 data-lang="en" style="display:none;">Fast Coordination</h3>
+          <p data-lang="ar">نعمل بسرعة وكفاءة لإتمام الصفقات في أقصر وقت ممكن.</p>
+          <p data-lang="en" style="display:none;">We work quickly and efficiently to complete deals in the shortest time possible.</p>
+        </div>
+      </div>
+      
+      <!-- Feature 4 -->
+      <div class="feature-card" data-animate>
+        <div class="feature-icon">🏆</div>
+        <div class="feature-content">
+          <h3 data-lang="ar">جودة مضمونة</h3>
+          <h3 data-lang="en" style="display:none;">Guaranteed Quality</h3>
+          <p data-lang="ar">نضمن جودة جميع المنتجات ونتابع حتى اكتمال كل صفقة.</p>
+          <p data-lang="en" style="display:none;">We guarantee the quality of all products and follow up until each deal is complete.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer>
-  © Fancy Foods – Wholesale Nuts & Brokerage Services
+<!-- CTA Section -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section">
+      <div class="cta-content">
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h2 class="cta-title">هل ترغب في التعاون معنا؟</h2>
+          <p class="cta-text">سواء كنت تاجراً أو موزعاً، نحن هنا لمساعدتك في الحصول على أفضل المنتجات والصفقات</p>
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="products.html" class="btn btn-primary">استعراض المنتجات</a>
+            <a href="contact.html" class="btn btn-secondary" style="border-color: white; color: white;">تواصل معنا</a>
+          </div>
+        </div>
+        
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h2 class="cta-title">Want to Work With Us?</h2>
+          <p class="cta-text">Whether you're a trader or distributor, we're here to help you get the best products and deals</p>
+          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="products.html" class="btn btn-primary">Browse Products</a>
+            <a href="contact.html" class="btn btn-secondary" style="border-color: white; color: white;">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Company Info -->
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom: 20px;">
+          <img src="assets/images/logo.svg" alt="Fancy Foods Logo" class="logo-icon">
+          <div class="logo-text">
+            <span class="logo-text-main" style="color: white;" data-lang="ar">فانسي فودز</span>
+            <span class="logo-text-main" style="color: white; display:none;" data-lang="en">Fancy Foods</span>
+          </div>
+        </a>
+        <p data-lang="ar">موردون للمكسرات والموالح الفاخرة للتجار والموزعين. الجودة هي أولويتنا.</p>
+        <p data-lang="en" style="display:none;">Premium wholesale nuts and snacks for traders and distributors. Quality is our priority.</p>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 data-lang="ar">روابط سريعة</h4>
+        <h4 data-lang="en" style="display:none;">Quick Links</h4>
+        <ul>
+          <li><a href="index.html" data-lang="ar">الرئيسية</a><a href="index.html" data-lang="en" style="display:none;">Home</a></li>
+          <li><a href="products.html" data-lang="ar">المنتجات</a><a href="products.html" data-lang="en" style="display:none;">Products</a></li>
+          <li><a href="about.html" data-lang="ar">من نحن</a><a href="about.html" data-lang="en" style="display:none;">About Us</a></li>
+          <li><a href="contact.html" data-lang="ar">اتصل بنا</a><a href="contact.html" data-lang="en" style="display:none;">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4 data-lang="ar">تواصل معنا</h4>
+        <h4 data-lang="en" style="display:none;">Contact Us</h4>
+        <ul>
+          <li>📱 +963-XX-XXX-XXXX</li>
+          <li>📧 info@fancyfoods.com</li>
+          <li data-lang="ar">📍 سوريا</li>
+          <li data-lang="en" style="display:none;">📍 Syria</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p data-lang="ar">© 2025 فانسي فودز – جميع الحقوق محفوظة</p>
+      <p data-lang="en" style="display:none;">© 2025 Fancy Foods – All Rights Reserved</p>
+    </div>
+  </div>
 </footer>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>

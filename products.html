@@ -1,524 +1,466 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="تصفح مجموعتنا الواسعة من المكسرات والموالح الفاخرة - فستق حلبي، كاجو، لوز، بزر، وأكثر">
-<title>المنتجات | فانسي فودز</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our wide collection of premium nuts and snacks - Pistachios, Cashews, Almonds, Seeds and more | تصفح مجموعتنا الواسعة من المكسرات والموالح الفاخرة">
+  <title>Products | المنتجات - Fancy Foods</title>
   
-  body {
-    font-family: 'Tajawal', sans-serif;
-    background: #fafafa;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  /* HEADER */
-  header {
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 800;
-    color: #2f4f1f;
-    text-decoration: none;
-  }
-
-  .logo span {
-    background: linear-gradient(135deg, #2f4f1f 0%, #4a7c2f 100%);
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 8px;
-    margin-left: 10px;
-    box-shadow: 0 2px 8px rgba(47,79,31,0.2);
-  }
-
-  nav a {
-    margin-left: 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-  }
-
-  nav a:hover {
-    color: #2f4f1f;
-    background: #f0f7f0;
-  }
-
-  nav a.active {
-    background: #2f4f1f;
-    color: #fff;
-  }
-
-  /* PAGE HEADER */
-  .page-header {
-    background: linear-gradient(135deg, #d1a054 0%, #7cb342 100%);
-    padding: 60px 20px;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 40px;
-  }
-
-  .page-header h1 {
-    font-size: 48px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  }
-
-  .page-header p {
-    font-size: 20px;
-    opacity: 0.95;
-    max-width: 650px;
-    margin: auto;
-  }
-
-  /* PRODUCTS GRID */
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-  }
-
-  .product-card {
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    border: 1px solid #eee;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-
-  .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
-  }
-
-  .product-image {
-    width: 100%;
-    height: 220px;
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 64px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .product-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #d4af37;
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 700;
-    box-shadow: 0 2px 8px rgba(212,175,55,0.4);
-  }
-
-  .product-content {
-    padding: 20px;
-  }
-
-  .product-card h3 {
-    font-size: 22px;
-    color: #2f4f1f;
-    margin-bottom: 10px;
-    font-weight: 700;
-  }
-
-  .product-card .category {
-    display: inline-block;
-    background: #f0f7f0;
-    color: #2f4f1f;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 12px;
-  }
-
-  .product-card p {
-    color: #555;
-    line-height: 1.7;
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-
-  .product-features {
-    list-style: none;
-    margin-bottom: 15px;
-  }
-
-  .product-features li {
-    padding: 5px 0;
-    color: #666;
-    font-size: 14px;
-  }
-
-  .product-features li:before {
-    content: "✓";
-    color: #7cb342;
-    font-weight: bold;
-    margin-left: 8px;
-  }
-
-  /* SECTION TITLES */
-  .section-title {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #2f4f1f;
-    font-weight: 800;
-    position: relative;
-    padding-bottom: 15px;
-  }
-
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #d1a054 0%, #7cb342 100%);
-    border-radius: 2px;
-  }
-
-  /* CTA SECTION */
-  .cta-section {
-    background: linear-gradient(135deg, #2f4f1f 0%, #4a7c2f 100%);
-    padding: 60px 20px;
-    text-align: center;
-    color: #fff;
-    margin-top: 60px;
-    border-radius: 20px;
-  }
-
-  .cta-section h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    font-weight: 800;
-  }
-
-  .cta-section p {
-    font-size: 18px;
-    margin-bottom: 25px;
-    opacity: 0.95;
-  }
-
-  .cta-btn {
-    display: inline-block;
-    background: #fff;
-    color: #2f4f1f;
-    padding: 14px 35px;
-    border-radius: 30px;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(255,255,255,0.3);
-  }
-
-  .cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255,255,255,0.4);
-  }
-
-  /* FOOTER */
-  footer {
-    background: #2f4f1f;
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-    font-size: 14px;
-    margin-top: 60px;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .page-header h1 {
-      font-size: 36px;
-    }
-
-    .products-grid {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    nav a {
-      margin-left: 8px;
-      padding: 6px 10px;
-      font-size: 14px;
-    }
-
-    .logo {
-      font-size: 20px;
-    }
-  }
-</style>
-
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 </head>
-<body>
+<body class="rtl">
 
-<header>
-  <div class="container nav">
-    <a href="index.html" class="logo"><span>FF</span> فانسي فودز</a>
-    <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="products.html" class="active">المنتجات</a>
-      <a href="about.html">من نحن</a>
-      <a href="contact.html">اتصل بنا</a>
-    </nav>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.svg" alt="Fancy Foods Logo" class="logo-icon">
+        <div class="logo-text">
+          <span class="logo-text-main" data-lang="ar">فانسي فودز</span>
+          <span class="logo-text-main" data-lang="en" style="display:none;">Fancy Foods</span>
+          <span class="logo-text-sub" data-lang="ar">مكسرات فاخرة</span>
+          <span class="logo-text-sub" data-lang="en" style="display:none;">Premium Nuts</span>
+        </div>
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Navigation -->
+      <nav class="nav">
+        <a href="index.html" class="nav-link" data-nav="home">الرئيسية</a>
+        <a href="products.html" class="nav-link active" data-nav="products">المنتجات</a>
+        <a href="about.html" class="nav-link" data-nav="about">من نحن</a>
+        <a href="contact.html" class="nav-link" data-nav="contact">اتصل بنا</a>
+        
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="ar">عربي</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
   </div>
 </header>
 
-<div class="page-header">
-  <h1>مجموعة المنتجات</h1>
-  <p>اكتشف تشكيلتنا الواسعة من المكسرات والموالح الفاخرة</p>
-</div>
-
-<section>
+<!-- Page Header -->
+<section class="page-header">
   <div class="container">
-    
-    <h2 class="section-title">المكسرات الفاخرة</h2>
-    
-    <div class="products-grid">
+    <div class="page-header-content">
+      <!-- Arabic -->
+      <div data-lang="ar">
+        <h1 class="page-title">مجموعة المنتجات</h1>
+        <p class="page-subtitle">اكتشف تشكيلتنا الواسعة من المكسرات والموالح الفاخرة بجودة استثنائية</p>
+      </div>
       
-      <div class="product-card">
-        <div class="product-image">🥜
-          <span class="product-badge">الأكثر مبيعاً</span>
-        </div>
-        <div class="product-content">
-          <span class="category">مكسرات فاخرة</span>
-          <h3>فستق حلبي فاخر</h3>
-          <p>فستق محمص ومملح بدرجة متوازنة، مصدر من أجود المزارع.</p>
-          <ul class="product-features">
-            <li>جودة ممتازة وتعبئة محكمة</li>
-            <li>محمص بعناية فائقة</li>
-            <li>حجم كبير ومتجانس</li>
-          </ul>
-        </div>
+      <!-- English -->
+      <div data-lang="en" style="display:none;">
+        <h1 class="page-title">Our Products</h1>
+        <p class="page-subtitle">Discover our wide selection of premium nuts and snacks with exceptional quality</p>
       </div>
-
-      <div class="product-card">
-        <div class="product-image">🌰</div>
-        <div class="product-content">
-          <span class="category">مكسرات فاخرة</span>
-          <h3>كاجو محمص سوبر</h3>
-          <p>كاجو سوبر إكسترا، طعم غني وقوام مقرمش لا يقاوم.</p>
-          <ul class="product-features">
-            <li>درجة ممتازة</li>
-            <li>طعم مميز ونكهة أصيلة</li>
-            <li>قوام مقرمش</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🌰</div>
-        <div class="product-content">
-          <span class="category">مكسرات فاخرة</span>
-          <h3>لوز محمص</h3>
-          <p>لوز كاليفورنيا فاخر، محمص بعناية للحصول على أفضل مذاق.</p>
-          <ul class="product-features">
-            <li>لوز كامل وكبير الحجم</li>
-            <li>غني بالفوائد الصحية</li>
-            <li>طعم لذيذ ومقرمش</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🥜
-          <span class="product-badge">جديد</span>
-        </div>
-        <div class="product-content">
-          <span class="category">مكسرات مشكلة</span>
-          <h3>مكسرات مشكلة فاخرة</h3>
-          <p>خليط متنوع من أجود أنواع المكسرات المختارة بعناية.</p>
-          <ul class="product-features">
-            <li>تشكيلة متنوعة ولذيذة</li>
-            <li>جودة عالية لكل نوع</li>
-            <li>مثالية للضيافة</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🥜</div>
-        <div class="product-content">
-          <span class="category">مكسرات محلية</span>
-          <h3>فول سوداني محمص</h3>
-          <p>فول سوداني محمص بمهارة، نكهة غنية ومقرمشة.</p>
-          <ul class="product-features">
-            <li>تحميص متقن</li>
-            <li>نكهة أصيلة</li>
-            <li>سعر مناسب وجودة عالية</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🌰</div>
-        <div class="product-content">
-          <span class="category">مكسرات فاخرة</span>
-          <h3>بندق محمص</h3>
-          <p>بندق تركي فاخر، محمص ليبرز نكهته الطبيعية الغنية.</p>
-          <ul class="product-features">
-            <li>بندق تركي أصلي</li>
-            <li>قوام مقرمش ونكهة مميزة</li>
-            <li>جودة فائقة</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-
-    <h2 class="section-title">البزورات والموالح</h2>
-    
-    <div class="products-grid">
-      
-      <div class="product-card">
-        <div class="product-image">🌻
-          <span class="product-badge">الأكثر مبيعاً</span>
-        </div>
-        <div class="product-content">
-          <span class="category">بزورات</span>
-          <h3>بزر دوار الشمس</h3>
-          <p>بزر كبير الحجم، محمص ومملح بعناية لتحقيق أفضل نكهة.</p>
-          <ul class="product-features">
-            <li>حبات كبيرة ومتجانسة</li>
-            <li>تمليح متوازن</li>
-            <li>طازج ومقرمش</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🎃</div>
-        <div class="product-content">
-          <span class="category">بزورات</span>
-          <h3>بزر اليقطين</h3>
-          <p>بزر يقطين محمص، مصدر ممتاز للمعادن والفيتامينات.</p>
-          <ul class="product-features">
-            <li>غني بالفوائد الصحية</li>
-            <li>نكهة لذيذة ومميزة</li>
-            <li>جودة فاخرة</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🌾</div>
-        <div class="product-content">
-          <span class="category">موالح</span>
-          <h3>ذرة مقرمشة</h3>
-          <p>ذرة محمصة بعناية، خفيفة ومقرمشة بنكهة رائعة.</p>
-          <ul class="product-features">
-            <li>خفيفة ولذيذة</li>
-            <li>قرمشة مثالية</li>
-            <li>نكهات متعددة</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🌰</div>
-        <div class="product-content">
-          <span class="category">موالح</span>
-          <h3>حمص محمص</h3>
-          <p>حمص محمص ومتبل، وجبة خفيفة صحية ولذيذة.</p>
-          <ul class="product-features">
-            <li>خيار صحي ومغذي</li>
-            <li>غني بالبروتين</li>
-            <li>طعم أصيل ومميز</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🥜</div>
-        <div class="product-content">
-          <span class="category">موالح متنوعة</span>
-          <h3>موالح مشكلة</h3>
-          <p>تشكيلة متنوعة من البزورات والموالح المقرمشة.</p>
-          <ul class="product-features">
-            <li>تشكيلة واسعة</li>
-            <li>مثالية للتسالي</li>
-            <li>نكهات متعددة</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image">🌶️
-          <span class="product-badge">حار</span>
-        </div>
-        <div class="product-content">
-          <span class="category">موالح حارة</span>
-          <h3>موالح بنكهة حارة</h3>
-          <p>تشكيلة من الموالح بنكهات حارة ومتبلة للذواقة.</p>
-          <ul class="product-features">
-            <li>نكهة حارة مميزة</li>
-            <li>تتبيلة خاصة</li>
-            <li>للذواقة فقط</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
   </div>
 </section>
 
-<div class="container">
-  <div class="cta-section">
-    <h2>هل أنت تاجر؟</h2>
-    <p>انضم إلى شبكة عملائنا واحصل على أفضل الأسعار وخدمة التوصيل السريعة</p>
-    <a href="contact.html" class="cta-btn">اتصل بنا الآن</a>
+<!-- Premium Nuts Section -->
+<section class="section">
+  <div class="container">
+    <!-- Arabic Header -->
+    <div class="section-header" data-lang="ar">
+      <span class="section-badge">تشكيلة فاخرة</span>
+      <h2 class="section-title">المكسرات الفاخرة</h2>
+      <p class="section-desc">أجود أنواع المكسرات المحمصة بعناية فائقة</p>
+    </div>
+    
+    <!-- English Header -->
+    <div class="section-header" data-lang="en" style="display:none;">
+      <span class="section-badge">Premium Selection</span>
+      <h2 class="section-title">Premium Nuts</h2>
+      <p class="section-desc">The finest roasted nuts with exceptional care</p>
+    </div>
+    
+    <div class="cards-grid">
+      <!-- Product 1: Pistachios -->
+      <div class="product-card" data-animate>
+        <div class="product-image">
+          🥜
+          <span class="product-badge" data-lang="ar">الأكثر مبيعاً</span>
+          <span class="product-badge" data-lang="en" style="display:none;">Best Seller</span>
+        </div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">مكسرات فاخرة</span>
+          <span class="product-category" data-lang="en" style="display:none;">Premium Nuts</span>
+          <h3 class="product-title" data-lang="ar">فستق حلبي فاخر</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Premium Aleppo Pistachios</h3>
+          <p class="product-desc" data-lang="ar">فستق محمص ومملح بدرجة متوازنة، مصدر من أجود المزارع السورية.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Roasted and salted pistachios with perfect balance, sourced from the finest Syrian farms.</p>
+          <ul class="product-features">
+            <li data-lang="ar">جودة ممتازة وتعبئة محكمة</li>
+            <li data-lang="en" style="display:none;">Excellent quality and tight packaging</li>
+            <li data-lang="ar">محمص بعناية فائقة</li>
+            <li data-lang="en" style="display:none;">Carefully roasted</li>
+            <li data-lang="ar">حجم كبير ومتجانس</li>
+            <li data-lang="en" style="display:none;">Large and uniform size</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 2: Cashews -->
+      <div class="product-card" data-animate>
+        <div class="product-image">🌰</div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">مكسرات فاخرة</span>
+          <span class="product-category" data-lang="en" style="display:none;">Premium Nuts</span>
+          <h3 class="product-title" data-lang="ar">كاجو محمص سوبر</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Super Roasted Cashews</h3>
+          <p class="product-desc" data-lang="ar">كاجو سوبر إكسترا، طعم غني وقوام مقرمش لا يقاوم.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Super extra cashews with rich taste and irresistible crunchy texture.</p>
+          <ul class="product-features">
+            <li data-lang="ar">درجة ممتازة</li>
+            <li data-lang="en" style="display:none;">Excellent grade</li>
+            <li data-lang="ar">طعم مميز ونكهة أصيلة</li>
+            <li data-lang="en" style="display:none;">Distinctive taste and authentic flavor</li>
+            <li data-lang="ar">قوام مقرمش</li>
+            <li data-lang="en" style="display:none;">Crunchy texture</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 3: Almonds -->
+      <div class="product-card" data-animate>
+        <div class="product-image">🌰</div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">مكسرات فاخرة</span>
+          <span class="product-category" data-lang="en" style="display:none;">Premium Nuts</span>
+          <h3 class="product-title" data-lang="ar">لوز محمص</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Roasted Almonds</h3>
+          <p class="product-desc" data-lang="ar">لوز كاليفورنيا فاخر، محمص بعناية للحصول على أفضل مذاق.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Premium California almonds, carefully roasted for the best taste.</p>
+          <ul class="product-features">
+            <li data-lang="ar">لوز كامل وكبير الحجم</li>
+            <li data-lang="en" style="display:none;">Whole and large size</li>
+            <li data-lang="ar">غني بالفوائد الصحية</li>
+            <li data-lang="en" style="display:none;">Rich in health benefits</li>
+            <li data-lang="ar">طعم لذيذ ومقرمش</li>
+            <li data-lang="en" style="display:none;">Delicious and crunchy taste</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 4: Mixed Nuts -->
+      <div class="product-card" data-animate>
+        <div class="product-image">
+          🥜
+          <span class="product-badge" data-lang="ar">جديد</span>
+          <span class="product-badge" data-lang="en" style="display:none;">New</span>
+        </div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">مكسرات مشكلة</span>
+          <span class="product-category" data-lang="en" style="display:none;">Mixed Nuts</span>
+          <h3 class="product-title" data-lang="ar">مكسرات مشكلة فاخرة</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Premium Mixed Nuts</h3>
+          <p class="product-desc" data-lang="ar">خليط متنوع من أجود أنواع المكسرات المختارة بعناية.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">A diverse mix of the finest carefully selected nuts.</p>
+          <ul class="product-features">
+            <li data-lang="ar">تشكيلة متنوعة ولذيذة</li>
+            <li data-lang="en" style="display:none;">Diverse and delicious selection</li>
+            <li data-lang="ar">جودة عالية لكل نوع</li>
+            <li data-lang="en" style="display:none;">High quality for each type</li>
+            <li data-lang="ar">مثالية للضيافة</li>
+            <li data-lang="en" style="display:none;">Perfect for hospitality</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 5: Peanuts -->
+      <div class="product-card" data-animate>
+        <div class="product-image">🥜</div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">مكسرات محلية</span>
+          <span class="product-category" data-lang="en" style="display:none;">Local Nuts</span>
+          <h3 class="product-title" data-lang="ar">فول سوداني محمص</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Roasted Peanuts</h3>
+          <p class="product-desc" data-lang="ar">فول سوداني محمص بمهارة، نكهة غنية ومقرمشة.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Skillfully roasted peanuts, rich flavor and crunchy.</p>
+          <ul class="product-features">
+            <li data-lang="ar">تحميص متقن</li>
+            <li data-lang="en" style="display:none;">Perfect roasting</li>
+            <li data-lang="ar">نكهة أصيلة</li>
+            <li data-lang="en" style="display:none;">Authentic flavor</li>
+            <li data-lang="ar">سعر مناسب وجودة عالية</li>
+            <li data-lang="en" style="display:none;">Affordable price, high quality</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 6: Hazelnuts -->
+      <div class="product-card" data-animate>
+        <div class="product-image">🌰</div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">مكسرات فاخرة</span>
+          <span class="product-category" data-lang="en" style="display:none;">Premium Nuts</span>
+          <h3 class="product-title" data-lang="ar">بندق محمص</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Roasted Hazelnuts</h3>
+          <p class="product-desc" data-lang="ar">بندق تركي فاخر، محمص ليبرز نكهته الطبيعية الغنية.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Premium Turkish hazelnuts, roasted to bring out their rich natural flavor.</p>
+          <ul class="product-features">
+            <li data-lang="ar">بندق تركي أصلي</li>
+            <li data-lang="en" style="display:none;">Authentic Turkish hazelnuts</li>
+            <li data-lang="ar">قوام مقرمش ونكهة مميزة</li>
+            <li data-lang="en" style="display:none;">Crunchy texture and distinctive flavor</li>
+            <li data-lang="ar">جودة فائقة</li>
+            <li data-lang="en" style="display:none;">Superior quality</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<footer>
-  © 2025 فانسي فودز – جميع الحقوق محفوظة
+<!-- Seeds & Snacks Section -->
+<section class="section" style="background: var(--light-gray);">
+  <div class="container">
+    <!-- Arabic Header -->
+    <div class="section-header" data-lang="ar">
+      <span class="section-badge">تشكيلة متنوعة</span>
+      <h2 class="section-title">البزورات والموالح</h2>
+      <p class="section-desc">مجموعة متنوعة من البزورات والموالح المقرمشة</p>
+    </div>
+    
+    <!-- English Header -->
+    <div class="section-header" data-lang="en" style="display:none;">
+      <span class="section-badge">Variety Selection</span>
+      <h2 class="section-title">Seeds & Snacks</h2>
+      <p class="section-desc">A variety of crunchy seeds and snacks</p>
+    </div>
+    
+    <div class="cards-grid">
+      <!-- Product 1: Sunflower Seeds -->
+      <div class="product-card" data-animate>
+        <div class="product-image">
+          🌻
+          <span class="product-badge" data-lang="ar">الأكثر مبيعاً</span>
+          <span class="product-badge" data-lang="en" style="display:none;">Best Seller</span>
+        </div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">بزورات</span>
+          <span class="product-category" data-lang="en" style="display:none;">Seeds</span>
+          <h3 class="product-title" data-lang="ar">بزر دوار الشمس</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Sunflower Seeds</h3>
+          <p class="product-desc" data-lang="ar">بزر كبير الحجم، محمص ومملح بعناية لتحقيق أفضل نكهة.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Large seeds, carefully roasted and salted for the best flavor.</p>
+          <ul class="product-features">
+            <li data-lang="ar">حبات كبيرة ومتجانسة</li>
+            <li data-lang="en" style="display:none;">Large and uniform grains</li>
+            <li data-lang="ar">تمليح متوازن</li>
+            <li data-lang="en" style="display:none;">Balanced salting</li>
+            <li data-lang="ar">طازج ومقرمش</li>
+            <li data-lang="en" style="display:none;">Fresh and crunchy</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 2: Pumpkin Seeds -->
+      <div class="product-card" data-animate>
+        <div class="product-image">🎃</div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">بزورات</span>
+          <span class="product-category" data-lang="en" style="display:none;">Seeds</span>
+          <h3 class="product-title" data-lang="ar">بزر اليقطين</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Pumpkin Seeds</h3>
+          <p class="product-desc" data-lang="ar">بزر يقطين محمص، مصدر ممتاز للمعادن والفيتامينات.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Roasted pumpkin seeds, excellent source of minerals and vitamins.</p>
+          <ul class="product-features">
+            <li data-lang="ar">غني بالفوائد الصحية</li>
+            <li data-lang="en" style="display:none;">Rich in health benefits</li>
+            <li data-lang="ar">نكهة لذيذة ومميزة</li>
+            <li data-lang="en" style="display:none;">Delicious and distinctive flavor</li>
+            <li data-lang="ar">جودة فاخرة</li>
+            <li data-lang="en" style="display:none;">Premium quality</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 3: Crunchy Corn -->
+      <div class="product-card" data-animate>
+        <div class="product-image">🌾</div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">موالح</span>
+          <span class="product-category" data-lang="en" style="display:none;">Snacks</span>
+          <h3 class="product-title" data-lang="ar">ذرة مقرمشة</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Crunchy Corn</h3>
+          <p class="product-desc" data-lang="ar">ذرة محمصة بعناية، خفيفة ومقرمشة بنكهة رائعة.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Carefully roasted corn, light and crunchy with great flavor.</p>
+          <ul class="product-features">
+            <li data-lang="ar">خفيفة ولذيذة</li>
+            <li data-lang="en" style="display:none;">Light and delicious</li>
+            <li data-lang="ar">قرمشة مثالية</li>
+            <li data-lang="en" style="display:none;">Perfect crunch</li>
+            <li data-lang="ar">نكهات متعددة</li>
+            <li data-lang="en" style="display:none;">Multiple flavors</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 4: Roasted Chickpeas -->
+      <div class="product-card" data-animate>
+        <div class="product-image">🌰</div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">موالح</span>
+          <span class="product-category" data-lang="en" style="display:none;">Snacks</span>
+          <h3 class="product-title" data-lang="ar">حمص محمص</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Roasted Chickpeas</h3>
+          <p class="product-desc" data-lang="ar">حمص محمص ومتبل، وجبة خفيفة صحية ولذيذة.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">Roasted and seasoned chickpeas, a healthy and delicious snack.</p>
+          <ul class="product-features">
+            <li data-lang="ar">خيار صحي ومغذي</li>
+            <li data-lang="en" style="display:none;">Healthy and nutritious choice</li>
+            <li data-lang="ar">غني بالبروتين</li>
+            <li data-lang="en" style="display:none;">Rich in protein</li>
+            <li data-lang="ar">طعم أصيل ومميز</li>
+            <li data-lang="en" style="display:none;">Authentic and distinctive taste</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 5: Mixed Snacks -->
+      <div class="product-card" data-animate>
+        <div class="product-image">🥜</div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">موالح متنوعة</span>
+          <span class="product-category" data-lang="en" style="display:none;">Mixed Snacks</span>
+          <h3 class="product-title" data-lang="ar">موالح مشكلة</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Mixed Snacks</h3>
+          <p class="product-desc" data-lang="ar">تشكيلة متنوعة من البزورات والموالح المقرمشة.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">A diverse selection of seeds and crunchy snacks.</p>
+          <ul class="product-features">
+            <li data-lang="ar">تشكيلة واسعة</li>
+            <li data-lang="en" style="display:none;">Wide selection</li>
+            <li data-lang="ar">مثالية للتسالي</li>
+            <li data-lang="en" style="display:none;">Perfect for snacking</li>
+            <li data-lang="ar">نكهات متعددة</li>
+            <li data-lang="en" style="display:none;">Multiple flavors</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Product 6: Spicy Snacks -->
+      <div class="product-card" data-animate>
+        <div class="product-image">
+          🌶️
+          <span class="product-badge" data-lang="ar">حار</span>
+          <span class="product-badge" data-lang="en" style="display:none;">Spicy</span>
+        </div>
+        <div class="product-content">
+          <span class="product-category" data-lang="ar">موالح حارة</span>
+          <span class="product-category" data-lang="en" style="display:none;">Spicy Snacks</span>
+          <h3 class="product-title" data-lang="ar">موالح بنكهة حارة</h3>
+          <h3 class="product-title" data-lang="en" style="display:none;">Spicy Flavored Snacks</h3>
+          <p class="product-desc" data-lang="ar">تشكيلة من الموالح بنكهات حارة ومتبلة للذواقة.</p>
+          <p class="product-desc" data-lang="en" style="display:none;">A selection of snacks with hot and spicy flavors for connoisseurs.</p>
+          <ul class="product-features">
+            <li data-lang="ar">نكهة حارة مميزة</li>
+            <li data-lang="en" style="display:none;">Distinctive spicy flavor</li>
+            <li data-lang="ar">تتبيلة خاصة</li>
+            <li data-lang="en" style="display:none;">Special seasoning</li>
+            <li data-lang="ar">للذواقة فقط</li>
+            <li data-lang="en" style="display:none;">For connoisseurs only</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section">
+      <div class="cta-content">
+        <!-- Arabic -->
+        <div data-lang="ar">
+          <h2 class="cta-title">هل أنت تاجر؟</h2>
+          <p class="cta-text">انضم إلى شبكة عملائنا واحصل على أفضل الأسعار وخدمة التوصيل السريعة</p>
+          <a href="contact.html" class="btn btn-primary">اتصل بنا الآن</a>
+        </div>
+        
+        <!-- English -->
+        <div data-lang="en" style="display:none;">
+          <h2 class="cta-title">Are You a Trader?</h2>
+          <p class="cta-text">Join our network of clients and get the best prices and fast delivery service</p>
+          <a href="contact.html" class="btn btn-primary">Contact Us Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Company Info -->
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom: 20px;">
+          <img src="assets/images/logo.svg" alt="Fancy Foods Logo" class="logo-icon">
+          <div class="logo-text">
+            <span class="logo-text-main" style="color: white;" data-lang="ar">فانسي فودز</span>
+            <span class="logo-text-main" style="color: white; display:none;" data-lang="en">Fancy Foods</span>
+          </div>
+        </a>
+        <p data-lang="ar">موردون للمكسرات والموالح الفاخرة للتجار والموزعين. الجودة هي أولويتنا.</p>
+        <p data-lang="en" style="display:none;">Premium wholesale nuts and snacks for traders and distributors. Quality is our priority.</p>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 data-lang="ar">روابط سريعة</h4>
+        <h4 data-lang="en" style="display:none;">Quick Links</h4>
+        <ul>
+          <li><a href="index.html" data-lang="ar">الرئيسية</a><a href="index.html" data-lang="en" style="display:none;">Home</a></li>
+          <li><a href="products.html" data-lang="ar">المنتجات</a><a href="products.html" data-lang="en" style="display:none;">Products</a></li>
+          <li><a href="about.html" data-lang="ar">من نحن</a><a href="about.html" data-lang="en" style="display:none;">About Us</a></li>
+          <li><a href="contact.html" data-lang="ar">اتصل بنا</a><a href="contact.html" data-lang="en" style="display:none;">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4 data-lang="ar">تواصل معنا</h4>
+        <h4 data-lang="en" style="display:none;">Contact Us</h4>
+        <ul>
+          <li>📱 +963-XX-XXX-XXXX</li>
+          <li>📧 info@fancyfoods.com</li>
+          <li data-lang="ar">📍 سوريا</li>
+          <li data-lang="en" style="display:none;">📍 Syria</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p data-lang="ar">© 2025 فانسي فودز – جميع الحقوق محفوظة</p>
+      <p data-lang="en" style="display:none;">© 2025 Fancy Foods – All Rights Reserved</p>
+    </div>
+  </div>
 </footer>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
