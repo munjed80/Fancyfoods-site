@@ -512,8 +512,9 @@ function setLanguage(lang) {
   });
   
   // Show/hide content based on language
-  const arElements = document.querySelectorAll('[data-lang="ar"]');
-  const enElements = document.querySelectorAll('[data-lang="en"]');
+  // Show/hide content based on language (exclude language switcher buttons)
+  const arElements = document.querySelectorAll('[data-lang="ar"]:not(.lang-btn)');
+  const enElements = document.querySelectorAll('[data-lang="en"]:not(.lang-btn)');
   
   if (lang === 'ar') {
     arElements.forEach(el => el.style.display = '');
@@ -633,9 +634,9 @@ function setLanguage(lang) {
     }
   });
   
-  // Show/hide content based on language
-  const arElements = document.querySelectorAll('[data-lang="ar"]');
-  const enElements = document.querySelectorAll('[data-lang="en"]');
+  // Show/hide content based on language (exclude language switcher buttons)
+  const arElements = document.querySelectorAll('[data-lang="ar"]:not(.lang-btn)');
+  const enElements = document.querySelectorAll('[data-lang="en"]:not(.lang-btn)');
   
   if (lang === 'ar') {
     arElements.forEach(el => el.style.display = '');
