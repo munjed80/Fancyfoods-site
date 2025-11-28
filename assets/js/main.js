@@ -511,9 +511,9 @@ function setLanguage(lang) {
     }
   });
   
-  // Show/hide content based on language
-  const arElements = document.querySelectorAll('[data-lang="ar"]');
-  const enElements = document.querySelectorAll('[data-lang="en"]');
+  // Show/hide content based on language (exclude language switcher buttons)
+  const arElements = document.querySelectorAll('[data-lang="ar"]:not(.lang-btn)');
+  const enElements = document.querySelectorAll('[data-lang="en"]:not(.lang-btn)');
   
   if (lang === 'ar') {
     arElements.forEach(el => el.style.display = '');
@@ -602,89 +602,4 @@ function throttle(func, limit) {
   };
 }
 
-/**
- * Set the website language
- * @param {string} lang - Language code ('ar' or 'en')
- */
-function setLanguage(lang) {
-  const body = document.body;
-  const htmlEl = document.documentElement;
-  
-  // Update body classes
-  if (lang === 'ar') {
-    body.classList.add('rtl');
-    body.classList.remove('ltr', 'en');
-    htmlEl.setAttribute('lang', 'ar');
-    htmlEl.setAttribute('dir', 'rtl');
-  } else {
-    body.classList.add('ltr', 'en');
-    body.classList.remove('rtl');
-    htmlEl.setAttribute('lang', 'en');
-    htmlEl.setAttribute('dir', 'ltr');
-  }
-  
-  // Update language buttons
-  const langButtons = document.querySelectorAll('.lang-btn');
-  langButtons.forEach(btn => {
-    if (btn.dataset.lang === lang) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-  });
-  
-  // Show/hide content based on language
-  const arElements = document.querySelectorAll('[data-lang="ar"]');
-  const enElements = document.querySelectorAll('[data-lang="en"]');
-  
-  if (lang === 'ar') {
-    arElements.forEach(el => el.style.display = '');
-    enElements.forEach(el => el.style.display = 'none');
-  } else {
-    arElements.forEach(el => el.style.display = 'none');
-    enElements.forEach(el => el.style.display = '');
-  }
-  
-  // Update navigation links
-  updateNavigationLinks(lang);
-}
 
-/**
- * Update navigation link text based on language
- * @param {string} lang - Language code
- */
-function updateNavigationLinks(lang) {
-  const navTranslations = {
-    ar: {
-      home: 'الرئيسية',
-      products: 'المنتجات',
-      about: 'من نحن',
-      contact: 'اتصل بنا'
-    },
-    en: {
-      home: 'Home',
-      products: 'Products',
-      about: 'About Us',
-      contact: 'Contact'
-    }
-  };
-  
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    const key = link.dataset.nav;
-    if (key && navTranslations[lang][key]) {
-      link.textContent = navTranslations[lang][key];
-    }
-  });
-}
-
-/**
- * Smooth scroll to element
- * @param {string} selector - CSS selector for target element
- */
-function scrollToElement(selector) {
-  const element = document.querySelector(selector);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
