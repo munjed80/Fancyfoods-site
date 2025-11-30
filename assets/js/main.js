@@ -435,7 +435,7 @@ function initWhatsAppButton() {
     
     const whatsappBtn = document.createElement('a');
     whatsappBtn.className = 'whatsapp-float';
-    whatsappBtn.href = 'https://wa.me/963XXXXXXXX';
+    whatsappBtn.href = 'https://wa.me/963988216431';
     whatsappBtn.target = '_blank';
     whatsappBtn.rel = 'noopener noreferrer';
     whatsappBtn.setAttribute('aria-label', tooltipText);
