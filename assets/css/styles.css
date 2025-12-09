@@ -295,7 +295,8 @@ ul, ol {
 
 /* ============ Hero Section ============ */
 .hero {
-  /* Single background property with fallbacks - browser uses first available from left */
+  /* Background fallback cascade: Real photo → SVG placeholder → Gradient */
+  /* Browser uses first available from left to right */
   background: url('../images/nuts-background.jpg') center center / cover no-repeat, 
               url('../images/nuts-background.svg') center center / cover no-repeat, 
               linear-gradient(135deg, #A0785A 0%, #C9A961 50%, #D4AF37 100%);
@@ -303,9 +304,15 @@ ul, ol {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for better mobile support */
   display: flex;
   align-items: center;
+}
+
+/* Use dynamic viewport height on supported browsers for better mobile experience */
+@supports (height: 100dvh) {
+  .hero {
+    min-height: 100dvh;
+  }
 }
 
 /* Dark overlay for text readability (20% opacity - lighter for better nuts visibility) */
@@ -2102,7 +2109,6 @@ body {
     padding: 60px 0;
     min-height: 100vh;
     background-position: center center;
-    background-attachment: scroll;
   }
   
   .hero-logo img {
