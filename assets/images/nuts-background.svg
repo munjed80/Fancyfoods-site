@@ -4,33 +4,33 @@
     <style>
       @keyframes float1 {
         0%, 100% { transform: translate(0, 0) rotate(0deg); }
-        25% { transform: translate(-8px, -12px) rotate(3deg); }
-        50% { transform: translate(-5px, -20px) rotate(0deg); }
-        75% { transform: translate(8px, -12px) rotate(-3deg); }
+        25% { transform: translate(-15px, -20px) rotate(5deg); }
+        50% { transform: translate(-10px, -35px) rotate(0deg); }
+        75% { transform: translate(15px, -20px) rotate(-5deg); }
       }
       @keyframes float2 {
         0%, 100% { transform: translate(0, 0) rotate(0deg); }
-        25% { transform: translate(10px, -10px) rotate(-2deg); }
-        50% { transform: translate(6px, -18px) rotate(0deg); }
-        75% { transform: translate(-10px, -10px) rotate(2deg); }
+        25% { transform: translate(18px, -18px) rotate(-4deg); }
+        50% { transform: translate(12px, -30px) rotate(0deg); }
+        75% { transform: translate(-18px, -18px) rotate(4deg); }
       }
       @keyframes float3 {
         0%, 100% { transform: translate(0, 0) rotate(0deg); }
-        25% { transform: translate(-6px, -15px) rotate(4deg); }
-        50% { transform: translate(8px, -22px) rotate(0deg); }
-        75% { transform: translate(-8px, -15px) rotate(-4deg); }
+        25% { transform: translate(-12px, -25px) rotate(6deg); }
+        50% { transform: translate(15px, -38px) rotate(0deg); }
+        75% { transform: translate(-15px, -25px) rotate(-6deg); }
       }
       @keyframes float4 {
         0%, 100% { transform: translate(0, 0) rotate(0deg); }
-        25% { transform: translate(12px, -8px) rotate(-3deg); }
-        50% { transform: translate(-4px, -16px) rotate(0deg); }
-        75% { transform: translate(12px, -8px) rotate(3deg); }
+        25% { transform: translate(20px, -15px) rotate(-5deg); }
+        50% { transform: translate(-8px, -28px) rotate(0deg); }
+        75% { transform: translate(20px, -15px) rotate(5deg); }
       }
       @keyframes float5 {
         0%, 100% { transform: translate(0, 0) rotate(0deg); }
-        25% { transform: translate(-10px, -14px) rotate(2deg); }
-        50% { transform: translate(7px, -24px) rotate(0deg); }
-        75% { transform: translate(-10px, -14px) rotate(-2deg); }
+        25% { transform: translate(-18px, -22px) rotate(3deg); }
+        50% { transform: translate(13px, -40px) rotate(0deg); }
+        75% { transform: translate(-18px, -22px) rotate(-3deg); }
       }
       .nut-anim-1 { animation: float1 8s ease-in-out infinite; transform-origin: center; }
       .nut-anim-2 { animation: float2 7s ease-in-out infinite 0.5s; transform-origin: center; }
@@ -39,37 +39,64 @@
       .nut-anim-5 { animation: float5 8.5s ease-in-out infinite 2s; transform-origin: center; }
     </style>
     
-    <!-- Gradients for realistic nut colors -->
-    <radialGradient id="pistachio" cx="50%" cy="50%">
-      <stop offset="0%" style="stop-color:#E5C45F;stop-opacity:1" />
-      <stop offset="70%" style="stop-color:#D4AF37;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#B8962A;stop-opacity:1" />
+    <!-- Enhanced gradients for ultra-realistic nut colors with 3D effect -->
+    <radialGradient id="pistachio" cx="35%" cy="35%">
+      <stop offset="0%" style="stop-color:#F5E6C8;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#E5C45F;stop-opacity:1" />
+      <stop offset="65%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9A7928;stop-opacity:1" />
     </radialGradient>
     
-    <radialGradient id="cashew" cx="40%" cy="40%">
-      <stop offset="0%" style="stop-color:#F5DEB3;stop-opacity:1" />
+    <linearGradient id="pistachioShell" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A961;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#B8962A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B7020;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="cashew" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#FFFAF0;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#F5DEB3;stop-opacity:1" />
       <stop offset="60%" style="stop-color:#DEB887;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#D2B48C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C19A6B;stop-opacity:1" />
     </radialGradient>
     
-    <radialGradient id="almond" cx="45%" cy="45%">
-      <stop offset="0%" style="stop-color:#D2691E;stop-opacity:1" />
-      <stop offset="60%" style="stop-color:#CD853F;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+    <radialGradient id="almond" cx="35%" cy="35%">
+      <stop offset="0%" style="stop-color:#E6A679;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#D2691E;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#B8571E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
     </radialGradient>
     
-    <radialGradient id="sunflower" cx="50%" cy="50%">
-      <stop offset="0%" style="stop-color:#9B7653;stop-opacity:1" />
-      <stop offset="70%" style="stop-color:#8B7355;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#6B5345;stop-opacity:1" />
+    <radialGradient id="corn" cx="40%" cy="40%">
+      <stop offset="0%" style="stop-color:#FFE97F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F4D03F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4AC0D;stop-opacity:1" />
     </radialGradient>
     
-    <!-- Filters for depth -->
+    <radialGradient id="sunflower" cx="40%" cy="40%">
+      <stop offset="0%" style="stop-color:#A68A64;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B7355;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5D4E37;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Enhanced filters for 3D depth and realism -->
     <filter id="depth">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
       <feOffset dx="1" dy="2" result="offsetblur"/>
       <feComponentTransfer>
-        <feFuncA type="linear" slope="0.3"/>
+        <feFuncA type="linear" slope="0.5"/>
       </feComponentTransfer>
       <feMerge>
         <feMergeNode/>
@@ -80,116 +107,263 @@
     <!-- Vignette gradient for depth -->
     <radialGradient id="vignette" cx="50%" cy="50%">
       <stop offset="40%" style="stop-color:#000000;stop-opacity:0" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.25" />
     </radialGradient>
   </defs>
   
-  <!-- Rich brown background mimicking wood/surface - lighter tone -->
-  <rect width="1920" height="1080" fill="#A0785A"/>
+  <!-- Rich brown background mimicking wood/surface - warmer, more realistic tone -->
+  <rect width="1920" height="1080" fill="#9B7653"/>
   
-  <!-- Subtle texture overlay -->
-  <rect width="1920" height="1080" fill="#8B5A3C" opacity="0.1"/>
+  <!-- Subtle texture overlays for depth -->
+  <rect width="1920" height="1080" fill="#8B5A3C" opacity="0.15"/>
+  <rect width="1920" height="1080" fill="#A0785A" opacity="0.08"/>
   
   <!-- Layer multiple nuts for depth and realism -->
   
-  <!-- Back layer - slightly blurred/darker -->
-  <g opacity="0.6" filter="url(#depth)">
-    <!-- Pistachios -->
-    <ellipse cx="340" cy="180" rx="28" ry="42" fill="url(#pistachio)" transform="rotate(25 340 180)"/>
-    <ellipse cx="820" cy="280" rx="32" ry="45" fill="url(#pistachio)" transform="rotate(-15 820 280)"/>
-    <ellipse cx="1450" cy="420" rx="30" ry="44" fill="url(#pistachio)" transform="rotate(35 1450 420)"/>
-    <ellipse cx="560" cy="780" rx="26" ry="40" fill="url(#pistachio)" transform="rotate(-25 560 780)"/>
-    <ellipse cx="1620" cy="850" rx="29" ry="43" fill="url(#pistachio)" transform="rotate(15 1620 850)"/>
+  <!-- Back layer - slightly blurred/darker for depth -->
+  <g opacity="0.65" filter="url(#depth)">
+    <!-- Pistachios with realistic shell crack -->
+    <g transform="rotate(25 340 180)">
+      <ellipse cx="340" cy="180" rx="30" ry="45" fill="url(#pistachioShell)"/>
+      <ellipse cx="338" cy="178" rx="28" ry="42" fill="url(#pistachio)"/>
+      <path d="M 340 160 Q 342 170 340 180" stroke="#8B7020" stroke-width="2" fill="none" opacity="0.8"/>
+    </g>
     
-    <!-- Cashews -->
-    <path d="M 480 340 Q 460 345 445 355 Q 435 370 440 385 Q 450 395 465 395 Q 485 390 495 375 Q 500 360 495 345 Q 485 335 480 340 Z" fill="url(#cashew)"/>
-    <path d="M 1180 520 Q 1160 525 1145 535 Q 1135 550 1140 565 Q 1150 575 1165 575 Q 1185 570 1195 555 Q 1200 540 1195 525 Q 1185 515 1180 520 Z" fill="url(#cashew)"/>
-    <path d="M 280 680 Q 260 685 245 695 Q 235 710 240 725 Q 250 735 265 735 Q 285 730 295 715 Q 300 700 295 685 Q 285 675 280 680 Z" fill="url(#cashew)"/>
+    <g transform="rotate(-15 820 280)">
+      <ellipse cx="820" cy="280" rx="34" ry="48" fill="url(#pistachioShell)"/>
+      <ellipse cx="818" cy="278" rx="32" ry="45" fill="url(#pistachio)"/>
+      <path d="M 820 258 Q 822 268 820 278" stroke="#8B7020" stroke-width="2" fill="none" opacity="0.8"/>
+    </g>
+    
+    <g transform="rotate(35 1450 420)">
+      <ellipse cx="1450" cy="420" rx="32" ry="47" fill="url(#pistachioShell)"/>
+      <ellipse cx="1448" cy="418" rx="30" ry="44" fill="url(#pistachio)"/>
+      <path d="M 1450 398 Q 1452 408 1450 418" stroke="#8B7020" stroke-width="2" fill="none" opacity="0.8"/>
+    </g>
+    
+    <!-- Cashews with realistic curve and texture -->
+    <path d="M 480 340 Q 455 346 435 360 Q 420 380 428 400 Q 442 413 462 413 Q 490 403 508 383 Q 515 363 508 346 Q 495 333 480 340 Z" fill="url(#cashew)"/>
+    <ellipse cx="465" cy="375" rx="18" ry="25" fill="#FFF8DC" opacity="0.35"/>
+    
+    <path d="M 1180 520 Q 1155 526 1135 540 Q 1120 560 1128 580 Q 1142 593 1162 593 Q 1190 583 1208 563 Q 1215 543 1208 526 Q 1195 513 1180 520 Z" fill="url(#cashew)"/>
+    <ellipse cx="1165" cy="555" rx="18" ry="25" fill="#FFF8DC" opacity="0.35"/>
+    
+    <!-- Almonds with natural shape and texture lines -->
+    <g transform="rotate(18 710 190)">
+      <ellipse cx="710" cy="190" rx="26" ry="46" fill="url(#almond)"/>
+      <line x1="708" y1="165" x2="712" y2="178" stroke="#6B3410" stroke-width="1.5" opacity="0.6"/>
+      <ellipse cx="708" cy="185" rx="12" ry="20" fill="#CD853F" opacity="0.4"/>
+    </g>
+    
+    <g transform="rotate(-28 1320 720)">
+      <ellipse cx="1320" cy="720" rx="28" ry="48" fill="url(#almond)"/>
+      <line x1="1318" y1="692" x2="1322" y2="707" stroke="#6B3410" stroke-width="1.5" opacity="0.6"/>
+      <ellipse cx="1318" cy="715" rx="13" ry="22" fill="#CD853F" opacity="0.4"/>
+    </g>
+    
+    <!-- Corn kernels - realistic rounded triangle shapes -->
+    <g transform="rotate(12 600 620)">
+      <path d="M 600 600 Q 590 605 590 615 Q 590 625 600 630 Q 610 630 610 615 Q 610 605 600 600 Z" fill="url(#corn)"/>
+      <ellipse cx="600" cy="612" rx="5" ry="8" fill="#FFE97F" opacity="0.5"/>
+    </g>
+    
+    <g transform="rotate(-22 1540 850)">
+      <path d="M 1540 830 Q 1530 835 1530 845 Q 1530 855 1540 860 Q 1550 860 1550 845 Q 1550 835 1540 830 Z" fill="url(#corn)"/>
+      <ellipse cx="1540" cy="842" rx="5" ry="8" fill="#FFE97F" opacity="0.5"/>
+    </g>
   </g>
   
-  <!-- Middle layer - main focus -->
-  <g>
-    <!-- Pistachios - main layer with animations -->
+  <!-- Middle layer - main focus with enhanced realism and animations -->
+  <g filter="url(#softShadow)">
+    <!-- Pistachios - main layer with realistic shell splits and animations -->
     <g class="nut-anim-1">
-      <ellipse cx="180" cy="380" rx="35" ry="52" fill="url(#pistachio)" transform="rotate(18 180 380)"/>
-      <line x1="175" y1="345" x2="175" y2="365" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+      <g transform="rotate(18 180 380)">
+        <ellipse cx="180" cy="380" rx="38" ry="56" fill="url(#pistachioShell)"/>
+        <ellipse cx="178" cy="378" rx="35" ry="52" fill="url(#pistachio)"/>
+        <path d="M 180 345 Q 183 360 180 375" stroke="#8B7020" stroke-width="3" fill="none" opacity="0.75"/>
+        <ellipse cx="178" cy="375" rx="15" ry="25" fill="#F5E6C8" opacity="0.4"/>
+      </g>
     </g>
     
     <g class="nut-anim-2">
-      <ellipse cx="640" cy="480" rx="38" ry="55" fill="url(#pistachio)" transform="rotate(-22 640 480)"/>
-      <line x1="635" y1="440" x2="635" y2="465" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+      <g transform="rotate(-22 640 480)">
+        <ellipse cx="640" cy="480" rx="42" ry="60" fill="url(#pistachioShell)"/>
+        <ellipse cx="638" cy="478" rx="38" ry="55" fill="url(#pistachio)"/>
+        <path d="M 640 440 Q 643 458 640 475" stroke="#8B7020" stroke-width="3" fill="none" opacity="0.75"/>
+        <ellipse cx="638" cy="473" rx="16" ry="27" fill="#F5E6C8" opacity="0.4"/>
+      </g>
     </g>
     
     <g class="nut-anim-3">
-      <ellipse cx="1280" cy="240" rx="36" ry="53" fill="url(#pistachio)" transform="rotate(42 1280 240)"/>
-      <line x1="1275" y1="205" x2="1275" y2="228" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+      <g transform="rotate(42 1280 240)">
+        <ellipse cx="1280" cy="240" rx="40" ry="58" fill="url(#pistachioShell)"/>
+        <ellipse cx="1278" cy="238" rx="36" ry="53" fill="url(#pistachio)"/>
+        <path d="M 1280 205 Q 1283 220 1280 235" stroke="#8B7020" stroke-width="3" fill="none" opacity="0.75"/>
+        <ellipse cx="1278" cy="233" rx="15" ry="26" fill="#F5E6C8" opacity="0.4"/>
+      </g>
     </g>
     
     <g class="nut-anim-4">
-      <ellipse cx="1680" cy="620" rx="34" ry="50" fill="url(#pistachio)" transform="rotate(-8 1680 620)"/>
-      <line x1="1675" y1="590" x2="1675" y2="612" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+      <g transform="rotate(-8 1680 620)">
+        <ellipse cx="1680" cy="620" rx="37" ry="54" fill="url(#pistachioShell)"/>
+        <ellipse cx="1678" cy="618" rx="34" ry="50" fill="url(#pistachio)"/>
+        <path d="M 1680 590 Q 1683 605 1680 620" stroke="#8B7020" stroke-width="3" fill="none" opacity="0.75"/>
+        <ellipse cx="1678" cy="615" rx="14" ry="24" fill="#F5E6C8" opacity="0.4"/>
+      </g>
     </g>
     
     <g class="nut-anim-5">
-      <ellipse cx="420" cy="920" rx="37" ry="54" fill="url(#pistachio)" transform="rotate(28 420 920)"/>
-      <line x1="415" y1="882" x2="415" y2="905" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+      <g transform="rotate(28 420 920)">
+        <ellipse cx="420" cy="920" rx="41" ry="59" fill="url(#pistachioShell)"/>
+        <ellipse cx="418" cy="918" rx="37" ry="54" fill="url(#pistachio)"/>
+        <path d="M 420 882 Q 423 898 420 915" stroke="#8B7020" stroke-width="3" fill="none" opacity="0.75"/>
+        <ellipse cx="418" cy="913" rx="16" ry="26" fill="#F5E6C8" opacity="0.4"/>
+      </g>
     </g>
     
-    <!-- Cashews - main layer with animations -->
+    <!-- Cashews - main layer with enhanced curves and highlights -->
     <g class="nut-anim-2">
-      <path d="M 920 180 Q 895 186 875 200 Q 862 218 868 238 Q 880 252 900 252 Q 928 244 943 224 Q 950 204 943 186 Q 930 174 920 180 Z" fill="url(#cashew)"/>
-      <ellipse cx="905" cy="215" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+      <path d="M 920 180 Q 890 188 865 205 Q 848 228 856 252 Q 872 269 897 269 Q 932 258 952 234 Q 961 210 952 188 Q 937 173 920 180 Z" fill="url(#cashew)"/>
+      <ellipse cx="902" cy="225" rx="20" ry="28" fill="#FFF8DC" opacity="0.45"/>
+      <ellipse cx="895" cy="215" rx="10" ry="15" fill="#FFFAF0" opacity="0.6"/>
     </g>
     
     <g class="nut-anim-1">
-      <path d="M 1480 780 Q 1455 786 1435 800 Q 1422 818 1428 838 Q 1440 852 1460 852 Q 1488 844 1503 824 Q 1510 804 1503 786 Q 1490 774 1480 780 Z" fill="url(#cashew)"/>
-      <ellipse cx="1465" cy="815" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+      <path d="M 1480 780 Q 1450 788 1425 805 Q 1408 828 1416 852 Q 1432 869 1457 869 Q 1492 858 1512 834 Q 1521 810 1512 788 Q 1497 773 1480 780 Z" fill="url(#cashew)"/>
+      <ellipse cx="1462" cy="825" rx="20" ry="28" fill="#FFF8DC" opacity="0.45"/>
+      <ellipse cx="1455" cy="815" rx="10" ry="15" fill="#FFFAF0" opacity="0.6"/>
     </g>
     
     <g class="nut-anim-3">
-      <path d="M 200 840 Q 175 846 155 860 Q 142 878 148 898 Q 160 912 180 912 Q 208 904 223 884 Q 230 864 223 846 Q 210 834 200 840 Z" fill="url(#cashew)"/>
-      <ellipse cx="185" cy="875" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+      <path d="M 200 840 Q 170 848 145 865 Q 128 888 136 912 Q 152 929 177 929 Q 212 918 232 894 Q 241 870 232 848 Q 217 833 200 840 Z" fill="url(#cashew)"/>
+      <ellipse cx="182" cy="885" rx="20" ry="28" fill="#FFF8DC" opacity="0.45"/>
+      <ellipse cx="175" cy="875" rx="10" ry="15" fill="#FFFAF0" opacity="0.6"/>
     </g>
     
-    <!-- Almonds - main layer with animations -->
+    <!-- Almonds - main layer with realistic texture -->
     <g class="nut-anim-4">
-      <ellipse cx="1120" cy="680" rx="24" ry="42" fill="url(#almond)" transform="rotate(15 1120 680)"/>
-      <line x1="1118" y1="655" x2="1122" y2="665" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+      <g transform="rotate(15 1120 680)">
+        <ellipse cx="1120" cy="680" rx="27" ry="47" fill="url(#almond)"/>
+        <line x1="1118" y1="652" x2="1122" y2="668" stroke="#6B3410" stroke-width="2" opacity="0.6"/>
+        <ellipse cx="1118" cy="675" rx="13" ry="22" fill="#CD853F" opacity="0.45"/>
+      </g>
     </g>
     
     <g class="nut-anim-5">
-      <ellipse cx="760" cy="820" rx="26" ry="44" fill="url(#almond)" transform="rotate(-35 760 820)"/>
-      <line x1="758" y1="790" x2="762" y2="802" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+      <g transform="rotate(-35 760 820)">
+        <ellipse cx="760" cy="820" rx="29" ry="49" fill="url(#almond)"/>
+        <line x1="758" y1="788" x2="762" y2="806" stroke="#6B3410" stroke-width="2" opacity="0.6"/>
+        <ellipse cx="758" cy="815" rx="14" ry="23" fill="#CD853F" opacity="0.45"/>
+      </g>
     </g>
     
     <g class="nut-anim-1">
-      <ellipse cx="1820" cy="380" rx="25" ry="43" fill="url(#almond)" transform="rotate(22 1820 380)"/>
-      <line x1="1818" y1="352" x2="1822" y2="364" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+      <g transform="rotate(22 1820 380)">
+        <ellipse cx="1820" cy="380" rx="28" ry="48" fill="url(#almond)"/>
+        <line x1="1818" y1="350" x2="1822" y2="368" stroke="#6B3410" stroke-width="2" opacity="0.6"/>
+        <ellipse cx="1818" cy="375" rx="13" ry="22" fill="#CD853F" opacity="0.45"/>
+      </g>
     </g>
     
-    <!-- Sunflower seeds - main layer with animations -->
-    <ellipse class="nut-anim-2" cx="380" cy="580" rx="14" ry="28" fill="url(#sunflower)" transform="rotate(45 380 580)"/>
-    <ellipse class="nut-anim-3" cx="1560" cy="180" rx="15" ry="29" fill="url(#sunflower)" transform="rotate(-30 1560 180)"/>
-    <ellipse class="nut-anim-4" cx="980" cy="940" rx="14" ry="27" fill="url(#sunflower)" transform="rotate(60 980 940)"/>
-    <ellipse class="nut-anim-5" cx="1340" cy="920" rx="16" ry="30" fill="url(#sunflower)" transform="rotate(-45 1340 920)"/>
+    <!-- Corn kernels - realistic with ridges -->
+    <g class="nut-anim-3">
+      <g transform="rotate(32 960 380)">
+        <path d="M 960 360 Q 948 366 948 378 Q 948 390 960 396 Q 972 396 972 378 Q 972 366 960 360 Z" fill="url(#corn)"/>
+        <ellipse cx="960" cy="375" rx="6" ry="11" fill="#FFE97F" opacity="0.55"/>
+        <line x1="960" y1="368" x2="960" y2="382" stroke="#D4AC0D" stroke-width="1" opacity="0.4"/>
+      </g>
+    </g>
+    
+    <g class="nut-anim-5">
+      <g transform="rotate(-18 1560 720)">
+        <path d="M 1560 700 Q 1548 706 1548 718 Q 1548 730 1560 736 Q 1572 736 1572 718 Q 1572 706 1560 700 Z" fill="url(#corn)"/>
+        <ellipse cx="1560" cy="715" rx="6" ry="11" fill="#FFE97F" opacity="0.55"/>
+        <line x1="1560" y1="708" x2="1560" y2="722" stroke="#D4AC0D" stroke-width="1" opacity="0.4"/>
+      </g>
+    </g>
+    
+    <g class="nut-anim-4">
+      <g transform="rotate(48 340 900)">
+        <path d="M 340 880 Q 328 886 328 898 Q 328 910 340 916 Q 352 916 352 898 Q 352 886 340 880 Z" fill="url(#corn)"/>
+        <ellipse cx="340" cy="895" rx="6" ry="11" fill="#FFE97F" opacity="0.55"/>
+        <line x1="340" y1="888" x2="340" y2="902" stroke="#D4AC0D" stroke-width="1" opacity="0.4"/>
+      </g>
+    </g>
+    
+    <!-- Sunflower seeds - enhanced realism -->
+    <g class="nut-anim-2">
+      <ellipse cx="380" cy="580" rx="16" ry="32" fill="url(#sunflower)" transform="rotate(45 380 580)"/>
+      <ellipse cx="378" cy="578" rx="12" ry="24" fill="#A68A64" opacity="0.5" transform="rotate(45 380 580)"/>
+    </g>
+    
+    <g class="nut-anim-3">
+      <ellipse cx="1560" cy="180" rx="17" ry="33" fill="url(#sunflower)" transform="rotate(-30 1560 180)"/>
+      <ellipse cx="1558" cy="178" rx="13" ry="25" fill="#A68A64" opacity="0.5" transform="rotate(-30 1560 180)"/>
+    </g>
+    
+    <g class="nut-anim-4">
+      <ellipse cx="980" cy="940" rx="16" ry="31" fill="url(#sunflower)" transform="rotate(60 980 940)"/>
+      <ellipse cx="978" cy="938" rx="12" ry="23" fill="#A68A64" opacity="0.5" transform="rotate(60 980 940)"/>
+    </g>
+    
+    <g class="nut-anim-5">
+      <ellipse cx="1340" cy="920" rx="18" ry="34" fill="url(#sunflower)" transform="rotate(-45 1340 920)"/>
+      <ellipse cx="1338" cy="918" rx="14" ry="26" fill="#A68A64" opacity="0.5" transform="rotate(-45 1340 920)"/>
+    </g>
   </g>
   
-  <!-- Front layer - highlights -->
-  <g opacity="0.9">
-    <!-- More nuts in foreground with animations -->
+  <!-- Front layer - highlights with enhanced realism -->
+  <g opacity="0.95" filter="url(#softShadow)">
+    <!-- More nuts in foreground with animations and realistic details -->
     <g class="nut-anim-3">
-      <ellipse cx="520" cy="140" rx="40" ry="58" fill="url(#pistachio)" transform="rotate(-12 520 140)"/>
-      <line x1="515" y1="100" x2="515" y2="128" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+      <g transform="rotate(-12 520 140)">
+        <ellipse cx="520" cy="140" rx="44" ry="63" fill="url(#pistachioShell)"/>
+        <ellipse cx="518" cy="138" rx="40" ry="58" fill="url(#pistachio)"/>
+        <path d="M 520 100 Q 524 118 520 135" stroke="#8B7020" stroke-width="3.5" fill="none" opacity="0.75"/>
+        <ellipse cx="518" cy="133" rx="17" ry="28" fill="#F5E6C8" opacity="0.45"/>
+      </g>
     </g>
     
     <g class="nut-anim-4">
-      <path d="M 1600 980 Q 1572 987 1550 1004 Q 1535 1024 1542 1046 Q 1556 1062 1578 1062 Q 1610 1052 1628 1030 Q 1636 1008 1628 987 Q 1613 973 1600 980 Z" fill="url(#cashew)"/>
-      <ellipse cx="1583" cy="1018" rx="18" ry="24" fill="#FFF8DC" opacity="0.4"/>
+      <path d="M 1600 980 Q 1568 989 1543 1008 Q 1524 1032 1533 1058 Q 1550 1077 1577 1077 Q 1617 1064 1640 1038 Q 1650 1012 1640 989 Q 1623 972 1600 980 Z" fill="url(#cashew)"/>
+      <ellipse cx="1580" cy="1028" rx="23" ry="32" fill="#FFF8DC" opacity="0.45"/>
+      <ellipse cx="1572" cy="1018" rx="12" ry="18" fill="#FFFAF0" opacity="0.6"/>
     </g>
     
     <g class="nut-anim-5">
-      <ellipse cx="90" cy="540" rx="28" ry="48" fill="url(#almond)" transform="rotate(38 90 540)"/>
-      <line x1="88" y1="508" x2="92" y2="522" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+      <g transform="rotate(38 90 540)">
+        <ellipse cx="90" cy="540" rx="31" ry="53" fill="url(#almond)"/>
+        <line x1="88" y1="505" x2="92" y2="525" stroke="#6B3410" stroke-width="2.5" opacity="0.6"/>
+        <ellipse cx="88" cy="535" rx="15" ry="25" fill="#CD853F" opacity="0.45"/>
+      </g>
+    </g>
+    
+    <!-- Additional corn kernels in foreground -->
+    <g class="nut-anim-2">
+      <g transform="rotate(-25 1750 280)">
+        <path d="M 1750 258 Q 1736 265 1736 279 Q 1736 293 1750 300 Q 1764 300 1764 279 Q 1764 265 1750 258 Z" fill="url(#corn)"/>
+        <ellipse cx="1750" cy="276" rx="7" ry="13" fill="#FFE97F" opacity="0.55"/>
+        <line x1="1750" y1="267" x2="1750" y2="285" stroke="#D4AC0D" stroke-width="1.5" opacity="0.4"/>
+      </g>
+    </g>
+    
+    <g class="nut-anim-1">
+      <g transform="rotate(55 140 260)">
+        <path d="M 140 238 Q 126 245 126 259 Q 126 273 140 280 Q 154 280 154 259 Q 154 245 140 238 Z" fill="url(#corn)"/>
+        <ellipse cx="140" cy="256" rx="7" ry="13" fill="#FFE97F" opacity="0.55"/>
+        <line x1="140" y1="247" x2="140" y2="265" stroke="#D4AC0D" stroke-width="1.5" opacity="0.4"/>
+      </g>
+    </g>
+    
+    <!-- Extra sunflower seeds for variety -->
+    <g class="nut-anim-1">
+      <ellipse cx="1100" cy="120" rx="18" ry="35" fill="url(#sunflower)" transform="rotate(25 1100 120)"/>
+      <ellipse cx="1098" cy="118" rx="14" ry="27" fill="#A68A64" opacity="0.5" transform="rotate(25 1100 120)"/>
+    </g>
+    
+    <g class="nut-anim-4">
+      <ellipse cx="280" cy="1020" rx="17" ry="34" fill="url(#sunflower)" transform="rotate(-52 280 1020)"/>
+      <ellipse cx="278" cy="1018" rx="13" ry="26" fill="#A68A64" opacity="0.5" transform="rotate(-52 280 1020)"/>
     </g>
   </g>
   
