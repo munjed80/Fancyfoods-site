@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Generate Nuts Background</title>
+</head>
+<body>
+<canvas id="canvas" width="1920" height="1080"></canvas>
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+// Create a warm brown gradient background
+const gradient = ctx.createLinearGradient(0, 0, 1920, 1080);
+gradient.addColorStop(0, '#8B5A3C');
+gradient.addColorStop(0.5, '#A0785A');
+gradient.addColorStop(1, '#C9A961');
+ctx.fillStyle = gradient;
+ctx.fillRect(0, 0, 1920, 1080);
+
+// Add some circular shapes to simulate nuts
+const colors = ['#D4AF37', '#8B4513', '#CD853F', '#DEB887', '#F5DEB3'];
+for (let i = 0; i < 100; i++) {
+  const x = Math.random() * 1920;
+  const y = Math.random() * 1080;
+  const r = Math.random() * 30 + 10;
+  ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+// Download the image
+canvas.toBlob(function(blob) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'nuts-background.jpg';
+  a.click();
+});
+</script>
+</body>
+</html>
