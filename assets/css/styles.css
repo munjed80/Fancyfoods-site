@@ -1232,13 +1232,13 @@ ul, ol {
   gap: 30px;
 }
 
-/* Add decorative background to services section */
-.section[style*="background: var(--light-gray)"] {
+/* Add decorative background to alternate sections */
+.section-alt-bg {
+  background: var(--light-gray);
   position: relative;
-  background: var(--light-gray) !important;
 }
 
-.section[style*="background: var(--light-gray)"]::before {
+.section-alt-bg::before {
   content: '';
   position: absolute;
   top: 0;
