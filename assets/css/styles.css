@@ -398,6 +398,210 @@ ul, ol {
   flex-wrap: wrap;
 }
 
+/* Floating nuts overlay - animated individual nuts */
+.floating-nuts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2; /* Above hero overlay but below content */
+  overflow: hidden;
+}
+
+.floating-nut {
+  position: absolute;
+  opacity: 0.85;
+  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* Specific positions and animations for each nut */
+.nut-1 {
+  top: 10%;
+  left: 8%;
+  width: 60px;
+  height: 60px;
+  animation: floatNut1 12s ease-in-out infinite;
+}
+
+.nut-2 {
+  top: 20%;
+  right: 12%;
+  width: 55px;
+  height: 55px;
+  animation: floatNut2 10s ease-in-out infinite 1s;
+}
+
+.nut-3 {
+  top: 55%;
+  left: 5%;
+  width: 50px;
+  height: 50px;
+  animation: floatNut3 14s ease-in-out infinite 2s;
+}
+
+.nut-4 {
+  bottom: 15%;
+  right: 10%;
+  width: 65px;
+  height: 65px;
+  animation: floatNut4 11s ease-in-out infinite 0.5s;
+}
+
+.nut-5 {
+  top: 35%;
+  right: 25%;
+  width: 45px;
+  height: 45px;
+  animation: floatNut5 13s ease-in-out infinite 1.5s;
+}
+
+.nut-6 {
+  bottom: 25%;
+  left: 15%;
+  width: 58px;
+  height: 58px;
+  animation: floatNut6 9s ease-in-out infinite 2.5s;
+}
+
+.nut-7 {
+  top: 70%;
+  right: 35%;
+  width: 52px;
+  height: 52px;
+  animation: floatNut7 15s ease-in-out infinite 3s;
+}
+
+.nut-8 {
+  top: 42%;
+  left: 28%;
+  width: 48px;
+  height: 48px;
+  animation: floatNut8 10.5s ease-in-out infinite 1.8s;
+}
+
+/* Keyframe animations for floating nuts with realistic movement */
+@keyframes floatNut1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-25px, -30px) rotate(8deg);
+  }
+  50% {
+    transform: translate(-15px, -55px) rotate(0deg);
+  }
+  75% {
+    transform: translate(25px, -30px) rotate(-8deg);
+  }
+}
+
+@keyframes floatNut2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -25px) rotate(-6deg);
+  }
+  50% {
+    transform: translate(20px, -45px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-30px, -25px) rotate(6deg);
+  }
+}
+
+@keyframes floatNut3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-20px, -35px) rotate(10deg);
+  }
+  50% {
+    transform: translate(28px, -60px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-28px, -35px) rotate(-10deg);
+  }
+}
+
+@keyframes floatNut4 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(32px, -22px) rotate(-7deg);
+  }
+  50% {
+    transform: translate(-12px, -42px) rotate(0deg);
+  }
+  75% {
+    transform: translate(32px, -22px) rotate(7deg);
+  }
+}
+
+@keyframes floatNut5 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-28px, -32px) rotate(5deg);
+  }
+  50% {
+    transform: translate(22px, -58px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-28px, -32px) rotate(-5deg);
+  }
+}
+
+@keyframes floatNut6 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(24px, -28px) rotate(-9deg);
+  }
+  50% {
+    transform: translate(-18px, -52px) rotate(0deg);
+  }
+  75% {
+    transform: translate(24px, -28px) rotate(9deg);
+  }
+}
+
+@keyframes floatNut7 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-35px, -30px) rotate(6deg);
+  }
+  50% {
+    transform: translate(25px, -65px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-35px, -30px) rotate(-6deg);
+  }
+}
+
+@keyframes floatNut8 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(27px, -26px) rotate(-8deg);
+  }
+  50% {
+    transform: translate(-22px, -48px) rotate(0deg);
+  }
+  75% {
+    transform: translate(27px, -26px) rotate(8deg);
+  }
+}
+
 /* ============ Buttons ============ */
 .btn {
   display: inline-flex;
@@ -2064,6 +2268,11 @@ body {
   .page-header::after {
     animation: none !important;
   }
+  
+  /* Hide floating nuts completely for better accessibility */
+  .floating-nuts {
+    display: none !important;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -2080,6 +2289,21 @@ body {
   .about-image {
     order: -1;
     height: 300px;
+  }
+  
+  /* Adjust floating nuts for tablet devices */
+  .floating-nut {
+    opacity: 0.7;
+  }
+  
+  .nut-1, .nut-2, .nut-3, .nut-4 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .nut-5, .nut-6, .nut-7, .nut-8 {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -2209,6 +2433,26 @@ body {
   
   .page-title {
     font-size: 30px;
+  }
+  
+  /* Adjust floating nuts for mobile */
+  .floating-nut {
+    opacity: 0.6;
+  }
+  
+  .nut-1, .nut-2, .nut-3, .nut-4 {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .nut-5, .nut-6, .nut-7, .nut-8 {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Hide some nuts on very small screens for cleaner look */
+  .nut-7, .nut-8 {
+    display: none;
   }
 }
 
