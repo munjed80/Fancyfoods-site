@@ -347,8 +347,10 @@ ul, ol {
 .hero-logo img {
   width: 120px;
   height: 120px;
-  /* Consolidated drop-shadow for better performance */
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.8));
+  /* Soft glow and drop shadow for better contrast against green background */
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5))
+          drop-shadow(0 0 40px rgba(255, 255, 255, 0.6))
+          drop-shadow(0 0 60px rgba(212, 175, 55, 0.4));
   animation: pulse 3s ease-in-out infinite;
 }
 
