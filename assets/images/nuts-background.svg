@@ -37,13 +37,19 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    
+    <!-- Vignette gradient for depth -->
+    <radialGradient id="vignette" cx="50%" cy="50%">
+      <stop offset="40%" style="stop-color:#000000;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2" />
+    </radialGradient>
   </defs>
   
   <!-- Rich brown background mimicking wood/surface - lighter tone -->
   <rect width="1920" height="1080" fill="#A0785A"/>
   
-  <!-- Texture overlay -->
-  <rect width="1920" height="1080" fill="url(#woodTexture)" opacity="0.3"/>
+  <!-- Subtle texture overlay -->
+  <rect width="1920" height="1080" fill="#8B5A3C" opacity="0.1"/>
   
   <!-- Layer multiple nuts for depth and realism -->
   
@@ -121,5 +127,5 @@
   </g>
   
   <!-- Subtle vignette for depth -->
-  <rect width="1920" height="1080" fill="radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 100%)"/>
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
 </svg>

@@ -295,11 +295,9 @@ ul, ol {
 
 /* ============ Hero Section ============ */
 .hero {
-  /* Fallback gradient background */
+  /* Multiple fallback backgrounds - browser will use first available from right to left */
   background: linear-gradient(135deg, #A0785A 0%, #C9A961 50%, #D4AF37 100%);
-  /* SVG nuts illustration as intermediate fallback */
   background: url('../images/nuts-background.svg') center center / cover no-repeat, linear-gradient(135deg, #A0785A 0%, #C9A961 50%, #D4AF37 100%);
-  /* Real nuts photo background - add nuts-background.jpg to assets/images/ for best quality */
   background: url('../images/nuts-background.jpg') center center / cover no-repeat, url('../images/nuts-background.svg') center center / cover no-repeat, linear-gradient(135deg, #A0785A 0%, #C9A961 50%, #D4AF37 100%);
   padding: 120px 0;
   position: relative;
