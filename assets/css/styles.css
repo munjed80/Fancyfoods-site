@@ -345,14 +345,6 @@ ul, ol {
   animation: pulse 3s ease-in-out infinite;
 }
 
-.hero-visual {
-  display: none;
-}
-
-.product-tree {
-  display: none;
-}
-
 .hero-text {
   text-align: center;
   width: 100%;
@@ -2120,14 +2112,6 @@ body {
   
   .hero-content {
     gap: 30px;
-  }
-  
-  .hero-visual {
-    display: none;
-  }
-  
-  .product-tree {
-    display: none;
   }
   
   .hero-title {
