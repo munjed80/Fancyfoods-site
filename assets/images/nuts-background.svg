@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradients for realistic nut colors -->
+    <radialGradient id="pistachio" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#E5C45F;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8962A;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="cashew" cx="40%" cy="40%">
+      <stop offset="0%" style="stop-color:#F5DEB3;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#DEB887;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D2B48C;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="almond" cx="45%" cy="45%">
+      <stop offset="0%" style="stop-color:#D2691E;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#CD853F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="sunflower" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#9B7653;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#8B7355;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B5345;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Filters for depth -->
+    <filter id="depth">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Rich brown background mimicking wood/surface - lighter tone -->
+  <rect width="1920" height="1080" fill="#A0785A"/>
+  
+  <!-- Texture overlay -->
+  <rect width="1920" height="1080" fill="url(#woodTexture)" opacity="0.3"/>
+  
+  <!-- Layer multiple nuts for depth and realism -->
+  
+  <!-- Back layer - slightly blurred/darker -->
+  <g opacity="0.6" filter="url(#depth)">
+    <!-- Pistachios -->
+    <ellipse cx="340" cy="180" rx="28" ry="42" fill="url(#pistachio)" transform="rotate(25 340 180)"/>
+    <ellipse cx="820" cy="280" rx="32" ry="45" fill="url(#pistachio)" transform="rotate(-15 820 280)"/>
+    <ellipse cx="1450" cy="420" rx="30" ry="44" fill="url(#pistachio)" transform="rotate(35 1450 420)"/>
+    <ellipse cx="560" cy="780" rx="26" ry="40" fill="url(#pistachio)" transform="rotate(-25 560 780)"/>
+    <ellipse cx="1620" cy="850" rx="29" ry="43" fill="url(#pistachio)" transform="rotate(15 1620 850)"/>
+    
+    <!-- Cashews -->
+    <path d="M 480 340 Q 460 345 445 355 Q 435 370 440 385 Q 450 395 465 395 Q 485 390 495 375 Q 500 360 495 345 Q 485 335 480 340 Z" fill="url(#cashew)"/>
+    <path d="M 1180 520 Q 1160 525 1145 535 Q 1135 550 1140 565 Q 1150 575 1165 575 Q 1185 570 1195 555 Q 1200 540 1195 525 Q 1185 515 1180 520 Z" fill="url(#cashew)"/>
+    <path d="M 280 680 Q 260 685 245 695 Q 235 710 240 725 Q 250 735 265 735 Q 285 730 295 715 Q 300 700 295 685 Q 285 675 280 680 Z" fill="url(#cashew)"/>
+  </g>
+  
+  <!-- Middle layer - main focus -->
+  <g>
+    <!-- Pistachios - main layer -->
+    <ellipse cx="180" cy="380" rx="35" ry="52" fill="url(#pistachio)" transform="rotate(18 180 380)"/>
+    <line x1="175" y1="345" x2="175" y2="365" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    
+    <ellipse cx="640" cy="480" rx="38" ry="55" fill="url(#pistachio)" transform="rotate(-22 640 480)"/>
+    <line x1="635" y1="440" x2="635" y2="465" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    
+    <ellipse cx="1280" cy="240" rx="36" ry="53" fill="url(#pistachio)" transform="rotate(42 1280 240)"/>
+    <line x1="1275" y1="205" x2="1275" y2="228" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    
+    <ellipse cx="1680" cy="620" rx="34" ry="50" fill="url(#pistachio)" transform="rotate(-8 1680 620)"/>
+    <line x1="1675" y1="590" x2="1675" y2="612" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    
+    <ellipse cx="420" cy="920" rx="37" ry="54" fill="url(#pistachio)" transform="rotate(28 420 920)"/>
+    <line x1="415" y1="882" x2="415" y2="905" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    
+    <!-- Cashews - main layer -->
+    <path d="M 920 180 Q 895 186 875 200 Q 862 218 868 238 Q 880 252 900 252 Q 928 244 943 224 Q 950 204 943 186 Q 930 174 920 180 Z" fill="url(#cashew)"/>
+    <ellipse cx="905" cy="215" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    
+    <path d="M 1480 780 Q 1455 786 1435 800 Q 1422 818 1428 838 Q 1440 852 1460 852 Q 1488 844 1503 824 Q 1510 804 1503 786 Q 1490 774 1480 780 Z" fill="url(#cashew)"/>
+    <ellipse cx="1465" cy="815" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    
+    <path d="M 200 840 Q 175 846 155 860 Q 142 878 148 898 Q 160 912 180 912 Q 208 904 223 884 Q 230 864 223 846 Q 210 834 200 840 Z" fill="url(#cashew)"/>
+    <ellipse cx="185" cy="875" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    
+    <!-- Almonds - main layer -->
+    <ellipse cx="1120" cy="680" rx="24" ry="42" fill="url(#almond)" transform="rotate(15 1120 680)"/>
+    <line x1="1118" y1="655" x2="1122" y2="665" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    
+    <ellipse cx="760" cy="820" rx="26" ry="44" fill="url(#almond)" transform="rotate(-35 760 820)"/>
+    <line x1="758" y1="790" x2="762" y2="802" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    
+    <ellipse cx="1820" cy="380" rx="25" ry="43" fill="url(#almond)" transform="rotate(22 1820 380)"/>
+    <line x1="1818" y1="352" x2="1822" y2="364" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Sunflower seeds - main layer -->
+    <ellipse cx="380" cy="580" rx="14" ry="28" fill="url(#sunflower)" transform="rotate(45 380 580)"/>
+    <ellipse cx="1560" cy="180" rx="15" ry="29" fill="url(#sunflower)" transform="rotate(-30 1560 180)"/>
+    <ellipse cx="980" cy="940" rx="14" ry="27" fill="url(#sunflower)" transform="rotate(60 980 940)"/>
+    <ellipse cx="1340" cy="920" rx="16" ry="30" fill="url(#sunflower)" transform="rotate(-45 1340 920)"/>
+  </g>
+  
+  <!-- Front layer - highlights -->
+  <g opacity="0.9">
+    <!-- More nuts in foreground -->
+    <ellipse cx="520" cy="140" rx="40" ry="58" fill="url(#pistachio)" transform="rotate(-12 520 140)"/>
+    <line x1="515" y1="100" x2="515" y2="128" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    
+    <path d="M 1600 980 Q 1572 987 1550 1004 Q 1535 1024 1542 1046 Q 1556 1062 1578 1062 Q 1610 1052 1628 1030 Q 1636 1008 1628 987 Q 1613 973 1600 980 Z" fill="url(#cashew)"/>
+    <ellipse cx="1583" cy="1018" rx="18" ry="24" fill="#FFF8DC" opacity="0.4"/>
+    
+    <ellipse cx="90" cy="540" rx="28" ry="48" fill="url(#almond)" transform="rotate(38 90 540)"/>
+    <line x1="88" y1="508" x2="92" y2="522" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Subtle vignette for depth -->
+  <rect width="1920" height="1080" fill="radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.2) 100%)"/>
+</svg>

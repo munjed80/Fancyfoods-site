@@ -295,10 +295,12 @@ ul, ol {
 
 /* ============ Hero Section ============ */
 .hero {
-  /* Fallback gradient background (will be replaced by nuts-background.jpg) */
-  background: linear-gradient(135deg, #8B5A3C 0%, #A0785A 50%, #C9A961 100%);
-  /* Real nuts photo background - add nuts-background.jpg to assets/images/ */
-  background: url('../images/nuts-background.jpg') center center / cover no-repeat, linear-gradient(135deg, #8B5A3C 0%, #A0785A 50%, #C9A961 100%);
+  /* Fallback gradient background */
+  background: linear-gradient(135deg, #A0785A 0%, #C9A961 50%, #D4AF37 100%);
+  /* SVG nuts illustration as intermediate fallback */
+  background: url('../images/nuts-background.svg') center center / cover no-repeat, linear-gradient(135deg, #A0785A 0%, #C9A961 50%, #D4AF37 100%);
+  /* Real nuts photo background - add nuts-background.jpg to assets/images/ for best quality */
+  background: url('../images/nuts-background.jpg') center center / cover no-repeat, url('../images/nuts-background.svg') center center / cover no-repeat, linear-gradient(135deg, #A0785A 0%, #C9A961 50%, #D4AF37 100%);
   padding: 120px 0;
   position: relative;
   overflow: hidden;
@@ -307,7 +309,7 @@ ul, ol {
   align-items: center;
 }
 
-/* Dark overlay for text readability (25% opacity) */
+/* Dark overlay for text readability (20% opacity - lighter for better nuts visibility) */
 .hero::before {
   content: '';
   position: absolute;
@@ -315,7 +317,7 @@ ul, ol {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.20);
   z-index: 1;
 }
 
