@@ -692,12 +692,31 @@ ul, ol {
   background: var(--white);
   border-radius: var(--card-radius);
   box-shadow: var(--shadow-sm);
-  transition: var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--gray);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--gradient-gold);
+  transition: height 0.4s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(47, 95, 31, 0.15);
+  border-color: var(--gold-light);
+}
+
+.feature-card:hover::before {
+  height: 100%;
 }
 
 .feature-icon {
@@ -711,6 +730,29 @@ ul, ol {
   justify-content: center;
   font-size: 28px;
   color: var(--white);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-gold);
+  position: relative;
+}
+
+.feature-icon::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--gradient-gold);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+}
+
+.feature-card:hover .feature-icon::before {
+  opacity: 0.6;
 }
 
 .feature-content h3 {
@@ -805,7 +847,7 @@ ul, ol {
   border-radius: 15px;
   font-size: 16px;
   font-family: inherit;
-  transition: var(--transition-normal);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: var(--white);
 }
 
@@ -814,6 +856,12 @@ ul, ol {
   outline: none;
   border-color: var(--primary-green);
   box-shadow: 0 0 0 4px rgba(47, 95, 31, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-input:hover:not(:focus),
+.form-textarea:hover:not(:focus) {
+  border-color: var(--primary-green-light);
 }
 
 .form-textarea {
@@ -939,12 +987,32 @@ ul, ol {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--gray);
   text-align: center;
-  transition: var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
 }
 
 .contact-info-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
+  border-color: var(--gold-light);
+}
+
+.contact-info-card:hover::before {
+  transform: scaleX(1);
 }
 
 .contact-info-icon {
@@ -957,6 +1025,31 @@ ul, ol {
   justify-content: center;
   font-size: 32px;
   margin: 0 auto 20px;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-gold);
+  position: relative;
+}
+
+.contact-info-icon::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--gradient-gold);
+  opacity: 0;
+  transition: all 0.3s ease;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.contact-info-card:hover .contact-info-icon {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.5);
+}
+
+.contact-info-card:hover .contact-info-icon::after {
+  opacity: 0.7;
 }
 
 .contact-info-card h3 {
@@ -989,6 +1082,7 @@ ul, ol {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
 .about-image::before {
@@ -1000,12 +1094,16 @@ ul, ol {
   bottom: 20px;
   border: 3px solid rgba(212, 175, 55, 0.5);
   border-radius: calc(var(--card-radius) - 10px);
+  animation: pulse 3s ease-in-out infinite;
 }
 
 .about-image-icon {
-  font-size: 120px;
+  width: 200px;
+  height: 200px;
   position: relative;
   z-index: 1;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  animation: float 4s ease-in-out infinite;
 }
 
 .about-text h2 {
@@ -1062,7 +1160,7 @@ ul, ol {
   padding: 40px;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--gray);
-  transition: var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
@@ -1079,25 +1177,55 @@ ul, ol {
   transition: var(--transition-normal);
 }
 
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-gold);
+  border-radius: var(--card-radius);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  filter: blur(20px);
+}
+
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(47, 95, 31, 0.2);
+  border-color: var(--gold-light);
 }
 
 .service-card:hover::before {
   transform: scaleX(1);
 }
 
+.service-card:hover::after {
+  opacity: 0.3;
+}
+
 .service-icon {
   width: 80px;
   height: 80px;
-  background: rgba(47, 95, 31, 0.1);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(47, 95, 31, 0.1) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 40px;
   margin-bottom: 25px;
+  color: var(--primary-green);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(47, 95, 31, 0.15);
+}
+
+.service-card:hover .service-icon {
+  background: var(--gradient-gold);
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--shadow-gold);
 }
 
 .service-card h3 {
