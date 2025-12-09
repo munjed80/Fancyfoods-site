@@ -432,15 +432,6 @@ ul, ol {
   flex-wrap: wrap;
 }
 
-/* Hide the old tree visual */
-.hero-visual {
-  display: none;
-}
-
-.product-tree {
-  display: none;
-}
-
 /* ============ Buttons ============ */
 .btn {
   display: inline-flex;
