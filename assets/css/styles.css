@@ -295,13 +295,14 @@ ul, ol {
 
 /* ============ Hero Section ============ */
 .hero {
-  background: var(--gradient-hero);
-  padding: 80px 0;
+  background: #1a0f08;
+  padding: 60px 0 80px;
   position: relative;
   overflow: hidden;
   min-height: 600px;
 }
 
+/* Photorealistic nuts and seeds background pattern */
 .hero::before {
   content: '';
   position: absolute;
@@ -309,49 +310,96 @@ ul, ol {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='rgba(255,255,255,0.1)' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
-  background-size: cover;
-  opacity: 0.5;
+  background-image: 
+    radial-gradient(ellipse at 20% 30%, #8B5A3C 0%, transparent 35%),
+    radial-gradient(ellipse at 80% 20%, #D4AF37 0%, transparent 30%),
+    radial-gradient(ellipse at 40% 60%, #A0785A 0%, transparent 40%),
+    radial-gradient(ellipse at 70% 70%, #C9A961 0%, transparent 35%),
+    radial-gradient(ellipse at 15% 80%, #6B4423 0%, transparent 30%),
+    radial-gradient(ellipse at 90% 50%, #E5C45F 0%, transparent 28%),
+    radial-gradient(ellipse at 50% 25%, #8B6F47 0%, transparent 32%),
+    radial-gradient(ellipse at 25% 45%, #B8956A 0%, transparent 38%),
+    radial-gradient(ellipse at 60% 85%, #9C7A4F 0%, transparent 30%),
+    radial-gradient(ellipse at 85% 90%, #D4A76F 0%, transparent 33%),
+    radial-gradient(circle at 10% 10%, #F5DEB3 0%, transparent 25%),
+    radial-gradient(circle at 95% 15%, #CD853F 0%, transparent 27%),
+    radial-gradient(circle at 35% 90%, #DEB887 0%, transparent 29%),
+    radial-gradient(circle at 75% 40%, #A67C52 0%, transparent 31%);
+  background-size: 
+    200px 180px, 150px 140px, 220px 200px, 170px 160px,
+    140px 130px, 160px 150px, 190px 170px, 210px 190px,
+    180px 165px, 155px 145px, 130px 125px, 145px 135px,
+    165px 155px, 175px 160px;
+  background-position: 
+    20% 30%, 80% 20%, 40% 60%, 70% 70%,
+    15% 80%, 90% 50%, 50% 25%, 25% 45%,
+    60% 85%, 85% 90%, 10% 10%, 95% 15%,
+    35% 90%, 75% 40%;
+  background-repeat: repeat;
+  opacity: 0.95;
+  filter: brightness(1.1) contrast(1.15) saturate(1.2);
 }
 
+/* Dark overlay for text readability */
 .hero::after {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  color: var(--white);
-}
-
-.hero-visual {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
+  color: var(--white);
+  text-align: center;
+  padding: 40px 20px;
 }
 
-.product-tree {
-  width: 100%;
-  max-width: 500px;
+.hero-logo {
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo img {
+  width: 160px;
   height: auto;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.9)) 
+          drop-shadow(0 0 60px rgba(255, 255, 255, 0.6))
+          drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5));
+  animation: float 4s ease-in-out infinite;
 }
 
 .hero-text {
   text-align: center;
+  max-width: 900px;
+  position: relative;
+}
+
+.hero-text::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: calc(100% + 80px);
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.7) 0%, 
+    rgba(0, 0, 0, 0.6) 50%, 
+    rgba(0, 0, 0, 0.5) 100%);
+  border-radius: 30px;
+  filter: blur(40px);
+  z-index: -1;
 }
 
 .hero-badge {
@@ -367,19 +415,24 @@ ul, ol {
 }
 
 .hero-title {
-  font-size: 60px;
+  font-size: 56px;
   font-weight: 800;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8),
+               0 0 40px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 24px;
-  opacity: 0.95;
-  max-width: 700px;
+  font-size: 26px;
+  font-weight: 600;
+  opacity: 0.98;
+  max-width: 800px;
   margin: 0 auto 40px;
-  line-height: 1.6;
+  line-height: 1.5;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7),
+               0 0 30px rgba(0, 0, 0, 0.4);
+  color: var(--gold-light);
 }
 
 .hero-buttons {
@@ -387,6 +440,15 @@ ul, ol {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+/* Hide the old tree visual */
+.hero-visual {
+  display: none;
+}
+
+.product-tree {
+  display: none;
 }
 
 /* ============ Buttons ============ */
@@ -2094,20 +2156,15 @@ body {
   }
   
   .hero-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    padding: 30px 15px;
   }
   
-  .hero-visual {
-    order: -1;
-  }
-  
-  .product-tree {
-    max-width: 350px;
+  .hero-logo img {
+    width: 120px;
   }
   
   .hero-title {
-    font-size: 38px;
+    font-size: 36px;
   }
   
   .hero-subtitle {
@@ -2154,7 +2211,15 @@ body {
   }
   
   .hero-title {
-    font-size: 32px;
+    font-size: 28px;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .hero-logo img {
+    width: 100px;
   }
   
   .hero-buttons {
