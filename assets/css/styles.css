@@ -341,7 +341,7 @@ ul, ol {
 /* Logo in hero section */
 .hero-logo {
   margin-bottom: 40px;
-  animation: fadeInDown 1s ease;
+  text-align: center;
 }
 
 .hero-logo img {
@@ -351,7 +351,8 @@ ul, ol {
   filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5))
           drop-shadow(0 0 40px rgba(255, 255, 255, 0.6))
           drop-shadow(0 0 60px rgba(212, 175, 55, 0.4));
-  animation: pulse 3s ease-in-out infinite;
+  /* Gentle floating animation for premium feel */
+  animation: logoFloat 4s ease-in-out infinite;
 }
 
 .hero-text {
@@ -1477,6 +1478,16 @@ ul, ol {
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+/* Gentle floating animation for hero logo */
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
 
