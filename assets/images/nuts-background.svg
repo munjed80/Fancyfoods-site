@@ -1,5 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
   <defs>
+    <!-- CSS Animations for floating nuts -->
+    <style>
+      @keyframes float1 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(-8px, -12px) rotate(3deg); }
+        50% { transform: translate(-5px, -20px) rotate(0deg); }
+        75% { transform: translate(8px, -12px) rotate(-3deg); }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(10px, -10px) rotate(-2deg); }
+        50% { transform: translate(6px, -18px) rotate(0deg); }
+        75% { transform: translate(-10px, -10px) rotate(2deg); }
+      }
+      @keyframes float3 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(-6px, -15px) rotate(4deg); }
+        50% { transform: translate(8px, -22px) rotate(0deg); }
+        75% { transform: translate(-8px, -15px) rotate(-4deg); }
+      }
+      @keyframes float4 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(12px, -8px) rotate(-3deg); }
+        50% { transform: translate(-4px, -16px) rotate(0deg); }
+        75% { transform: translate(12px, -8px) rotate(3deg); }
+      }
+      @keyframes float5 {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(-10px, -14px) rotate(2deg); }
+        50% { transform: translate(7px, -24px) rotate(0deg); }
+        75% { transform: translate(-10px, -14px) rotate(-2deg); }
+      }
+      .nut-anim-1 { animation: float1 8s ease-in-out infinite; transform-origin: center; }
+      .nut-anim-2 { animation: float2 7s ease-in-out infinite 0.5s; transform-origin: center; }
+      .nut-anim-3 { animation: float3 9s ease-in-out infinite 1s; transform-origin: center; }
+      .nut-anim-4 { animation: float4 7.5s ease-in-out infinite 1.5s; transform-origin: center; }
+      .nut-anim-5 { animation: float5 8.5s ease-in-out infinite 2s; transform-origin: center; }
+    </style>
+    
     <!-- Gradients for realistic nut colors -->
     <radialGradient id="pistachio" cx="50%" cy="50%">
       <stop offset="0%" style="stop-color:#E5C45F;stop-opacity:1" />
@@ -70,60 +109,88 @@
   
   <!-- Middle layer - main focus -->
   <g>
-    <!-- Pistachios - main layer -->
-    <ellipse cx="180" cy="380" rx="35" ry="52" fill="url(#pistachio)" transform="rotate(18 180 380)"/>
-    <line x1="175" y1="345" x2="175" y2="365" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    <!-- Pistachios - main layer with animations -->
+    <g class="nut-anim-1">
+      <ellipse cx="180" cy="380" rx="35" ry="52" fill="url(#pistachio)" transform="rotate(18 180 380)"/>
+      <line x1="175" y1="345" x2="175" y2="365" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    </g>
     
-    <ellipse cx="640" cy="480" rx="38" ry="55" fill="url(#pistachio)" transform="rotate(-22 640 480)"/>
-    <line x1="635" y1="440" x2="635" y2="465" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    <g class="nut-anim-2">
+      <ellipse cx="640" cy="480" rx="38" ry="55" fill="url(#pistachio)" transform="rotate(-22 640 480)"/>
+      <line x1="635" y1="440" x2="635" y2="465" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    </g>
     
-    <ellipse cx="1280" cy="240" rx="36" ry="53" fill="url(#pistachio)" transform="rotate(42 1280 240)"/>
-    <line x1="1275" y1="205" x2="1275" y2="228" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    <g class="nut-anim-3">
+      <ellipse cx="1280" cy="240" rx="36" ry="53" fill="url(#pistachio)" transform="rotate(42 1280 240)"/>
+      <line x1="1275" y1="205" x2="1275" y2="228" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    </g>
     
-    <ellipse cx="1680" cy="620" rx="34" ry="50" fill="url(#pistachio)" transform="rotate(-8 1680 620)"/>
-    <line x1="1675" y1="590" x2="1675" y2="612" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    <g class="nut-anim-4">
+      <ellipse cx="1680" cy="620" rx="34" ry="50" fill="url(#pistachio)" transform="rotate(-8 1680 620)"/>
+      <line x1="1675" y1="590" x2="1675" y2="612" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    </g>
     
-    <ellipse cx="420" cy="920" rx="37" ry="54" fill="url(#pistachio)" transform="rotate(28 420 920)"/>
-    <line x1="415" y1="882" x2="415" y2="905" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    <g class="nut-anim-5">
+      <ellipse cx="420" cy="920" rx="37" ry="54" fill="url(#pistachio)" transform="rotate(28 420 920)"/>
+      <line x1="415" y1="882" x2="415" y2="905" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    </g>
     
-    <!-- Cashews - main layer -->
-    <path d="M 920 180 Q 895 186 875 200 Q 862 218 868 238 Q 880 252 900 252 Q 928 244 943 224 Q 950 204 943 186 Q 930 174 920 180 Z" fill="url(#cashew)"/>
-    <ellipse cx="905" cy="215" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    <!-- Cashews - main layer with animations -->
+    <g class="nut-anim-2">
+      <path d="M 920 180 Q 895 186 875 200 Q 862 218 868 238 Q 880 252 900 252 Q 928 244 943 224 Q 950 204 943 186 Q 930 174 920 180 Z" fill="url(#cashew)"/>
+      <ellipse cx="905" cy="215" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    </g>
     
-    <path d="M 1480 780 Q 1455 786 1435 800 Q 1422 818 1428 838 Q 1440 852 1460 852 Q 1488 844 1503 824 Q 1510 804 1503 786 Q 1490 774 1480 780 Z" fill="url(#cashew)"/>
-    <ellipse cx="1465" cy="815" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    <g class="nut-anim-1">
+      <path d="M 1480 780 Q 1455 786 1435 800 Q 1422 818 1428 838 Q 1440 852 1460 852 Q 1488 844 1503 824 Q 1510 804 1503 786 Q 1490 774 1480 780 Z" fill="url(#cashew)"/>
+      <ellipse cx="1465" cy="815" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    </g>
     
-    <path d="M 200 840 Q 175 846 155 860 Q 142 878 148 898 Q 160 912 180 912 Q 208 904 223 884 Q 230 864 223 846 Q 210 834 200 840 Z" fill="url(#cashew)"/>
-    <ellipse cx="185" cy="875" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    <g class="nut-anim-3">
+      <path d="M 200 840 Q 175 846 155 860 Q 142 878 148 898 Q 160 912 180 912 Q 208 904 223 884 Q 230 864 223 846 Q 210 834 200 840 Z" fill="url(#cashew)"/>
+      <ellipse cx="185" cy="875" rx="15" ry="20" fill="#FFF8DC" opacity="0.4"/>
+    </g>
     
-    <!-- Almonds - main layer -->
-    <ellipse cx="1120" cy="680" rx="24" ry="42" fill="url(#almond)" transform="rotate(15 1120 680)"/>
-    <line x1="1118" y1="655" x2="1122" y2="665" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    <!-- Almonds - main layer with animations -->
+    <g class="nut-anim-4">
+      <ellipse cx="1120" cy="680" rx="24" ry="42" fill="url(#almond)" transform="rotate(15 1120 680)"/>
+      <line x1="1118" y1="655" x2="1122" y2="665" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    </g>
     
-    <ellipse cx="760" cy="820" rx="26" ry="44" fill="url(#almond)" transform="rotate(-35 760 820)"/>
-    <line x1="758" y1="790" x2="762" y2="802" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    <g class="nut-anim-5">
+      <ellipse cx="760" cy="820" rx="26" ry="44" fill="url(#almond)" transform="rotate(-35 760 820)"/>
+      <line x1="758" y1="790" x2="762" y2="802" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    </g>
     
-    <ellipse cx="1820" cy="380" rx="25" ry="43" fill="url(#almond)" transform="rotate(22 1820 380)"/>
-    <line x1="1818" y1="352" x2="1822" y2="364" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    <g class="nut-anim-1">
+      <ellipse cx="1820" cy="380" rx="25" ry="43" fill="url(#almond)" transform="rotate(22 1820 380)"/>
+      <line x1="1818" y1="352" x2="1822" y2="364" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    </g>
     
-    <!-- Sunflower seeds - main layer -->
-    <ellipse cx="380" cy="580" rx="14" ry="28" fill="url(#sunflower)" transform="rotate(45 380 580)"/>
-    <ellipse cx="1560" cy="180" rx="15" ry="29" fill="url(#sunflower)" transform="rotate(-30 1560 180)"/>
-    <ellipse cx="980" cy="940" rx="14" ry="27" fill="url(#sunflower)" transform="rotate(60 980 940)"/>
-    <ellipse cx="1340" cy="920" rx="16" ry="30" fill="url(#sunflower)" transform="rotate(-45 1340 920)"/>
+    <!-- Sunflower seeds - main layer with animations -->
+    <ellipse class="nut-anim-2" cx="380" cy="580" rx="14" ry="28" fill="url(#sunflower)" transform="rotate(45 380 580)"/>
+    <ellipse class="nut-anim-3" cx="1560" cy="180" rx="15" ry="29" fill="url(#sunflower)" transform="rotate(-30 1560 180)"/>
+    <ellipse class="nut-anim-4" cx="980" cy="940" rx="14" ry="27" fill="url(#sunflower)" transform="rotate(60 980 940)"/>
+    <ellipse class="nut-anim-5" cx="1340" cy="920" rx="16" ry="30" fill="url(#sunflower)" transform="rotate(-45 1340 920)"/>
   </g>
   
   <!-- Front layer - highlights -->
   <g opacity="0.9">
-    <!-- More nuts in foreground -->
-    <ellipse cx="520" cy="140" rx="40" ry="58" fill="url(#pistachio)" transform="rotate(-12 520 140)"/>
-    <line x1="515" y1="100" x2="515" y2="128" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    <!-- More nuts in foreground with animations -->
+    <g class="nut-anim-3">
+      <ellipse cx="520" cy="140" rx="40" ry="58" fill="url(#pistachio)" transform="rotate(-12 520 140)"/>
+      <line x1="515" y1="100" x2="515" y2="128" stroke="#8B7355" stroke-width="3" opacity="0.7"/>
+    </g>
     
-    <path d="M 1600 980 Q 1572 987 1550 1004 Q 1535 1024 1542 1046 Q 1556 1062 1578 1062 Q 1610 1052 1628 1030 Q 1636 1008 1628 987 Q 1613 973 1600 980 Z" fill="url(#cashew)"/>
-    <ellipse cx="1583" cy="1018" rx="18" ry="24" fill="#FFF8DC" opacity="0.4"/>
+    <g class="nut-anim-4">
+      <path d="M 1600 980 Q 1572 987 1550 1004 Q 1535 1024 1542 1046 Q 1556 1062 1578 1062 Q 1610 1052 1628 1030 Q 1636 1008 1628 987 Q 1613 973 1600 980 Z" fill="url(#cashew)"/>
+      <ellipse cx="1583" cy="1018" rx="18" ry="24" fill="#FFF8DC" opacity="0.4"/>
+    </g>
     
-    <ellipse cx="90" cy="540" rx="28" ry="48" fill="url(#almond)" transform="rotate(38 90 540)"/>
-    <line x1="88" y1="508" x2="92" y2="522" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    <g class="nut-anim-5">
+      <ellipse cx="90" cy="540" rx="28" ry="48" fill="url(#almond)" transform="rotate(38 90 540)"/>
+      <line x1="88" y1="508" x2="92" y2="522" stroke="#8B4513" stroke-width="2" opacity="0.6"/>
+    </g>
   </g>
   
   <!-- Subtle vignette for depth -->
