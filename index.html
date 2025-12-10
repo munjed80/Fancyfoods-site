@@ -58,9 +58,13 @@
   </div>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Section - Magnificent Rebuild -->
 <section class="hero">
-  <!-- Floating nuts overlay -->
+  <!-- Animated gradient background layers -->
+  <div class="hero-bg-gradient"></div>
+  <div class="hero-bg-gradient-overlay"></div>
+  
+  <!-- 3D Floating nuts with enhanced effects -->
   <div class="floating-nuts" aria-hidden="true">
     <!-- Pistachio 1 -->
     <svg class="floating-nut nut-1" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
@@ -71,8 +75,15 @@
           <stop offset="65%" style="stop-color:#D4AF37;stop-opacity:1" />
           <stop offset="100%" style="stop-color:#9A7928;stop-opacity:1" />
         </radialGradient>
+        <filter id="glow-1">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
       </defs>
-      <g transform="rotate(15 30 30)">
+      <g transform="rotate(15 30 30)" filter="url(#glow-1)">
         <ellipse cx="30" cy="30" rx="20" ry="28" fill="url(#hero-pistachio-1)"/>
         <path d="M 30 10 Q 32 20 30 30" stroke="#8B7020" stroke-width="2" fill="none" opacity="0.7"/>
         <ellipse cx="29" cy="28" rx="8" ry="14" fill="#F5E6C8" opacity="0.4"/>
@@ -88,9 +99,18 @@
           <stop offset="60%" style="stop-color:#DEB887;stop-opacity:1" />
           <stop offset="100%" style="stop-color:#C19A6B;stop-opacity:1" />
         </radialGradient>
+        <filter id="glow-2">
+          <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
       </defs>
-      <path d="M 30 15 Q 20 17 14 24 Q 10 33 13 42 Q 19 48 28 48 Q 40 44 47 35 Q 50 26 47 17 Q 40 12 30 15 Z" fill="url(#hero-cashew-1)"/>
-      <ellipse cx="26" cy="32" rx="8" ry="11" fill="#FFF8DC" opacity="0.45"/>
+      <g filter="url(#glow-2)">
+        <path d="M 30 15 Q 20 17 14 24 Q 10 33 13 42 Q 19 48 28 48 Q 40 44 47 35 Q 50 26 47 17 Q 40 12 30 15 Z" fill="url(#hero-cashew-1)"/>
+        <ellipse cx="26" cy="32" rx="8" ry="11" fill="#FFF8DC" opacity="0.45"/>
+      </g>
     </svg>
     
     <!-- Almond 1 -->
@@ -191,46 +211,79 @@
     </svg>
   </div>
   
+  <!-- Premium particle effects -->
+  <div class="hero-particles" aria-hidden="true"></div>
+  
   <div class="container">
     <div class="hero-content">
-      <!-- Logo with glow -->
+      <!-- Enhanced Logo with pulsing glow -->
       <div class="hero-logo">
+        <div class="hero-logo-glow"></div>
         <img src="assets/images/logo.svg" alt="Fancy Foods Logo">
       </div>
       
-      <!-- Text Content -->
+      <!-- Glassmorphism Content Container -->
       <div class="hero-text">
         <!-- Arabic Content -->
         <div data-lang="ar">
           <span class="hero-badge">
+            <span class="hero-badge-shimmer"></span>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-left: 5px;">
               <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
             </svg>
             الجودة تبدأ من أول حبة
           </span>
-          <h1 class="hero-title">فانسي فودز</h1>
+          <h1 class="hero-title">
+            <span class="hero-title-gradient">فانسي فودز</span>
+          </h1>
           <p class="hero-subtitle">موالح ومكسرات فاخرة للتجار والموزعين. نقدم أجود أنواع المكسرات من فستق حلبي، كاجو، لوز، وبزورات بجودة استثنائية وأسعار تنافسية.</p>
           <div class="hero-buttons">
-            <a href="products.html" class="btn btn-primary">استعراض المنتجات</a>
-            <a href="contact.html" class="btn btn-secondary">تواصل معنا</a>
+            <a href="products.html" class="btn btn-primary btn-magnetic">
+              <span>استعراض المنتجات</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-magnetic">
+              <span>تواصل معنا</span>
+            </a>
           </div>
         </div>
         
         <!-- English Content -->
         <div data-lang="en" style="display:none;">
           <span class="hero-badge">
+            <span class="hero-badge-shimmer"></span>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 5px;">
               <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
             </svg>
             Quality Starts from the First Nut
           </span>
-          <h1 class="hero-title">Fancy Foods</h1>
+          <h1 class="hero-title">
+            <span class="hero-title-gradient">Fancy Foods</span>
+          </h1>
           <p class="hero-subtitle">Premium wholesale nuts and seeds for traders and distributors. We offer the finest pistachios, cashews, almonds, and seeds with exceptional quality at competitive prices.</p>
           <div class="hero-buttons">
-            <a href="products.html" class="btn btn-primary">Browse Products</a>
-            <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            <a href="products.html" class="btn btn-primary btn-magnetic">
+              <span>Browse Products</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary btn-magnetic">
+              <span>Contact Us</span>
+            </a>
           </div>
         </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="hero-scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span data-lang="ar">اسحب للأسفل</span>
+        <span data-lang="en" style="display:none;">Scroll Down</span>
       </div>
     </div>
   </div>

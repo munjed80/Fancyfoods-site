@@ -293,29 +293,64 @@ ul, ol {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ============ Hero Section ============ */
+/* ============ Hero Section - Magnificent Rebuild ============ */
 .hero {
-  /* Background fallback cascade: Real photo → SVG placeholder → Gradient */
-  /* Browser uses first available from left to right */
+  /* Background fallback cascade with enhanced layers */
   background: url('../images/nuts-background.jpg') center center / cover no-repeat, 
               url('../images/nuts-background.svg') center center / cover no-repeat, 
               linear-gradient(135deg, #A0785A 0%, #C9A961 50%, #D4AF37 100%);
-  padding: 120px 0;
+  padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  perspective: 1000px;
 }
 
-/* Use dynamic viewport height on supported browsers for better mobile experience */
+/* Use dynamic viewport height on supported browsers */
 @supports (height: 100dvh) {
   .hero {
     min-height: 100dvh;
   }
 }
 
-/* Dark overlay for text readability (20% opacity - lighter for better nuts visibility) */
+/* Animated gradient background layer */
+.hero-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(160, 120, 90, 0.95) 0%,
+    rgba(201, 169, 97, 0.9) 25%,
+    rgba(212, 175, 55, 0.85) 50%,
+    rgba(47, 95, 31, 0.8) 75%,
+    rgba(139, 90, 60, 0.9) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientWave 20s ease infinite;
+  z-index: 0;
+}
+
+/* Additional gradient overlay for depth */
+.hero-bg-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+/* Enhanced dark overlay with gradient fade */
 .hero::before {
   content: '';
   position: absolute;
@@ -323,72 +358,160 @@ ul, ol {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.20);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
   z-index: 1;
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--white);
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
+  animation: heroContentReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-/* Logo in hero section */
+/* Enhanced Logo with pulsing glow effect */
 .hero-logo {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   text-align: center;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.hero-logo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.4) 0%,
+    rgba(212, 175, 55, 0.2) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: logoPulse 3s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .hero-logo img {
-  width: 120px;
-  height: 120px;
-  /* Soft glow and drop shadow for better contrast against nuts background */
-  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.5))
-          drop-shadow(0 0 40px rgba(255, 255, 255, 0.6))
-          drop-shadow(0 0 60px rgba(212, 175, 55, 0.4));
-  /* Gentle floating animation for premium feel */
-  animation: heroLogoFloat 4s ease-in-out infinite;
+  width: 140px;
+  height: 140px;
+  position: relative;
+  z-index: 2;
+  /* Enhanced drop shadows with multiple layers */
+  filter: drop-shadow(0 6px 25px rgba(0, 0, 0, 0.6))
+          drop-shadow(0 0 50px rgba(255, 255, 255, 0.7))
+          drop-shadow(0 0 80px rgba(212, 175, 55, 0.5))
+          drop-shadow(0 0 100px rgba(212, 175, 55, 0.3));
+  /* Enhanced floating animation */
+  animation: heroLogoFloat3D 5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.hero-logo:hover img {
+  transform: scale(1.1) rotateY(10deg);
 }
 
 .hero-text {
   text-align: center;
   width: 100%;
+  padding: 0 20px;
 }
 
+/* Enhanced glassmorphism badge with shimmer effect */
 .hero-badge {
   display: inline-block;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  padding: 10px 25px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  padding: 12px 30px;
   border-radius: var(--btn-radius);
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  animation: badgeFadeIn 0.8s ease 0.3s backwards;
 }
 
+.hero-badge-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Magnificent gradient title */
 .hero-title {
-  font-size: 60px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 
-               0 4px 16px rgba(0, 0, 0, 0.5);
-  line-height: 1.2;
+  font-size: 72px;
+  font-weight: 900;
+  margin-bottom: 25px;
+  line-height: 1.15;
+  animation: titleFadeIn 1s ease 0.5s backwards;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #FFE97F 25%,
+    #D4AF37 50%,
+    #FFFFFF 75%,
+    #E5C45F 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease infinite;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 12px rgba(212, 175, 55, 0.8))
+          drop-shadow(0 4px 20px rgba(0, 0, 0, 0.7))
+          drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
 }
 
 .hero-subtitle {
-  font-size: 22px;
-  opacity: 0.95;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0.97;
+  max-width: 750px;
+  margin: 0 auto 45px;
+  line-height: 1.7;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7),
+               0 1px 3px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: subtitleFadeIn 1s ease 0.7s backwards;
 }
 
 .hero-buttons {
@@ -396,9 +519,92 @@ ul, ol {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  animation: buttonsFadeIn 1s ease 0.9s backwards;
 }
 
-/* Floating nuts overlay - animated individual nuts */
+/* Scroll indicator - premium animated mouse */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: scrollIndicatorBounce 2s ease-in-out infinite;
+  z-index: 10;
+}
+
+.scroll-mouse {
+  width: 28px;
+  height: 45px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheelMove 2s ease-in-out infinite;
+}
+
+.hero-scroll-indicator span {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Premium particle effects */
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.hero-particles::before,
+.hero-particles::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(212, 175, 55, 0.6);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 10px rgba(212, 175, 55, 0.8),
+    200px 150px 0 rgba(255, 255, 255, 0.4),
+    400px 80px 0 rgba(212, 175, 55, 0.5),
+    -100px 250px 0 rgba(255, 255, 255, 0.3),
+    600px 200px 0 rgba(212, 175, 55, 0.4),
+    -200px 100px 0 rgba(255, 255, 255, 0.5),
+    800px 300px 0 rgba(212, 175, 55, 0.3),
+    300px 400px 0 rgba(255, 255, 255, 0.4);
+  animation: particleFloat 25s linear infinite;
+}
+
+.hero-particles::after {
+  animation-delay: -12s;
+  animation-duration: 30s;
+}
+
+/* Enhanced floating nuts with 3D effects */
 .floating-nuts {
   position: absolute;
   top: 0;
@@ -406,238 +612,439 @@ ul, ol {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 2; /* Above hero overlay but below content */
+  z-index: 5; /* Above gradient layers but below content */
   overflow: hidden;
+  transform-style: preserve-3d;
 }
 
 .floating-nut {
   position: absolute;
-  opacity: 0.85;
-  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.4));
+  opacity: 0.9;
+  filter: drop-shadow(3px 6px 12px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 
-/* Specific positions and animations for each nut */
+/* Enhanced 3D positions for floating nuts */
 .nut-1 {
   top: 10%;
   left: 8%;
-  width: 60px;
-  height: 60px;
-  animation: floatNut1 12s ease-in-out infinite;
+  width: 70px;
+  height: 70px;
+  animation: floatNut3D1 14s ease-in-out infinite;
 }
 
 .nut-2 {
-  top: 20%;
-  right: 12%;
-  width: 55px;
-  height: 55px;
-  animation: floatNut2 10s ease-in-out infinite 1s;
-}
-
-.nut-3 {
-  top: 55%;
-  left: 5%;
-  width: 50px;
-  height: 50px;
-  animation: floatNut3 14s ease-in-out infinite 2s;
-}
-
-.nut-4 {
-  bottom: 15%;
+  top: 18%;
   right: 10%;
   width: 65px;
   height: 65px;
-  animation: floatNut4 11s ease-in-out infinite 0.5s;
+  animation: floatNut3D2 12s ease-in-out infinite 1s;
+}
+
+.nut-3 {
+  top: 58%;
+  left: 6%;
+  width: 60px;
+  height: 60px;
+  animation: floatNut3D3 16s ease-in-out infinite 2s;
+}
+
+.nut-4 {
+  bottom: 12%;
+  right: 8%;
+  width: 75px;
+  height: 75px;
+  animation: floatNut3D4 13s ease-in-out infinite 0.5s;
 }
 
 .nut-5 {
-  top: 35%;
-  right: 25%;
-  width: 45px;
-  height: 45px;
-  animation: floatNut5 13s ease-in-out infinite 1.5s;
+  top: 38%;
+  right: 22%;
+  width: 55px;
+  height: 55px;
+  animation: floatNut3D5 15s ease-in-out infinite 1.5s;
 }
 
 .nut-6 {
-  bottom: 25%;
-  left: 15%;
-  width: 58px;
-  height: 58px;
-  animation: floatNut6 9s ease-in-out infinite 2.5s;
+  bottom: 28%;
+  left: 12%;
+  width: 68px;
+  height: 68px;
+  animation: floatNut3D6 11s ease-in-out infinite 2.5s;
 }
 
 .nut-7 {
-  top: 70%;
-  right: 35%;
-  width: 52px;
-  height: 52px;
-  animation: floatNut7 15s ease-in-out infinite 3s;
+  top: 72%;
+  right: 32%;
+  width: 62px;
+  height: 62px;
+  animation: floatNut3D7 17s ease-in-out infinite 3s;
 }
 
 .nut-8 {
-  top: 42%;
-  left: 28%;
-  width: 48px;
-  height: 48px;
-  animation: floatNut8 10.5s ease-in-out infinite 1.8s;
+  top: 45%;
+  left: 25%;
+  width: 58px;
+  height: 58px;
+  animation: floatNut3D8 12.5s ease-in-out infinite 1.8s;
 }
 
-/* Keyframe animations for floating nuts with realistic movement */
-@keyframes floatNut1 {
+/* ============ Enhanced 3D Keyframe Animations ============ */
+
+/* Logo animations */
+@keyframes heroLogoFloat3D {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
   }
   25% {
-    transform: translate(-25px, -30px) rotate(8deg);
+    transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
   }
   50% {
-    transform: translate(-15px, -55px) rotate(0deg);
+    transform: translateY(-25px) rotateX(-3deg) rotateY(0deg);
   }
   75% {
-    transform: translate(25px, -30px) rotate(-8deg);
+    transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
   }
 }
 
-@keyframes floatNut2 {
+@keyframes logoPulse {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* Content reveal animations */
+@keyframes heroContentReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes badgeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtitleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient animations */
+@keyframes gradientWave {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Scroll indicator animations */
+@keyframes scrollIndicatorBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(15px);
+  }
+}
+
+@keyframes scrollWheelMove {
+  0%, 100% {
+    top: 8px;
+    opacity: 1;
+  }
+  50% {
+    top: 20px;
+    opacity: 0.5;
+  }
+}
+
+/* Particle animations */
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Enhanced 3D floating animations for nuts */
+@keyframes floatNut3D1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   25% {
-    transform: translate(30px, -25px) rotate(-6deg);
+    transform: translate3d(-30px, -35px, 20px) rotate(10deg) scale(1.05);
   }
   50% {
-    transform: translate(20px, -45px) rotate(0deg);
+    transform: translate3d(-20px, -65px, 0) rotate(0deg) scale(1.1);
   }
   75% {
-    transform: translate(-30px, -25px) rotate(6deg);
+    transform: translate3d(30px, -35px, -20px) rotate(-10deg) scale(1.05);
   }
 }
 
-@keyframes floatNut3 {
+@keyframes floatNut3D2 {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   25% {
-    transform: translate(-20px, -35px) rotate(10deg);
+    transform: translate3d(35px, -30px, -20px) rotate(-8deg) scale(1.08);
   }
   50% {
-    transform: translate(28px, -60px) rotate(0deg);
+    transform: translate3d(25px, -55px, 0) rotate(0deg) scale(1.12);
   }
   75% {
-    transform: translate(-28px, -35px) rotate(-10deg);
+    transform: translate3d(-35px, -30px, 20px) rotate(8deg) scale(1.08);
   }
 }
 
-@keyframes floatNut4 {
+@keyframes floatNut3D3 {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   25% {
-    transform: translate(32px, -22px) rotate(-7deg);
+    transform: translate3d(-25px, -40px, 15px) rotate(12deg) scale(1.06);
   }
   50% {
-    transform: translate(-12px, -42px) rotate(0deg);
+    transform: translate3d(32px, -70px, 0) rotate(0deg) scale(1.15);
   }
   75% {
-    transform: translate(32px, -22px) rotate(7deg);
+    transform: translate3d(-32px, -40px, -15px) rotate(-12deg) scale(1.06);
   }
 }
 
-@keyframes floatNut5 {
+@keyframes floatNut3D4 {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   25% {
-    transform: translate(-28px, -32px) rotate(5deg);
+    transform: translate3d(38px, -28px, -25px) rotate(-9deg) scale(1.1);
   }
   50% {
-    transform: translate(22px, -58px) rotate(0deg);
+    transform: translate3d(-15px, -50px, 0) rotate(0deg) scale(1.15);
   }
   75% {
-    transform: translate(-28px, -32px) rotate(-5deg);
+    transform: translate3d(38px, -28px, 25px) rotate(9deg) scale(1.1);
   }
 }
 
-@keyframes floatNut6 {
+@keyframes floatNut3D5 {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   25% {
-    transform: translate(24px, -28px) rotate(-9deg);
+    transform: translate3d(-32px, -38px, 18px) rotate(7deg) scale(1.07);
   }
   50% {
-    transform: translate(-18px, -52px) rotate(0deg);
+    transform: translate3d(28px, -68px, 0) rotate(0deg) scale(1.13);
   }
   75% {
-    transform: translate(24px, -28px) rotate(9deg);
+    transform: translate3d(-32px, -38px, -18px) rotate(-7deg) scale(1.07);
   }
 }
 
-@keyframes floatNut7 {
+@keyframes floatNut3D6 {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   25% {
-    transform: translate(-35px, -30px) rotate(6deg);
+    transform: translate3d(28px, -32px, -22px) rotate(-11deg) scale(1.09);
   }
   50% {
-    transform: translate(25px, -65px) rotate(0deg);
+    transform: translate3d(-22px, -60px, 0) rotate(0deg) scale(1.14);
   }
   75% {
-    transform: translate(-35px, -30px) rotate(-6deg);
+    transform: translate3d(28px, -32px, 22px) rotate(11deg) scale(1.09);
   }
 }
 
-@keyframes floatNut8 {
+@keyframes floatNut3D7 {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   25% {
-    transform: translate(27px, -26px) rotate(-8deg);
+    transform: translate3d(-40px, -35px, 20px) rotate(8deg) scale(1.08);
   }
   50% {
-    transform: translate(-22px, -48px) rotate(0deg);
+    transform: translate3d(30px, -75px, 0) rotate(0deg) scale(1.16);
   }
   75% {
-    transform: translate(27px, -26px) rotate(8deg);
+    transform: translate3d(-40px, -35px, -20px) rotate(-8deg) scale(1.08);
   }
 }
 
-/* ============ Buttons ============ */
+@keyframes floatNut3D8 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate3d(32px, -30px, -18px) rotate(-10deg) scale(1.07);
+  }
+  50% {
+    transform: translate3d(-26px, -58px, 0) rotate(0deg) scale(1.12);
+  }
+  75% {
+    transform: translate3d(32px, -30px, 18px) rotate(10deg) scale(1.07);
+  }
+}
+
+/* ============ Enhanced Magnetic Buttons ============ */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 35px;
+  padding: 18px 40px;
   border-radius: var(--btn-radius);
   font-size: 17px;
   font-weight: 700;
   cursor: pointer;
   border: none;
-  transition: var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+/* Magnetic button effect */
+.btn-magnetic {
+  will-change: transform;
 }
 
 .btn-primary {
-  background: var(--white);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
   color: var(--primary-green);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
 }
 
 .btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   color: var(--white);
-  border: 2px solid var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
 }
 
 .btn-secondary:hover {
-  background: var(--white);
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--white);
+  box-shadow: 0 15px 45px rgba(255, 255, 255, 0.3);
   color: var(--primary-green);
+}
+
+.btn-secondary:hover::before {
+  opacity: 1;
 }
 
 .btn-gold {
@@ -1685,15 +2092,7 @@ ul, ol {
   }
 }
 
-/* Gentle floating animation for hero logo */
-@keyframes heroLogoFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
+
 
 @keyframes shimmer {
   0% {
@@ -2269,8 +2668,23 @@ body {
     animation: none !important;
   }
   
-  /* Hide floating nuts completely for better accessibility */
-  .floating-nuts {
+  /* Hide decorative animated elements for better accessibility */
+  .floating-nuts,
+  .hero-particles,
+  .hero-bg-gradient {
+    display: none !important;
+  }
+  
+  /* Ensure hero content is visible immediately */
+  .hero-content {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Simplify hero for reduced motion */
+  .hero-logo-glow,
+  .hero-badge-shimmer,
+  .scroll-wheel {
     display: none !important;
   }
 }
@@ -2343,26 +2757,55 @@ body {
   }
   
   .hero {
-    padding: 60px 0;
+    padding: 80px 0 60px;
     min-height: 100vh;
     background-position: center center;
   }
   
+  .hero-logo {
+    margin-bottom: 35px;
+  }
+  
   .hero-logo img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .hero-logo-glow {
+    width: 140px;
+    height: 140px;
   }
   
   .hero-content {
-    gap: 30px;
+    max-width: 90%;
+  }
+  
+  .hero-badge {
+    font-size: 13px;
+    padding: 10px 24px;
+    margin-bottom: 25px;
   }
   
   .hero-title {
-    font-size: 38px;
+    font-size: 48px;
   }
   
   .hero-subtitle {
     font-size: 18px;
+    padding: 18px 25px;
+    margin-bottom: 35px;
+  }
+  
+  .hero-buttons {
+    gap: 15px;
+  }
+  
+  .hero-scroll-indicator {
+    bottom: 30px;
+  }
+  
+  .floating-nut {
+    transform: scale(0.85);
   }
   
   .section-title {
@@ -2404,18 +2847,60 @@ body {
     padding: 0 10px;
   }
   
+  .hero {
+    padding: 60px 0 50px;
+  }
+  
+  .hero-logo {
+    margin-bottom: 30px;
+  }
+  
+  .hero-logo img {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .hero-logo-glow {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .hero-badge {
+    font-size: 12px;
+    padding: 8px 20px;
+    margin-bottom: 20px;
+  }
+  
   .hero-title {
-    font-size: 32px;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-subtitle {
+    font-size: 16px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
   }
   
   .hero-buttons {
     flex-direction: column;
     width: 100%;
     padding: 0 20px;
+    gap: 12px;
   }
   
   .btn {
     width: 100%;
+    padding: 16px 30px;
+  }
+  
+  .hero-scroll-indicator {
+    bottom: 20px;
+    transform: scale(0.9) translateX(-50%);
+  }
+  
+  .floating-nut {
+    transform: scale(0.65);
   }
   
   .logo-icon {

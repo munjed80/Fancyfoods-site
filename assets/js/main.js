@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
   initParallax();
   initWhatsAppButton();
   initPageTransitions();
+  initMagneticButtons();
+  initHeroParallax();
+  initFloatingNutsInteraction();
 });
 
 /**
@@ -600,6 +603,111 @@ function throttle(func, limit) {
       setTimeout(() => inThrottle = false, limit);
     }
   };
+}
+
+/**
+ * Initialize magnetic button effects
+ */
+function initMagneticButtons() {
+  const magneticButtons = document.querySelectorAll('.btn-magnetic');
+  
+  magneticButtons.forEach(btn => {
+    btn.addEventListener('mousemove', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      // Apply magnetic effect with reduced intensity
+      const moveX = x * 0.15;
+      const moveY = y * 0.15;
+      
+      this.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+    
+    btn.addEventListener('mouseleave', function() {
+      this.style.transform = 'translate(0, 0)';
+    });
+  });
+}
+
+/**
+ * Enhanced hero parallax with 3D effect
+ */
+function initHeroParallax() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  
+  const heroLogo = hero.querySelector('.hero-logo img');
+  const heroContent = hero.querySelector('.hero-content');
+  const floatingNuts = hero.querySelectorAll('.floating-nut');
+  
+  // Mouse movement parallax
+  hero.addEventListener('mousemove', throttle(function(e) {
+    const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    
+    if (heroLogo) {
+      heroLogo.style.transform = `
+        translateY(-25px) 
+        rotateY(${mouseX * 5}deg) 
+        rotateX(${-mouseY * 5}deg)
+      `;
+    }
+    
+    // Move floating nuts based on mouse position
+    floatingNuts.forEach((nut, index) => {
+      const speed = 0.5 + (index % 3) * 0.3;
+      const moveX = mouseX * 20 * speed;
+      const moveY = mouseY * 20 * speed;
+      
+      nut.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+  }, 50));
+  
+  // Reset on mouse leave
+  hero.addEventListener('mouseleave', function() {
+    if (heroLogo) {
+      heroLogo.style.transform = '';
+    }
+    
+    floatingNuts.forEach(nut => {
+      nut.style.transform = '';
+    });
+  });
+  
+  // Scroll parallax
+  window.addEventListener('scroll', throttle(function() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * 0.4;
+    
+    if (scrolled < hero.offsetHeight) {
+      if (heroContent) {
+        const opacity = 1 - (scrolled / hero.offsetHeight) * 1.5;
+        const translateY = scrolled * 0.3;
+        heroContent.style.transform = `translateY(${translateY}px)`;
+        heroContent.style.opacity = Math.max(0, opacity);
+      }
+    }
+  }, 16));
+}
+
+/**
+ * Interactive floating nuts on hover
+ */
+function initFloatingNutsInteraction() {
+  const floatingNuts = document.querySelectorAll('.floating-nut');
+  
+  floatingNuts.forEach(nut => {
+    nut.addEventListener('mouseenter', function() {
+      this.style.filter = 'drop-shadow(3px 6px 18px rgba(212, 175, 55, 0.8))';
+      this.style.transform = 'scale(1.15) rotate(15deg)';
+    });
+    
+    nut.addEventListener('mouseleave', function() {
+      this.style.filter = '';
+      this.style.transform = '';
+    });
+  });
 }
 
 
