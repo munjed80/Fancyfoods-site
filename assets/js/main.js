@@ -675,18 +675,15 @@ function initHeroParallax() {
     });
   });
   
-  // Scroll parallax
+  // Scroll parallax - fade out hero content as user scrolls
   window.addEventListener('scroll', throttle(function() {
     const scrolled = window.pageYOffset;
-    const rate = scrolled * 0.4;
     
-    if (scrolled < hero.offsetHeight) {
-      if (heroContent) {
-        const opacity = 1 - (scrolled / hero.offsetHeight) * 1.5;
-        const translateY = scrolled * 0.3;
-        heroContent.style.transform = `translateY(${translateY}px)`;
-        heroContent.style.opacity = Math.max(0, opacity);
-      }
+    if (scrolled < hero.offsetHeight && heroContent) {
+      const opacity = 1 - (scrolled / hero.offsetHeight) * 1.5;
+      const translateY = scrolled * 0.3;
+      heroContent.style.transform = `translateY(${translateY}px)`;
+      heroContent.style.opacity = Math.max(0, opacity);
     }
   }, 16));
 }

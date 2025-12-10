@@ -2093,16 +2093,6 @@ ul, ol {
 }
 
 
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -2676,9 +2666,14 @@ body {
   }
   
   /* Ensure hero content is visible immediately */
-  .hero-content {
+  .hero-content,
+  .hero-badge,
+  .hero-title,
+  .hero-subtitle,
+  .hero-buttons {
     opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
   }
   
   /* Simplify hero for reduced motion */
