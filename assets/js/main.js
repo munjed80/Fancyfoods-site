@@ -409,22 +409,29 @@ function initParallax() {
   if (!hero) return;
   
   const shapes = hero.querySelectorAll('.shape');
+  let mouseMoveTimeout;
   
-  // Mouse move parallax effect
+  // Mouse move parallax effect with throttling
   hero.addEventListener('mousemove', function(e) {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-    
-    const xPercent = (clientX / innerWidth - 0.5) * 2;
-    const yPercent = (clientY / innerHeight - 0.5) * 2;
-    
-    shapes.forEach((shape, index) => {
-      const speed = (index + 1) * 10;
-      const x = xPercent * speed;
-      const y = yPercent * speed;
-      
-      shape.style.transform = `translate(${x}px, ${y}px)`;
-    });
+    if (!mouseMoveTimeout) {
+      mouseMoveTimeout = setTimeout(function() {
+        mouseMoveTimeout = null;
+        
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+        
+        const xPercent = (clientX / innerWidth - 0.5) * 2;
+        const yPercent = (clientY / innerHeight - 0.5) * 2;
+        
+        shapes.forEach((shape, index) => {
+          const speed = (index + 1) * 10;
+          const x = xPercent * speed;
+          const y = yPercent * speed;
+          
+          shape.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }, 50); // Throttle to 50ms (20fps for smooth but efficient performance)
+    }
   });
   
   // Scroll effect
