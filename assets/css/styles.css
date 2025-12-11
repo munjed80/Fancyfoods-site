@@ -9,9 +9,11 @@
   --primary-green: #2F5F1F;
   --primary-green-light: #4A7C2F;
   --primary-green-dark: #1E3F14;
+  --primary-green-rgb: 47, 95, 31;
   --gold: #D4AF37;
   --gold-light: #E5C45F;
   --gold-dark: #B8962A;
+  --gold-rgb: 212, 175, 55;
   
   /* Neutral Colors */
   --white: #FFFFFF;
@@ -24,8 +26,9 @@
   --text-light: #6B7280;
   
   /* Hero Colors */
-  --hero-bg-light: #f3f3e7;
-  --hero-bg-dark: #e7e2cf;
+  --hero-bg-light: #f5f1e8;
+  --hero-bg-mid: #e8e0d0;
+  --hero-bg-end: #f0ead9;
   
   /* Gradients */
   --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B8962A 100%);
@@ -304,7 +307,7 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f5f1e8 0%, #e8e0d0 50%, #f0ead9 100%);
+  background: linear-gradient(135deg, var(--hero-bg-light) 0%, var(--hero-bg-mid) 50%, var(--hero-bg-end) 100%);
   padding: 140px 0 80px;
   overflow: hidden;
 }
@@ -317,7 +320,7 @@ ul, ol {
   right: -10%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.08) 0%, transparent 70%);
   border-radius: 50%;
   animation: floatSlow 20s ease-in-out infinite;
 }
@@ -329,7 +332,7 @@ ul, ol {
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(47, 95, 31, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--primary-green-rgb), 0.06) 0%, transparent 70%);
   border-radius: 50%;
   animation: floatSlow 25s ease-in-out infinite reverse;
 }
@@ -523,31 +526,31 @@ ul, ol {
 .hero-shape-1 {
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(184, 150, 42, 0.1));
+  background: linear-gradient(135deg, rgba(var(--gold-rgb), 0.15), rgba(var(--gold-rgb), 0.1));
   top: 15%;
   right: 10%;
   animation: float 15s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 8px 32px rgba(var(--gold-rgb), 0.15);
 }
 
 .hero-shape-2 {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, rgba(47, 95, 31, 0.12), rgba(74, 124, 47, 0.08));
+  background: linear-gradient(135deg, rgba(var(--primary-green-rgb), 0.12), rgba(var(--primary-green-rgb), 0.08));
   bottom: 25%;
   left: 8%;
   animation: float 18s ease-in-out infinite reverse;
-  box-shadow: 0 8px 32px rgba(47, 95, 31, 0.12);
+  box-shadow: 0 8px 32px rgba(var(--primary-green-rgb), 0.12);
 }
 
 .hero-shape-3 {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(229, 196, 95, 0.08));
+  background: linear-gradient(135deg, rgba(var(--gold-rgb), 0.1), rgba(var(--gold-rgb), 0.08));
   top: 60%;
   right: 15%;
   animation: float 20s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.12);
+  box-shadow: 0 8px 32px rgba(var(--gold-rgb), 0.12);
 }
 
 @keyframes float {
@@ -2347,19 +2350,13 @@ body {
   .hero-btn-primary,
   .hero-btn-secondary {
     width: 100%;
-    padding: 16px 35px;
+    max-width: 320px;
+    padding: 14px 32px;
+    font-size: 15px;
   }
   
   .hero-shape {
     display: none;
-  }
-  
-  .hero-btn-primary,
-  .hero-btn-secondary {
-    width: 100%;
-    max-width: 320px;
-    padding: 14px 32px;
-    font-size: 15px;
   }
   
   .btn {
