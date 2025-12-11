@@ -23,10 +23,14 @@
   --text-dark: #1F2937;
   --text-light: #6B7280;
   
+  /* Hero Colors */
+  --hero-bg-light: #f3f3e7;
+  --hero-bg-dark: #e7e2cf;
+  
   /* Gradients */
   --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B8962A 100%);
   --gradient-green: linear-gradient(135deg, #2F5F1F 0%, #4A7C2F 100%);
-  --gradient-hero: linear-gradient(135deg, #D4AF37 0%, #7cb342 50%, #2F5F1F 100%);
+  --gradient-hero: linear-gradient(180deg, var(--hero-bg-light) 0%, var(--hero-bg-dark) 100%);
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -301,7 +305,7 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #f3f3e7 0%, #e7e2cf 100%);
+  background: var(--gradient-hero);
   padding: 140px 0 80px;
 }
 
@@ -2182,26 +2186,6 @@ body {
   
   .page-title {
     font-size: 30px;
-  }
-  
-
-  
-  .hero-scroll-indicator {
-    display: none;
-  }
-  
-  .shape {
-    filter: blur(30px);
-  }
-  
-  .shape-1, .shape-2 {
-    width: 250px;
-    height: 250px;
-  }
-  
-  .shape-3, .shape-4, .shape-5 {
-    width: 200px;
-    height: 200px;
   }
 }
 
