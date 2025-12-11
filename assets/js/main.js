@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initFormValidation();
   initRippleEffect();
   initSmoothScroll();
-  initParallax();
   initWhatsAppButton();
   initPageTransitions();
 });
@@ -401,52 +400,7 @@ function initSmoothScroll() {
   });
 }
 
-/**
- * Initialize parallax effects for hero
- */
-function initParallax() {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-  
-  const shapes = hero.querySelectorAll('.shape');
-  let mouseMoveTimeout;
-  
-  // Mouse move parallax effect with throttling
-  hero.addEventListener('mousemove', function(e) {
-    if (!mouseMoveTimeout) {
-      mouseMoveTimeout = setTimeout(function() {
-        mouseMoveTimeout = null;
-        
-        const { clientX, clientY } = e;
-        const { innerWidth, innerHeight } = window;
-        
-        const xPercent = (clientX / innerWidth - 0.5) * 2;
-        const yPercent = (clientY / innerHeight - 0.5) * 2;
-        
-        shapes.forEach((shape, index) => {
-          const speed = (index + 1) * 10;
-          const x = xPercent * speed;
-          const y = yPercent * speed;
-          
-          shape.style.transform = `translate(${x}px, ${y}px)`;
-        });
-      }, 50); // Throttle to 50ms (20fps for smooth but efficient performance)
-    }
-  });
-  
-  // Scroll effect
-  window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    
-    if (scrolled < hero.offsetHeight) {
-      const heroContent = hero.querySelector('.hero-content');
-      if (heroContent) {
-        heroContent.style.transform = `translateY(${scrolled * 0.15}px)`;
-        heroContent.style.opacity = Math.max(0, 1 - (scrolled / hero.offsetHeight) * 1.5);
-      }
-    }
-  }, { passive: true });
-}
+
 
 /**
  * Initialize WhatsApp floating button
