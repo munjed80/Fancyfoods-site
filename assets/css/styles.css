@@ -1204,11 +1204,12 @@ ul, ol {
   font-size: 50px;
   font-weight: 800;
   margin-bottom: 15px;
+  color: var(--primary-green);
   background: linear-gradient(135deg, var(--primary-green-dark) 0%, var(--primary-green) 50%, var(--primary-green-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.1));
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .page-subtitle {
