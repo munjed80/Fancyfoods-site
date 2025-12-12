@@ -12,6 +12,7 @@
   --primary-green-rgb: 47, 95, 31;
   --gold: #D4AF37;
   --gold-light: #E5C45F;
+  --gold-medium: #C9A961;
   --gold-dark: #B8962A;
   --gold-rgb: 212, 175, 55;
   
@@ -23,6 +24,7 @@
   --medium-gray: #9CA3AF;
   --dark-gray: #4B5563;
   --text-dark: #1F2937;
+  --text-medium: #3D3D3D;
   --text-light: #6B7280;
   
   /* Hero Colors */
@@ -400,13 +402,13 @@ ul, ol {
 .hero-subtitle {
   font-size: clamp(20px, 3vw, 28px);
   font-weight: 600;
-  background: linear-gradient(135deg, #C9A961 0%, var(--gold) 50%, #B8962A 100%);
+  background: linear-gradient(135deg, var(--gold-medium) 0%, var(--gold) 50%, var(--gold-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 24px;
   line-height: 1.4;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.12)) drop-shadow(0 3px 6px rgba(212, 175, 55, 0.2));
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.12)) drop-shadow(0 3px 6px rgba(var(--gold-rgb), 0.2));
   animation: fadeInUp 1s ease-out 0.4s both;
 }
 
@@ -414,7 +416,7 @@ ul, ol {
 .hero-description {
   font-size: clamp(16px, 2vw, 18px);
   line-height: 1.8;
-  color: #3D3D3D;
+  color: var(--text-medium);
   max-width: 700px;
   margin: 0 auto 48px;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.1);
