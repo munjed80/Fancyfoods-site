@@ -30,6 +30,7 @@
   /* Hero Colors */
   --hero-bg-light: #f5f1e8;
   --hero-bg-mid: #e8e0d0;
+  --hero-bg-dark: #e7e2cf;
   --hero-bg-end: #f0ead9;
   
   /* Gradients */
@@ -1165,7 +1166,7 @@ ul, ol {
   background: var(--gradient-hero);
   padding: 80px 0;
   text-align: center;
-  color: var(--white);
+  color: var(--text-dark);
   position: relative;
   overflow: hidden;
 }
@@ -1203,14 +1204,20 @@ ul, ol {
   font-size: 50px;
   font-weight: 800;
   margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: var(--primary-green);
+  background: linear-gradient(135deg, var(--primary-green-dark) 0%, var(--primary-green) 50%, var(--primary-green-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .page-subtitle {
   font-size: 20px;
-  opacity: 0.95;
+  color: var(--text-medium);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 /* ============ Two Column Layout ============ */
