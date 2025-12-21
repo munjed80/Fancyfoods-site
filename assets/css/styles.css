@@ -398,9 +398,10 @@ ul, ol {
   bottom: var(--hero-text-glow-inset);
   left: var(--hero-text-glow-inset);
   background-color: transparent;
-  background:
+  background-image:
     radial-gradient(ellipse at var(--hero-glow-pos-1), var(--hero-glow-color-1), transparent var(--hero-glow-stop-1)),
     radial-gradient(ellipse at var(--hero-glow-pos-2), var(--hero-glow-color-2), transparent var(--hero-glow-stop-2));
+  background-repeat: no-repeat;
   opacity: 0.6;
   z-index: -1;
   pointer-events: none;
