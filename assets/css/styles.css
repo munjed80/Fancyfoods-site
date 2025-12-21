@@ -54,6 +54,7 @@
   --hero-text-light-rgb: 249, 250, 251;
   --hero-card-bg: rgba(255, 255, 255, 0.26);
   --product-cream: #FAF9F6;
+  --hero-text-glow-inset: -10%;
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -386,7 +387,7 @@ ul, ol {
 .hero-content::before {
   content: '';
   position: absolute;
-  inset: -10%;
+  inset: var(--hero-text-glow-inset);
   background:
     radial-gradient(ellipse at 35% 30%, rgba(0, 0, 0, 0.18), transparent 55%),
     radial-gradient(ellipse at 70% 60%, rgba(0, 0, 0, 0.14), transparent 60%);
