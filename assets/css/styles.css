@@ -61,6 +61,9 @@
   --hero-glow-pos-2: 70% 60%;
   --hero-glow-stop-1: 55%;
   --hero-glow-stop-2: 60%;
+  --hero-glow-image:
+    radial-gradient(ellipse at var(--hero-glow-pos-1), var(--hero-glow-color-1), transparent var(--hero-glow-stop-1)),
+    radial-gradient(ellipse at var(--hero-glow-pos-2), var(--hero-glow-color-2), transparent var(--hero-glow-stop-2));
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -398,9 +401,7 @@ ul, ol {
   bottom: var(--hero-text-glow-inset);
   left: var(--hero-text-glow-inset);
   background-color: transparent;
-  background-image:
-    radial-gradient(ellipse at var(--hero-glow-pos-1), var(--hero-glow-color-1), transparent var(--hero-glow-stop-1)),
-    radial-gradient(ellipse at var(--hero-glow-pos-2), var(--hero-glow-color-2), transparent var(--hero-glow-stop-2));
+  background-image: var(--hero-glow-image);
   background-repeat: no-repeat;
   opacity: 0.6;
   z-index: -1;
