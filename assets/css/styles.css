@@ -1011,14 +1011,6 @@ ul, ol {
   transform: scale(1.02);
 }
 
-.feature-icon svg * {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .feature-content h3 {
   font-size: 20px;
   font-weight: 700;
@@ -1335,14 +1327,6 @@ ul, ol {
   opacity: 0.6;
 }
 
-.contact-info-icon svg * {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .contact-info-card h3 {
   font-size: 20px;
   font-weight: 700;
@@ -1581,6 +1565,8 @@ ul, ol {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
+.feature-icon svg *,
+.contact-info-icon svg *,
 .service-icon svg * {
   fill: none;
   stroke: currentColor;
