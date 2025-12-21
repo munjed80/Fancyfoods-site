@@ -1224,8 +1224,7 @@ ul, ol {
 }
 
 /* ============ Page Hero (Inner Pages) ============ */
-.page-hero,
-.page-header {
+.page-hero {
   position: relative;
   min-height: clamp(180px, 22vh, 240px);
   padding: clamp(120px, 16vh, 160px) 0 clamp(50px, 10vh, 80px);
@@ -1238,8 +1237,7 @@ ul, ol {
   align-items: center;
 }
 
-.page-hero::before,
-.page-header::before {
+.page-hero::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -1251,8 +1249,7 @@ ul, ol {
   pointer-events: none;
 }
 
-.page-hero::after,
-.page-header::after {
+.page-hero::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -1266,14 +1263,12 @@ ul, ol {
   opacity: 0.8;
 }
 
-.page-hero .container,
-.page-header .container {
+.page-hero .container {
   position: relative;
   z-index: 1;
 }
 
-.page-hero-content,
-.page-header-content {
+.page-hero-content {
   max-width: 840px;
   margin: 0 auto;
   text-align: center;
@@ -2448,14 +2443,12 @@ body {
     margin: 0;
   }
   
-  .page-hero,
-  .page-header {
+  .page-hero {
     min-height: clamp(140px, 24vh, 200px);
     padding: 100px 0 60px;
   }
   
-  .page-hero::after,
-  .page-header::after {
+  .page-hero::after {
     width: min(320px, 72%);
   }
   
