@@ -387,7 +387,7 @@ ul, ol {
 .hero-content::before {
   content: '';
   position: absolute;
-  inset: var(--hero-text-glow-inset);
+  inset: var(--hero-text-glow-inset) var(--hero-text-glow-inset) var(--hero-text-glow-inset) var(--hero-text-glow-inset);
   background:
     radial-gradient(ellipse at 35% 30%, rgba(0, 0, 0, 0.18), transparent 55%),
     radial-gradient(ellipse at 70% 60%, rgba(0, 0, 0, 0.14), transparent 60%);
