@@ -15,6 +15,7 @@
   --gold-medium: #B58A3F;
   --gold-dark: #9D7A36;
   --gold-rgb: 201, 162, 77;
+  --whatsapp-green: #25D366;
   
   /* Neutral Colors */
   --white: #FFFFFF;
@@ -339,7 +340,7 @@ ul, ol {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.24);
+  background: var(--hero-before-overlay), rgba(255, 255, 255, 0.24);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.28);
@@ -1333,7 +1334,7 @@ ul, ol {
 }
 
 .whatsapp-icon {
-  color: #25D366;
+  color: var(--whatsapp-green);
   box-shadow: 0 10px 26px rgba(37, 211, 102, 0.32);
 }
 
