@@ -386,11 +386,10 @@ ul, ol {
 .hero-content::before {
   content: '';
   position: absolute;
-  inset: -10% -8% -12% -8%;
+  inset: -10%;
   background:
     radial-gradient(ellipse at 35% 30%, rgba(0, 0, 0, 0.18), transparent 55%),
     radial-gradient(ellipse at 70% 60%, rgba(0, 0, 0, 0.14), transparent 60%);
-  filter: blur(6px);
   opacity: 0.6;
   z-index: -1;
   pointer-events: none;
