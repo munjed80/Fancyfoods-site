@@ -54,16 +54,6 @@
   --hero-text-light-rgb: 249, 250, 251;
   --hero-card-bg: rgba(255, 255, 255, 0.26);
   --product-cream: #FAF9F6;
-  --hero-text-glow-inset: -28px;
-  --hero-glow-color-1: rgba(0, 0, 0, 0.18);
-  --hero-glow-color-2: rgba(0, 0, 0, 0.14);
-  --hero-glow-pos-1: 35% 30%;
-  --hero-glow-pos-2: 70% 60%;
-  --hero-glow-stop-1: 55%;
-  --hero-glow-stop-2: 60%;
-  --hero-glow-image:
-    radial-gradient(ellipse at var(--hero-glow-pos-1), var(--hero-glow-color-1), transparent var(--hero-glow-stop-1)),
-    radial-gradient(ellipse at var(--hero-glow-pos-2), var(--hero-glow-color-2), transparent var(--hero-glow-stop-2));
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -393,21 +383,6 @@ ul, ol {
   border: none;
 }
 
-.hero-content::before {
-  content: '';
-  position: absolute;
-  top: var(--hero-text-glow-inset);
-  right: var(--hero-text-glow-inset);
-  bottom: var(--hero-text-glow-inset);
-  left: var(--hero-text-glow-inset);
-  background-color: transparent;
-  background-image: var(--hero-glow-image);
-  background-repeat: no-repeat;
-  opacity: 0.6;
-  z-index: -1;
-  pointer-events: none;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -423,11 +398,14 @@ ul, ol {
 .hero-title {
   font-size: clamp(48px, 7vw, 72px);
   font-weight: 800;
-  color: var(--surface-cream);
+  color: #f5f1e4;
+  mix-blend-mode: difference;
   margin-bottom: 12px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.22);
+  text-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.32),
+    0 0 1px rgba(255, 255, 255, 0.55);
   animation: fadeInUp 1s ease-out 0.2s both;
 }
 
@@ -435,10 +413,13 @@ ul, ol {
 .hero-subtitle {
   font-size: clamp(20px, 3vw, 28px);
   font-weight: 600;
-  color: var(--gold);
+  color: #e8d5a5;
+  mix-blend-mode: difference;
   margin-bottom: 10px;
   line-height: 1.4;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.3),
+    0 0 1px rgba(255, 255, 255, 0.45);
   animation: fadeInUp 1s ease-out 0.4s both;
 }
 
@@ -446,12 +427,26 @@ ul, ol {
 .hero-description {
   font-size: clamp(16px, 2vw, 18px);
   line-height: 1.8;
-  color: rgba(var(--surface-cream-rgb), 0.92);
+  color: #f1ebdd;
+  mix-blend-mode: difference;
   max-width: 520px;
   margin: 0 0 32px;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.32),
+    0 0 1px rgba(255, 255, 255, 0.35);
   font-weight: 500;
   animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+@supports not (mix-blend-mode: difference) {
+  .hero-title,
+  .hero-subtitle,
+  .hero-description {
+    color: #f4efe2;
+    text-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.3),
+      0 0 1px rgba(255, 255, 255, 0.4);
+  }
 }
 
 /* Hero buttons */
