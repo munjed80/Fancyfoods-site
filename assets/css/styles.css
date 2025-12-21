@@ -339,7 +339,14 @@ ul, ol {
 /* Hero decorative background elements */
 .hero::before {
   content: '';
-  display: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.25) 42%,
+    rgba(0, 0, 0, 0.38) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero::after {
@@ -357,7 +364,7 @@ ul, ol {
 /* Hero content */
 .hero .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -381,6 +388,7 @@ ul, ol {
   border-radius: 0;
   box-shadow: none;
   border: none;
+  z-index: 3;
 }
 
 @keyframes fadeInUp {
@@ -398,14 +406,15 @@ ul, ol {
 .hero-title {
   font-size: clamp(48px, 7vw, 72px);
   font-weight: 800;
-  color: #f5f1e4;
-  mix-blend-mode: difference;
+  color: #f6f1e4;
+  -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.36);
   margin-bottom: 12px;
   line-height: 1.2;
   letter-spacing: -0.02em;
   text-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.32),
-    0 0 1px rgba(255, 255, 255, 0.55);
+    0 6px 18px rgba(0, 0, 0, 0.34),
+    0 2px 8px rgba(0, 0, 0, 0.26),
+    0 0 1px rgba(255, 255, 255, 0.35);
   animation: fadeInUp 1s ease-out 0.2s both;
 }
 
@@ -413,13 +422,12 @@ ul, ol {
 .hero-subtitle {
   font-size: clamp(20px, 3vw, 28px);
   font-weight: 600;
-  color: #e8d5a5;
-  mix-blend-mode: difference;
+  color: #ead5a6;
   margin-bottom: 10px;
   line-height: 1.4;
   text-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.3),
-    0 0 1px rgba(255, 255, 255, 0.45);
+    0 5px 14px rgba(0, 0, 0, 0.3),
+    0 1px 6px rgba(0, 0, 0, 0.2);
   animation: fadeInUp 1s ease-out 0.4s both;
 }
 
@@ -427,25 +435,32 @@ ul, ol {
 .hero-description {
   font-size: clamp(16px, 2vw, 18px);
   line-height: 1.8;
-  color: #f1ebdd;
-  mix-blend-mode: difference;
+  color: rgba(249, 246, 236, 0.92);
   max-width: 520px;
   margin: 0 0 32px;
   text-shadow:
     0 3px 12px rgba(0, 0, 0, 0.32),
-    0 0 1px rgba(255, 255, 255, 0.35);
+    0 1px 6px rgba(0, 0, 0, 0.22);
   font-weight: 500;
   animation: fadeInUp 1s ease-out 0.6s both;
 }
 
-@supports not (mix-blend-mode: difference) {
-  .hero-title,
-  .hero-subtitle,
-  .hero-description {
-    color: #f4efe2;
+@media (max-width: 768px) {
+  .hero-title {
+    -webkit-text-stroke: 0.45px rgba(0, 0, 0, 0.34);
     text-shadow:
-      0 8px 20px rgba(0, 0, 0, 0.3),
-      0 0 1px rgba(255, 255, 255, 0.4);
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      0 1px 6px rgba(0, 0, 0, 0.22);
+  }
+  .hero-subtitle {
+    text-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.28),
+      0 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  .hero-description {
+    text-shadow:
+      0 2px 10px rgba(0, 0, 0, 0.28),
+      0 1px 5px rgba(0, 0, 0, 0.2);
   }
 }
 
