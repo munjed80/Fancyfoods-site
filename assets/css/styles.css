@@ -395,7 +395,7 @@ ul, ol {
 .hero-title {
   font-size: clamp(48px, 7vw, 72px);
   font-weight: 800;
-  color: #fefcf6;
+  color: var(--hero-text-light);
   margin-bottom: 12px;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -418,7 +418,7 @@ ul, ol {
 .hero-description {
   font-size: clamp(16px, 2vw, 18px);
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(var(--hero-text-light-rgb), 0.9);
   max-width: 520px;
   margin: 0 0 32px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
