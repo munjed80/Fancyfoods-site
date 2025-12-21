@@ -21,6 +21,7 @@
   --white: #FFFFFF;
   --off-white: #FAFAFA;
   --surface-cream: #FAF8F3;
+  --surface-cream-rgb: 250, 248, 243;
   --light-gray: #F5F5F5;
   --gray: #E5E5E5;
   --medium-gray: #9CA3AF;
@@ -382,6 +383,19 @@ ul, ol {
   border: none;
 }
 
+.hero-content::before {
+  content: '';
+  position: absolute;
+  inset: -10% -8% -12% -8%;
+  background:
+    radial-gradient(ellipse at 35% 30%, rgba(0, 0, 0, 0.18), transparent 55%),
+    radial-gradient(ellipse at 70% 60%, rgba(0, 0, 0, 0.14), transparent 60%);
+  filter: blur(6px);
+  opacity: 0.6;
+  z-index: -1;
+  pointer-events: none;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -397,11 +411,11 @@ ul, ol {
 .hero-title {
   font-size: clamp(48px, 7vw, 72px);
   font-weight: 800;
-  color: var(--hero-text-light);
+  color: var(--surface-cream);
   margin-bottom: 12px;
   line-height: 1.2;
   letter-spacing: -0.02em;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.18);
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.22);
   animation: fadeInUp 1s ease-out 0.2s both;
 }
 
@@ -420,10 +434,10 @@ ul, ol {
 .hero-description {
   font-size: clamp(16px, 2vw, 18px);
   line-height: 1.8;
-  color: rgba(var(--hero-text-light-rgb), 0.9);
+  color: rgba(var(--surface-cream-rgb), 0.92);
   max-width: 520px;
   margin: 0 0 32px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
   font-weight: 500;
   animation: fadeInUp 1s ease-out 0.6s both;
 }
