@@ -38,11 +38,11 @@
   --gradient-gold: linear-gradient(135deg, #C9A24D 0%, #9D7A36 100%);
   --gradient-green: linear-gradient(135deg, #1F3D2B 0%, #3E6B4E 100%);
   --gradient-hero: linear-gradient(180deg, var(--hero-bg-light) 0%, var(--hero-bg-dark) 100%);
-  --hero-before-linear: linear-gradient(90deg, rgba(0, 0, 0, 0.3), transparent 50%, rgba(0, 0, 0, 0.15));
+  --hero-before-linear: linear-gradient(90deg, rgba(0, 0, 0, 0.14), transparent 50%, rgba(0, 0, 0, 0.08));
   --hero-before-gold: radial-gradient(circle at 20% 30%, rgba(var(--gold-rgb), 0.08), transparent 45%);
   --hero-before-green: radial-gradient(circle at 85% 65%, rgba(var(--primary-green-rgb), 0.08), transparent 50%);
-  --hero-overlay-strong: linear-gradient(120deg, rgba(17, 24, 39, 0.78) 0%, rgba(17, 24, 39, 0.6) 45%, rgba(17, 24, 39, 0.25) 100%);
-  --hero-overlay-soft: linear-gradient(180deg, rgba(var(--primary-green-rgb), 0.18) 0%, rgba(0, 0, 0, 0.05) 100%);
+  --hero-overlay-strong: linear-gradient(120deg, rgba(var(--primary-green-rgb), 0.18) 0%, rgba(var(--primary-green-rgb), 0.12) 45%, rgba(17, 24, 39, 0.08) 100%);
+  --hero-overlay-soft: linear-gradient(180deg, rgba(var(--primary-green-rgb), 0.12) 0%, rgba(0, 0, 0, 0.04) 100%);
   --hero-before-overlay: var(--hero-before-linear), var(--hero-before-gold), var(--hero-before-green);
   --hero-min-height: 480px;
   --hero-after-top: -160px;
@@ -50,7 +50,7 @@
   --hero-after-blur: 6px;
   --hero-text-light: #F9FAFB;
   --hero-text-light-rgb: 249, 250, 251;
-  --hero-card-bg: rgba(0, 0, 0, 0.55);
+  --hero-card-bg: rgba(255, 255, 255, 0.16);
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -385,11 +385,11 @@ ul, ol {
   flex-direction: column;
   gap: 10px;
   background: var(--hero-card-bg);
-  backdrop-filter: blur(8px) saturate(140%);
-  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @keyframes fadeInUp {
@@ -768,7 +768,7 @@ ul, ol {
 .card-icon {
   width: 70px;
   height: 70px;
-  background: var(--surface-cream);
+  background: radial-gradient(circle at 30% 30%, rgba(var(--gold-rgb), 0.14), rgba(250, 248, 243, 0.92));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -776,8 +776,8 @@ ul, ol {
   font-size: 32px;
   margin-bottom: 25px;
   color: var(--primary-green);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 26px rgba(var(--primary-green-rgb), 0.12);
+  border: 1px solid rgba(var(--gold-rgb), 0.25);
 }
 
 .card-title {
@@ -978,7 +978,7 @@ ul, ol {
   width: 60px;
   height: 60px;
   min-width: 60px;
-  background: var(--surface-cream);
+  background: linear-gradient(145deg, rgba(250, 248, 243, 0.9), rgba(255, 255, 255, 0.85));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -986,8 +986,8 @@ ul, ol {
   font-size: 28px;
   color: var(--primary-green);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 24px rgba(var(--primary-green-rgb), 0.12);
+  border: 1px solid rgba(var(--gold-rgb), 0.2);
   position: relative;
 }
 
@@ -1292,7 +1292,7 @@ ul, ol {
 .contact-info-icon {
   width: 70px;
   height: 70px;
-  background: var(--surface-cream);
+  background: linear-gradient(145deg, rgba(250, 248, 243, 0.92), rgba(255, 255, 255, 0.82));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1301,9 +1301,11 @@ ul, ol {
   margin: 0 auto 20px;
   color: var(--primary-green);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 28px rgba(var(--primary-green-rgb), 0.14);
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(var(--gold-rgb), 0.22);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .contact-info-icon::after {
@@ -1311,8 +1313,8 @@ ul, ol {
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.16) 0%, transparent 70%);
-  opacity: 0.5;
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.22) 0%, transparent 70%);
+  opacity: 0.55;
   transition: all 0.3s ease;
   filter: blur(10px);
   z-index: -1;
@@ -1546,7 +1548,7 @@ ul, ol {
 .service-icon {
   width: 80px;
   height: 80px;
-  background: var(--surface-cream);
+  background: radial-gradient(circle at 28% 28%, rgba(var(--gold-rgb), 0.14), rgba(250, 248, 243, 0.95));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1555,8 +1557,8 @@ ul, ol {
   margin-bottom: 25px;
   color: var(--primary-green);
   transition: all 0.4s ease;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 28px rgba(var(--primary-green-rgb), 0.14);
+  border: 1px solid rgba(var(--gold-rgb), 0.22);
 }
 
 .service-card:hover .service-icon {
@@ -1570,7 +1572,7 @@ ul, ol {
 .service-icon svg * {
   fill: none;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
