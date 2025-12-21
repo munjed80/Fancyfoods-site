@@ -37,6 +37,19 @@
   --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B8962A 100%);
   --gradient-green: linear-gradient(135deg, #2F5F1F 0%, #4A7C2F 100%);
   --gradient-hero: linear-gradient(180deg, var(--hero-bg-light) 0%, var(--hero-bg-dark) 100%);
+  --hero-before-linear: linear-gradient(90deg, rgba(0, 0, 0, 0.3), transparent 50%, rgba(0, 0, 0, 0.15));
+  --hero-before-gold: radial-gradient(circle at 20% 30%, rgba(var(--gold-rgb), 0.08), transparent 45%);
+  --hero-before-green: radial-gradient(circle at 85% 65%, rgba(var(--primary-green-rgb), 0.08), transparent 50%);
+  --hero-overlay-strong: linear-gradient(120deg, rgba(17, 24, 39, 0.78) 0%, rgba(17, 24, 39, 0.6) 45%, rgba(17, 24, 39, 0.25) 100%);
+  --hero-overlay-soft: linear-gradient(180deg, rgba(var(--primary-green-rgb), 0.18) 0%, rgba(0, 0, 0, 0.05) 100%);
+  --hero-before-overlay: var(--hero-before-linear), var(--hero-before-gold), var(--hero-before-green);
+  --hero-min-height: 480px;
+  --hero-after-top: -160px;
+  --hero-after-opacity: 0.75;
+  --hero-after-blur: 6px;
+  --hero-text-light: #F9FAFB;
+  --hero-text-light-rgb: 249, 250, 251;
+  --hero-card-bg: rgba(17, 24, 39, 0.42);
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -306,11 +319,11 @@ ul, ol {
 /* ============ Hero Section - Elegant & Professional ============ */
 .hero {
   position: relative;
-  min-height: 70vh;
+  min-height: max(70vh, var(--hero-min-height));
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, rgba(17, 24, 39, 0.78) 0%, rgba(17, 24, 39, 0.6) 45%, rgba(17, 24, 39, 0.25) 100%), linear-gradient(180deg, rgba(var(--primary-green-rgb), 0.18) 0%, rgba(0, 0, 0, 0.05) 100%), url('../images/hero-section.png');
+  background: var(--hero-overlay-strong), var(--hero-overlay-soft), url('../images/hero-section.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -324,36 +337,28 @@ ul, ol {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), transparent 50%, rgba(0, 0, 0, 0.15)), radial-gradient(circle at 20% 30%, rgba(var(--gold-rgb), 0.08), transparent 45%), radial-gradient(circle at 85% 65%, rgba(var(--primary-green-rgb), 0.08), transparent 50%);
+  background: rgba(0, 0, 0, 0.12);
+  background: var(--hero-before-overlay);
   z-index: 0;
 }
 
 .hero::after {
   content: '';
   position: absolute;
-  top: -45%;
-  right: -5%;
+  top: var(--hero-after-top);
+  right: 40px;
   width: 500px;
   height: 500px;
   background: radial-gradient(circle, rgba(var(--gold-rgb), 0.06) 0%, transparent 70%);
   border-radius: 50%;
-  opacity: 0.75;
-  filter: blur(6px);
-}
-
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(30px, -30px) scale(1.05);
-  }
+  opacity: var(--hero-after-opacity);
+  filter: blur(var(--hero-after-blur));
 }
 
 /* Use dynamic viewport height on supported browsers for better mobile experience */
 @supports (height: 100dvh) {
   .hero {
-    min-height: 70dvh;
+    min-height: max(70dvh, var(--hero-min-height));
   }
 }
 
@@ -378,7 +383,8 @@ ul, ol {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: rgba(17, 24, 39, 0.42);
+  background-color: rgba(17, 24, 39, 0.6);
+  background: var(--hero-card-bg);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border-radius: 26px;
@@ -401,7 +407,7 @@ ul, ol {
 .hero-title {
   font-size: clamp(48px, 7vw, 72px);
   font-weight: 800;
-  color: #F9FAFB;
+  color: var(--hero-text-light);
   margin-bottom: 12px;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -424,7 +430,7 @@ ul, ol {
 .hero-description {
   font-size: clamp(16px, 2vw, 18px);
   line-height: 1.8;
-  color: rgba(249, 250, 251, 0.85);
+  color: rgba(var(--hero-text-light-rgb), 0.85);
   max-width: 520px;
   margin: 0 0 32px;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
@@ -445,8 +451,8 @@ ul, ol {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #2F5F1F 0%, #4A7C2F 60%, #D4AF37 120%);
-  color: #F9FAFB;
+  background: linear-gradient(135deg, #2F5F1F 0%, #4A7C2F 60%, #D4AF37 100%);
+  color: var(--hero-text-light);
   padding: 16px 40px;
   font-size: 15px;
   font-weight: 600;
@@ -489,7 +495,7 @@ ul, ol {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.12);
-  color: #F9FAFB;
+  color: var(--hero-text-light);
   padding: 16px 40px;
   font-size: 15px;
   font-weight: 600;
@@ -521,7 +527,7 @@ ul, ol {
 }
 
 .hero-btn-secondary:hover {
-  color: #0B1621;
+  color: var(--white);
   border-color: transparent;
   transform: translateY(-3px) scale(1.01);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
@@ -2331,8 +2337,18 @@ body {
   
   .hero {
     padding: 110px 0 70px;
-    min-height: 55vh;
+    min-height: max(55vh, var(--hero-min-height));
     background-position: center;
+  }
+  
+  .hero::after {
+    top: -120px;
+  }
+  
+  @supports (height: 100dvh) {
+    .hero {
+      min-height: max(55dvh, var(--hero-min-height));
+    }
   }
   
   .hero .container {
