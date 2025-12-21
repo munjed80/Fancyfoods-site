@@ -6,26 +6,27 @@
 /* ============ CSS Variables ============ */
 :root {
   /* Brand Colors */
-  --primary-green: #2F5F1F;
-  --primary-green-light: #4A7C2F;
-  --primary-green-dark: #1E3F14;
-  --primary-green-rgb: 47, 95, 31;
-  --gold: #D4AF37;
-  --gold-light: #E5C45F;
-  --gold-medium: #C9A961;
-  --gold-dark: #B8962A;
-  --gold-rgb: 212, 175, 55;
+  --primary-green: #1F3D2B;
+  --primary-green-light: #3E6B4E;
+  --primary-green-dark: #162C20;
+  --primary-green-rgb: 31, 61, 43;
+  --gold: #C9A24D;
+  --gold-light: #D9B96F;
+  --gold-medium: #B58A3F;
+  --gold-dark: #9D7A36;
+  --gold-rgb: 201, 162, 77;
   
   /* Neutral Colors */
   --white: #FFFFFF;
   --off-white: #FAFAFA;
+  --surface-cream: #FAF8F3;
   --light-gray: #F5F5F5;
   --gray: #E5E5E5;
   --medium-gray: #9CA3AF;
   --dark-gray: #4B5563;
-  --text-dark: #1F2937;
-  --text-medium: #3D3D3D;
-  --text-light: #6B7280;
+  --text-dark: #2F332E;
+  --text-medium: #555555;
+  --text-light: #707070;
   
   /* Hero Colors */
   --hero-bg-light: #f5f1e8;
@@ -34,8 +35,8 @@
   --hero-bg-end: #f0ead9;
   
   /* Gradients */
-  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B8962A 100%);
-  --gradient-green: linear-gradient(135deg, #2F5F1F 0%, #4A7C2F 100%);
+  --gradient-gold: linear-gradient(135deg, #C9A24D 0%, #9D7A36 100%);
+  --gradient-green: linear-gradient(135deg, #1F3D2B 0%, #3E6B4E 100%);
   --gradient-hero: linear-gradient(180deg, var(--hero-bg-light) 0%, var(--hero-bg-dark) 100%);
   --hero-before-linear: linear-gradient(90deg, rgba(0, 0, 0, 0.3), transparent 50%, rgba(0, 0, 0, 0.15));
   --hero-before-gold: radial-gradient(circle at 20% 30%, rgba(var(--gold-rgb), 0.08), transparent 45%);
@@ -49,7 +50,7 @@
   --hero-after-blur: 6px;
   --hero-text-light: #F9FAFB;
   --hero-text-light-rgb: 249, 250, 251;
-  --hero-card-bg: rgba(17, 24, 39, 0.42);
+  --hero-card-bg: rgba(0, 0, 0, 0.55);
   
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -383,11 +384,10 @@ ul, ol {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: rgba(17, 24, 39, 0.6);
   background: var(--hero-card-bg);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border-radius: 26px;
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
@@ -768,13 +768,16 @@ ul, ol {
 .card-icon {
   width: 70px;
   height: 70px;
-  background: rgba(47, 95, 31, 0.1);
+  background: var(--surface-cream);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
   margin-bottom: 25px;
+  color: var(--primary-green);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .card-title {
@@ -945,7 +948,7 @@ ul, ol {
   border-radius: var(--card-radius);
   box-shadow: var(--shadow-sm);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--gray);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -963,8 +966,8 @@ ul, ol {
 
 .feature-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(47, 95, 31, 0.15);
-  border-color: var(--gold-light);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .feature-card:hover::before {
@@ -975,36 +978,37 @@ ul, ol {
   width: 60px;
   height: 60px;
   min-width: 60px;
-  background: var(--gradient-gold);
+  background: var(--surface-cream);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  color: var(--white);
+  color: var(--primary-green);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   position: relative;
 }
 
 .feature-icon::before {
   content: '';
   position: absolute;
-  inset: -3px;
+  inset: -4px;
   border-radius: 50%;
-  background: var(--gradient-gold);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  filter: blur(8px);
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.18) 0%, transparent 70%);
+  opacity: 0.35;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .feature-card:hover .feature-icon {
-  transform: scale(1.15) rotate(10deg);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .feature-card:hover .feature-icon::before {
-  opacity: 0.6;
+  opacity: 0.55;
+  transform: scale(1.02);
 }
 
 .feature-content h3 {
@@ -1277,8 +1281,8 @@ ul, ol {
 
 .contact-info-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
-  border-color: var(--gold-light);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .contact-info-card:hover::before {
@@ -1288,17 +1292,18 @@ ul, ol {
 .contact-info-icon {
   width: 70px;
   height: 70px;
-  background: var(--gradient-gold);
+  background: var(--surface-cream);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
   margin: 0 auto 20px;
-  color: white;
+  color: var(--primary-green);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .contact-info-icon::after {
@@ -1306,8 +1311,8 @@ ul, ol {
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  background: var(--gradient-gold);
-  opacity: 0;
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.16) 0%, transparent 70%);
+  opacity: 0.5;
   transition: all 0.3s ease;
   filter: blur(10px);
   z-index: -1;
@@ -1315,11 +1320,11 @@ ul, ol {
 
 .contact-info-card:hover .contact-info-icon {
   transform: scale(1.1) translateY(-5px);
-  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
 .contact-info-card:hover .contact-info-icon::after {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .contact-info-card h3 {
@@ -1526,8 +1531,8 @@ ul, ol {
 
 .service-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(47, 95, 31, 0.2);
-  border-color: var(--gold-light);
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .service-card:hover::before {
@@ -1541,7 +1546,7 @@ ul, ol {
 .service-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(47, 95, 31, 0.1) 100%);
+  background: var(--surface-cream);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1550,14 +1555,24 @@ ul, ol {
   margin-bottom: 25px;
   color: var(--primary-green);
   transition: all 0.4s ease;
-  box-shadow: 0 4px 12px rgba(47, 95, 31, 0.15);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .service-card:hover .service-icon {
-  background: var(--gradient-gold);
-  color: white;
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+  color: var(--primary-green-light);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon svg *,
+.contact-info-icon svg *,
+.service-icon svg * {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .service-card h3 {
