@@ -337,11 +337,13 @@ ul, ol {
 
 /* Hero decorative background elements */
 .hero::before {
-  content: none;
+  content: '';
+  display: none;
 }
 
 .hero::after {
-  content: none;
+  content: '';
+  display: none;
 }
 
 /* Use dynamic viewport height on supported browsers for better mobile experience */
