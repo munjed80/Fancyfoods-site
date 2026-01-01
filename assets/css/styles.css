@@ -1191,6 +1191,14 @@ ul, ol {
   color: var(--gold);
 }
 
+.footer-col h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 25px;
+  color: var(--gold-light);
+}
+
 .footer-col p,
 .footer-col li {
   font-size: 15px;
@@ -1212,15 +1220,130 @@ ul, ol {
   color: var(--gold);
 }
 
+/* Footer Social Icons */
+.footer-social {
+  margin-top: 25px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.social-icon:hover {
+  background: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--gold-rgb), 0.3);
+  border-color: var(--gold);
+}
+
+.social-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* Footer WhatsApp Button */
+.footer-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.footer-whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  opacity: 1;
+}
+
+.footer-whatsapp-btn svg {
+  flex-shrink: 0;
+}
+
+/* Footer Bottom */
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .footer-bottom p {
   font-size: 14px;
   opacity: 0.8;
+  margin: 0;
+}
+
+/* Footer Legal Links */
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-legal a {
+  color: var(--white);
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer-legal a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.footer-legal a:hover {
+  opacity: 1;
+  color: var(--gold-light);
+}
+
+.footer-legal a:hover::after {
+  width: 100%;
+}
+
+.footer-legal .separator {
+  opacity: 0.5;
+  margin: 0 4px;
 }
 
 /* ============ Page Hero (Inner Pages) ============ */
@@ -2522,6 +2645,24 @@ body {
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+  
+  .footer-social,
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .footer-whatsapp-btn {
+    display: inline-flex;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-legal .separator {
+    display: none;
   }
 }
 
