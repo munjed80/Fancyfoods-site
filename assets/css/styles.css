@@ -327,10 +327,7 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../images/hero-section.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--hero-bg-dark);
   padding: 140px 0 80px;
   overflow: hidden;
   isolation: isolate;
@@ -351,7 +348,24 @@ ul, ol {
 
 .page-home .hero::after {
   content: '';
-  display: none;
+  position: absolute;
+  inset: 0;
+  background: url('../images/hero-section.png') center/cover no-repeat;
+  z-index: 0;
+  transform: scale(1.1);
+  transform-origin: center center;
+  will-change: transform;
+  animation: heroZoomOut 8s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes heroZoomOut {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 /* Use dynamic viewport height on supported browsers for better mobile experience */
@@ -2731,9 +2745,13 @@ body {
   .about-image-photo,
   .page-hero::after,
   .page-home .hero::before,
-  .page-home .hero::after,
   .page-home .hero-shape {
     animation: none !important;
+  }
+  
+  /* Hero background handled separately to keep zoom disabled when motion is reduced */
+  .page-home .hero::after {
+    transform: scale(1) !important;
   }
   
   .page-home .hero-content {
