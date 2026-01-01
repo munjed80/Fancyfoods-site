@@ -1216,8 +1216,8 @@ ul, ol {
 .footer-col p,
 .footer-col li {
   font-size: 15px;
-  opacity: 0.9;
-  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.9;
 }
 
 .footer-col ul li {
@@ -1225,13 +1225,22 @@ ul, ol {
 }
 
 .footer-col a {
-  opacity: 0.9;
+  color: var(--white);
+  opacity: 1;
   transition: var(--transition-fast);
 }
 
 .footer-col a:hover {
-  opacity: 1;
-  color: var(--gold);
+  color: var(--gold-light);
+}
+
+.footer-col a:visited {
+  color: var(--white);
+}
+
+.footer-col a:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 /* Footer Social Icons */
@@ -1312,8 +1321,9 @@ ul, ol {
 
 .footer-bottom p {
   font-size: 14px;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
+  line-height: 1.8;
 }
 
 /* Footer Legal Links */
@@ -1325,39 +1335,55 @@ ul, ol {
   gap: 8px;
   font-size: 14px;
   margin-bottom: 10px;
+  line-height: 1.8;
 }
 
 .footer-legal a {
   color: var(--white);
-  opacity: 0.85;
+  opacity: 1;
   transition: all 0.3s ease;
   text-decoration: none;
   position: relative;
+  padding: 4px 8px;
 }
 
 .footer-legal a::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
+  bottom: 2px;
+  left: 8px;
   width: 0;
   height: 1px;
-  background: var(--gold);
+  background: var(--gold-light);
   transition: width 0.3s ease;
 }
 
 .footer-legal a:hover {
-  opacity: 1;
   color: var(--gold-light);
 }
 
 .footer-legal a:hover::after {
-  width: 100%;
+  width: calc(100% - 16px);
+}
+
+.footer-legal a:visited {
+  color: var(--white);
+}
+
+.footer-legal a:visited:hover {
+  color: var(--gold-light);
+}
+
+.footer-legal a:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .footer-legal .separator {
   opacity: 0.5;
   margin: 0 4px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* ============ Page Hero (Inner Pages) ============ */
@@ -2912,7 +2938,16 @@ body {
   
   .footer-legal {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    padding: 0 15px;
+  }
+  
+  .footer-legal a {
+    padding: 6px 10px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .footer-legal .separator {
