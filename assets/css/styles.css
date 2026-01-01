@@ -1433,6 +1433,150 @@ ul, ol {
   line-height: 1.7;
 }
 
+.hero-products.page-hero,
+.hero-contact.page-hero {
+  min-height: clamp(260px, 34vh, 420px);
+  padding: clamp(110px, 18vh, 150px) 0 clamp(58px, 10vh, 90px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 18px 46px rgba(var(--primary-green-rgb), 0.08);
+  isolation: isolate;
+}
+
+.hero-products.page-hero {
+  background-image:
+    linear-gradient(120deg, rgba(17, 46, 33, 0.95) 0%, rgba(43, 84, 60, 0.82) 48%, rgba(241, 232, 216, 0.92) 100%),
+    radial-gradient(circle at 82% 42%, rgba(var(--gold-rgb), 0.2) 0%, transparent 38%),
+    radial-gradient(circle at 18% 68%, rgba(var(--primary-green-rgb), 0.14) 0%, transparent 40%);
+}
+
+.hero-contact.page-hero {
+  background-image:
+    linear-gradient(135deg, rgba(36, 66, 50, 0.92) 0%, rgba(29, 70, 47, 0.82) 40%, rgba(245, 236, 218, 0.94) 100%),
+    radial-gradient(circle at 18% 36%, rgba(var(--gold-rgb), 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 86% 70%, rgba(var(--primary-green-rgb), 0.12) 0%, transparent 44%);
+}
+
+.hero-products.page-hero::before,
+.hero-contact.page-hero::before {
+  background: linear-gradient(110deg, rgba(0, 0, 0, 0.14) 0%, rgba(255, 255, 255, 0.18) 46%, rgba(0, 0, 0, 0.08) 100%);
+  opacity: 0.7;
+}
+
+.hero-products .page-hero-content,
+.hero-contact .page-hero-content {
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(var(--primary-green-rgb), 0.12);
+  padding: 32px 36px;
+  max-width: 760px;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-products .page-title,
+.hero-contact .page-title {
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--primary-green-dark);
+  text-shadow: 0 10px 30px rgba(var(--primary-green-rgb), 0.14);
+  letter-spacing: -0.015em;
+  padding-bottom: 14px;
+}
+
+.hero-products .page-title::after,
+.hero-contact .page-title::after {
+  width: 120px;
+  height: 3px;
+  box-shadow: 0 8px 22px rgba(var(--gold-rgb), 0.28);
+}
+
+.hero-products .page-subtitle,
+.hero-contact .page-subtitle {
+  font-size: clamp(17px, 2.2vw, 21px);
+  color: rgba(var(--primary-green-rgb), 0.78);
+  line-height: 1.8;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+.hero-products .page-hero-content,
+.hero-contact .page-hero-content,
+.hero-products.page-hero,
+.hero-contact.page-hero {
+  text-align: center;
+}
+
+.hero-products .page-hero-content::after,
+.hero-contact .page-hero-content::after {
+  content: '';
+  position: absolute;
+  inset: 12px -24px -12px -24px;
+  border-radius: 22px;
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.08) 0%, transparent 55%);
+  opacity: 0.65;
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-products.page-hero::after,
+.hero-contact.page-hero::after {
+  width: min(260px, 48%);
+  height: 3px;
+  box-shadow: 0 14px 30px rgba(var(--gold-rgb), 0.28);
+}
+
+.page-hero .hero-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.page-hero .hero-actions .btn-primary,
+.page-hero .hero-actions .btn {
+  padding: 15px 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(var(--primary-green-rgb), 0.14);
+  font-weight: 700;
+}
+
+.page-hero .hero-actions .btn-primary:hover,
+.page-hero .hero-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(var(--primary-green-rgb), 0.2);
+}
+
+.page-hero .hero-actions .btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .hero-products.page-hero,
+  .hero-contact.page-hero {
+    padding: 100px 0 64px;
+    min-height: clamp(240px, 34vh, 360px);
+    background-position: center;
+  }
+  
+  .hero-products .page-hero-content,
+  .hero-contact .page-hero-content {
+    padding: 26px 22px;
+  }
+  
+  .hero-products .page-hero-content::after,
+  .hero-contact .page-hero-content::after {
+    display: none;
+  }
+}
 /* ============ Two Column Layout ============ */
 .two-column {
   display: grid;
