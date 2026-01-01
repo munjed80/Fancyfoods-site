@@ -1734,6 +1734,98 @@ ul, ol {
   width: 100%;
 }
 
+.contact-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.contact-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(var(--primary-green-rgb), 0.14);
+  background: linear-gradient(135deg, rgba(var(--primary-green-rgb), 0.08) 0%, rgba(255, 255, 255, 0.95) 100%);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+  color: var(--primary-green);
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.contact-info-card .contact-cta-btn::after {
+  content: none;
+}
+
+.contact-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.contact-cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.contact-cta-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(var(--gold-rgb), 0.16);
+}
+
+.contact-cta-btn--whatsapp {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.12) 0%, rgba(var(--primary-green-rgb), 0.04) 100%);
+  border-color: rgba(37, 211, 102, 0.28);
+  box-shadow: 0 12px 26px rgba(37, 211, 102, 0.18);
+}
+
+.contact-cta-btn--whatsapp .contact-cta-icon {
+  color: var(--whatsapp-green);
+}
+
+.contact-cta-btn--whatsapp:hover {
+  box-shadow: 0 16px 30px rgba(37, 211, 102, 0.22);
+}
+
+.contact-cta-btn--email {
+  background: linear-gradient(135deg, rgba(var(--gold-rgb), 0.14) 0%, rgba(255, 255, 255, 0.96) 100%);
+  border-color: rgba(var(--gold-rgb), 0.32);
+  box-shadow: 0 12px 26px rgba(var(--gold-rgb), 0.18);
+}
+
+.contact-cta-btn--email .contact-cta-icon {
+  color: var(--gold-dark);
+}
+
+.contact-cta-btn--email:hover {
+  box-shadow: 0 16px 30px rgba(var(--gold-rgb), 0.22);
+}
+
+.contact-cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--primary-green);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.contact-cta-text {
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
 /* ============ About Section ============ */
 .about-content {
   display: grid;

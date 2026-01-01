@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initRippleEffect();
   initSmoothScroll();
   initWhatsAppButton();
+  initContactButtons();
   initPageTransitions();
 });
 
@@ -428,6 +429,42 @@ function initWhatsAppButton() {
 }
 
 /**
+ * Enhance contact CTA buttons with tel fallback on long-press/context menu
+ */
+function initContactButtons() {
+  const contactButtons = document.querySelectorAll('.contact-cta-btn[data-tel]');
+  if (!contactButtons.length) return;
+
+  const LONG_PRESS_MS = 650; // iOS-friendly long-press before context menu
+
+  contactButtons.forEach(btn => {
+    const tel = btn.dataset.tel;
+    if (!tel) return;
+
+    const cleanTel = tel.replace(/^tel:/, '');
+    const telHref = `tel:${cleanTel}`;
+    let pressTimer;
+
+    btn.addEventListener('touchstart', () => {
+      pressTimer = setTimeout(() => {
+        window.location.href = telHref;
+      }, LONG_PRESS_MS);
+    }, { passive: true });
+
+    ['touchend', 'touchcancel'].forEach(evt => {
+      btn.addEventListener(evt, () => {
+        clearTimeout(pressTimer);
+      }, { passive: true });
+    });
+
+    btn.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      window.location.href = telHref;
+    });
+  });
+}
+
+/**
  * Initialize page transitions
  */
 function initPageTransitions() {
@@ -579,5 +616,3 @@ function throttle(func, limit) {
     }
   };
 }
-
-
