@@ -488,13 +488,18 @@ ul, ol {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../images/hero-section.png') center/cover no-repeat;
+  background: url('../images/optimized/hero-section.webp') center/cover no-repeat;
   z-index: 0;
   transform: scale(1.15);
   transform-origin: center center;
   will-change: transform;
   animation: heroZoomOut 10s ease-out forwards;
   pointer-events: none;
+}
+
+/* Fallback for browsers without WebP support */
+.no-webp .page-home .hero::after {
+  background-image: url('../images/hero-section.png');
 }
 
 /* Luxury vignette overlay */

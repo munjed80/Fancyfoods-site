@@ -6,22 +6,33 @@
   <meta name="description" content="Browse our wide collection of premium nuts and snacks - Pistachios, Cashews, Almonds, Seeds and more | تصفح مجموعتنا الواسعة من المكسرات والموالح الفاخرة">
   <title>Products | المنتجات - Fancy Foods</title>
   
-  <!-- Fonts -->
+  <!-- Fonts - Optimized with display=swap for faster rendering -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/logo.png">
+  
+  <!-- Critical CSS for above-the-fold content -->
+  <style>
+    .page-loader{position:fixed;inset:0;background:linear-gradient(135deg,#162C20 0%,#1F3D2B 100%);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:30px}
+    .page-loader.hidden{opacity:0;visibility:hidden}
+    .loader-logo{width:120px;height:120px}
+  </style>
 </head>
 <body class="rtl page-inner">
 
 <!-- Premium Page Loader -->
 <div class="page-loader" id="pageLoader">
-  <img src="assets/images/logo.png" alt="Fancy Foods" class="loader-logo">
+  <picture>
+    <source srcset="assets/images/optimized/logo.webp" type="image/webp">
+    <img src="assets/images/logo.png" alt="Fancy Foods" class="loader-logo" width="120" height="120">
+  </picture>
   <div class="loader-spinner"></div>
 </div>
 
@@ -35,7 +46,10 @@
     <div class="header-content">
       <!-- Logo -->
       <a href="index.html" class="logo">
-        <img src="assets/images/logo.png" alt="Fancy Foods Logo" class="logo-icon">
+        <picture>
+          <source srcset="assets/images/optimized/logo.webp" type="image/webp">
+          <img src="assets/images/logo.png" alt="Fancy Foods Logo" class="logo-icon" width="60" height="60">
+        </picture>
         <div class="logo-text">
           <span class="logo-text-main" data-lang="ar">فانسي فودز</span>
           <span class="logo-text-main" data-lang="en" style="display:none;">Fancy Foods</span>
@@ -107,7 +121,10 @@
     <div class="cards-grid">
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Sunflower Seeds.png" alt="Sunflower Seeds / بزر دوار الشمس">
+          <picture>
+            <source srcset="assets/images/optimized/Sunflower-Seeds.webp" type="image/webp">
+            <img src="assets/images/Sunflower Seeds.png" alt="Sunflower Seeds / بزر دوار الشمس" width="220" height="200" loading="lazy">
+          </picture>
           <span class="product-badge" data-lang="ar">الأكثر طلباً</span>
           <span class="product-badge" data-lang="en" style="display:none;">Top Seller</span>
         </div>
@@ -123,7 +140,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Black Seeds.png" alt="Black Seeds / بزر أسود">
+          <picture>
+            <source srcset="assets/images/optimized/Black-Seeds.webp" type="image/webp">
+            <img src="assets/images/Black Seeds.png" alt="Black Seeds / بزر أسود" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">بزورات</span>
@@ -137,7 +157,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/White Seeds.png" alt="White Seeds / بزر أبيض">
+          <picture>
+            <source srcset="assets/images/optimized/White-Seeds.webp" type="image/webp">
+            <img src="assets/images/White Seeds.png" alt="White Seeds / بزر أبيض" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">بزورات</span>
@@ -151,7 +174,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Squash Seeds.png" alt="Squash Seeds / بزر كوسا">
+          <picture>
+            <source srcset="assets/images/optimized/Squash-Seeds.webp" type="image/webp">
+            <img src="assets/images/Squash Seeds.png" alt="Squash Seeds / بزر كوسا" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">بزورات</span>
@@ -165,7 +191,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Smoked Peanuts.png" alt="Smoked Peanuts / فستق سوداني مدخن">
+          <picture>
+            <source srcset="assets/images/optimized/Smoked-Peanuts.webp" type="image/webp">
+            <img src="assets/images/Smoked Peanuts.png" alt="Smoked Peanuts / فستق سوداني مدخن" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">فستق سوداني</span>
@@ -179,7 +208,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Peanuts Krik.png" alt="Peanuts Krik / فستق سوداني كريك">
+          <picture>
+            <source srcset="assets/images/optimized/Peanuts-Krik.webp" type="image/webp">
+            <img src="assets/images/Peanuts Krik.png" alt="Peanuts Krik / فستق سوداني كريك" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">فستق سوداني</span>
@@ -193,7 +225,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Smoked Peanuts.png" alt="Salted Peanuts / فستق سوداني مالح">
+          <picture>
+            <source srcset="assets/images/optimized/Smoked-Peanuts.webp" type="image/webp">
+            <img src="assets/images/Smoked Peanuts.png" alt="Salted Peanuts / فستق سوداني مالح" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">فستق سوداني</span>
@@ -207,7 +242,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Salted Pistachios.png" alt="Aleppo Pistachios / فستق حلبي">
+          <picture>
+            <source srcset="assets/images/optimized/Salted-Pistachios.webp" type="image/webp">
+            <img src="assets/images/Salted Pistachios.png" alt="Aleppo Pistachios / فستق حلبي" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">فستق</span>
@@ -242,7 +280,10 @@
     <div class="cards-grid">
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Smoked Almonds.png" alt="Smoked Almonds / لوز مدخن">
+          <picture>
+            <source srcset="assets/images/optimized/Smoked-Almonds.webp" type="image/webp">
+            <img src="assets/images/Smoked Almonds.png" alt="Smoked Almonds / لوز مدخن" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">لوز</span>
@@ -256,7 +297,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Plain Almonds.png" alt="Plain Almonds / لوز سادة">
+          <picture>
+            <source srcset="assets/images/optimized/Plain-Almonds.webp" type="image/webp">
+            <img src="assets/images/Plain Almonds.png" alt="Plain Almonds / لوز سادة" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">لوز</span>
@@ -270,7 +314,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Plain Almonds.png" alt="Salted Almonds / لوز مالح">
+          <picture>
+            <source srcset="assets/images/optimized/Plain-Almonds.webp" type="image/webp">
+            <img src="assets/images/Plain Almonds.png" alt="Salted Almonds / لوز مالح" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">لوز</span>
@@ -284,7 +331,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Green Freek Almonds.png" alt="Green Freek Almonds / لوز فريك">
+          <picture>
+            <source srcset="assets/images/optimized/Green-Freek-Almonds.webp" type="image/webp">
+            <img src="assets/images/Green Freek Almonds.png" alt="Green Freek Almonds / لوز فريك" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">لوز</span>
@@ -298,7 +348,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Smoked Cashews.png" alt="Smoked Cashews / كاجو مدخن">
+          <picture>
+            <source srcset="assets/images/optimized/Smoked-Cashews.webp" type="image/webp">
+            <img src="assets/images/Smoked Cashews.png" alt="Smoked Cashews / كاجو مدخن" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">كاجو</span>
@@ -312,7 +365,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Plain Cashews.png" alt="Plain Cashews / كاجو سادة">
+          <picture>
+            <source srcset="assets/images/optimized/Plain-Cashews.webp" type="image/webp">
+            <img src="assets/images/Plain Cashews.png" alt="Plain Cashews / كاجو سادة" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">كاجو</span>
@@ -326,7 +382,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Cheese Cashews.png" alt="Cheese Cashews / كاجو جبنة">
+          <picture>
+            <source srcset="assets/images/optimized/Cheese-Cashews.webp" type="image/webp">
+            <img src="assets/images/Cheese Cashews.png" alt="Cheese Cashews / كاجو جبنة" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">كاجو</span>
@@ -340,7 +399,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Sugar-Coated Chickpeas.png" alt="Sugar-Coated Chickpeas / قضامة بسكر">
+          <picture>
+            <source srcset="assets/images/optimized/Sugar-Coated-Chickpeas.webp" type="image/webp">
+            <img src="assets/images/Sugar-Coated Chickpeas.png" alt="Sugar-Coated Chickpeas / قضامة بسكر" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">قضامة</span>
@@ -354,7 +416,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Roasted Chickpeas.png" alt="Roasted Chickpeas / قضامة محمصة">
+          <picture>
+            <source srcset="assets/images/optimized/Roasted-Chickpeas.webp" type="image/webp">
+            <img src="assets/images/Roasted Chickpeas.png" alt="Roasted Chickpeas / قضامة محمصة" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">قضامة</span>
@@ -368,7 +433,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Soy Nuts.png" alt="Soy Nuts / فول صويا">
+          <picture>
+            <source srcset="assets/images/optimized/Soy-Nuts.webp" type="image/webp">
+            <img src="assets/images/Soy Nuts.png" alt="Soy Nuts / فول صويا" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">بقوليات</span>
@@ -382,7 +450,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Crunchy BBQ Corn.png" alt="Crunchy BBQ Corn / ذرة هشة باربيكيو">
+          <picture>
+            <source srcset="assets/images/optimized/Crunchy-BBQ-Corn.webp" type="image/webp">
+            <img src="assets/images/Crunchy BBQ Corn.png" alt="Crunchy BBQ Corn / ذرة هشة باربيكيو" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">ذرة هشة</span>
@@ -396,7 +467,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Crunchy Cheese Corn.png" alt="Crunchy Cheese Corn / ذرة هشة جبنة">
+          <picture>
+            <source srcset="assets/images/optimized/Crunchy-Cheese-Corn.webp" type="image/webp">
+            <img src="assets/images/Crunchy Cheese Corn.png" alt="Crunchy Cheese Corn / ذرة هشة جبنة" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">ذرة هشة</span>
@@ -410,7 +484,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Chinese Nuts Mix.png" alt="Chinese Nuts Mix / مكسرات صينية">
+          <picture>
+            <source srcset="assets/images/optimized/Chinese-Nuts-Mix.webp" type="image/webp">
+            <img src="assets/images/Chinese Nuts Mix.png" alt="Chinese Nuts Mix / مكسرات صينية" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">تشكيلة</span>
@@ -424,7 +501,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Plain Cashews.png" alt="Classic Mix / مشكّل كلاسيك">
+          <picture>
+            <source srcset="assets/images/optimized/Plain-Cashews.webp" type="image/webp">
+            <img src="assets/images/Plain Cashews.png" alt="Classic Mix / مشكّل كلاسيك" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">تشكيلة</span>
@@ -438,7 +518,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Smoked Cashews.png" alt="Mixed Seeds & Nuts / قلوبات مشكلة">
+          <picture>
+            <source srcset="assets/images/optimized/Smoked-Cashews.webp" type="image/webp">
+            <img src="assets/images/Smoked Cashews.png" alt="Mixed Seeds & Nuts / قلوبات مشكلة" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">قلوبات</span>
@@ -452,7 +535,10 @@
       
       <div class="product-card" data-animate>
         <div class="product-card__media">
-          <img src="assets/images/Smoked Pistachios.png" alt="Mixed Seeds with Pistachios / قلوبات مع فستق">
+          <picture>
+            <source srcset="assets/images/optimized/Smoked-Pistachios.webp" type="image/webp">
+            <img src="assets/images/Smoked Pistachios.png" alt="Mixed Seeds with Pistachios / قلوبات مع فستق" width="220" height="200" loading="lazy">
+          </picture>
         </div>
         <div class="product-content">
           <span class="product-category" data-lang="ar">قلوبات</span>
@@ -498,7 +584,10 @@
       <!-- Company Info -->
       <div class="footer-col">
         <a href="index.html" class="logo" style="margin-bottom: 20px;">
-          <img src="assets/images/logo.png" alt="Fancy Foods Logo" class="logo-icon">
+          <picture>
+            <source srcset="assets/images/optimized/logo.webp" type="image/webp">
+            <img src="assets/images/logo.png" alt="Fancy Foods Logo" class="logo-icon" width="60" height="60" loading="lazy">
+          </picture>
           <div class="logo-text">
             <span class="logo-text-main" style="color: white;" data-lang="ar">فانسي فودز</span>
             <span class="logo-text-main" style="color: white; display:none;" data-lang="en">Fancy Foods</span>
@@ -597,8 +686,8 @@
   </div>
 </footer>
 
-<!-- Scripts -->
-<script src="assets/js/main.js"></script>
+<!-- Scripts - Deferred for better performance -->
+<script src="assets/js/main.min.js" defer></script>
 
 </body>
 </html>
