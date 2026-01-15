@@ -1,10 +1,12 @@
 /**
- * Fancy Foods - Main JavaScript
- * Language switching and sophisticated UI interactions
+ * Fancy Foods - Ultra Premium JavaScript
+ * World-Class Sophisticated UI Interactions
  */
 
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all components
+  initPageLoader();
+  initCustomCursor();
   initLanguage();
   initMobileMenu();
   initHeaderScroll();
@@ -18,7 +20,101 @@ document.addEventListener('DOMContentLoaded', function() {
   initWhatsAppButton();
   initContactButtons();
   initPageTransitions();
+  initParallaxEffects();
+  initMagneticButtons();
+  initTiltEffect();
 });
+
+/**
+ * Initialize premium page loader
+ */
+function initPageLoader() {
+  const loader = document.getElementById('pageLoader');
+  if (!loader) return;
+  
+  // Hide loader when page is fully loaded
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 800);
+  });
+  
+  // Fallback: hide after 3 seconds max
+  setTimeout(() => {
+    if (loader && !loader.classList.contains('hidden')) {
+      loader.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }, 3000);
+}
+
+/**
+ * Initialize custom cursor effect
+ */
+function initCustomCursor() {
+  const cursorDot = document.getElementById('cursorDot');
+  const cursorOutline = document.getElementById('cursorOutline');
+  
+  if (!cursorDot || !cursorOutline) return;
+  
+  // Check if device supports hover (not touch)
+  if (window.matchMedia('(hover: none)').matches) {
+    cursorDot.style.display = 'none';
+    cursorOutline.style.display = 'none';
+    return;
+  }
+  
+  let mouseX = 0, mouseY = 0;
+  let outlineX = 0, outlineY = 0;
+  
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Dot follows instantly
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+  });
+  
+  // Smooth follow for outline
+  function animateOutline() {
+    outlineX += (mouseX - outlineX) * 0.15;
+    outlineY += (mouseY - outlineY) * 0.15;
+    
+    cursorOutline.style.left = outlineX + 'px';
+    cursorOutline.style.top = outlineY + 'px';
+    
+    requestAnimationFrame(animateOutline);
+  }
+  animateOutline();
+  
+  // Hover effect on interactive elements
+  const interactiveElements = document.querySelectorAll('a, button, .btn, .product-card, .feature-card, .nav-link');
+  
+  interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorOutline.classList.add('hover');
+      cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      cursorOutline.classList.remove('hover');
+      cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+  });
+  
+  // Click effect
+  document.addEventListener('mousedown', () => {
+    cursorOutline.classList.add('click');
+    cursorDot.style.transform = 'translate(-50%, -50%) scale(0.8)';
+  });
+  
+  document.addEventListener('mouseup', () => {
+    cursorOutline.classList.remove('click');
+    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
+}
 
 /**
  * Initialize language settings
@@ -615,4 +711,88 @@ function throttle(func, limit) {
       setTimeout(() => inThrottle = false, limit);
     }
   };
+}
+
+/**
+ * Initialize parallax effects on scroll
+ */
+function initParallaxEffects() {
+  const heroShapes = document.querySelectorAll('.hero-shape');
+  const heroParticles = document.querySelectorAll('.particle');
+  
+  if (!heroShapes.length && !heroParticles.length) return;
+  
+  window.addEventListener('scroll', throttle(() => {
+    const scrollY = window.pageYOffset;
+    
+    heroShapes.forEach((shape, index) => {
+      const speed = 0.05 + (index * 0.02);
+      shape.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+    
+    heroParticles.forEach((particle, index) => {
+      const speed = 0.03 + (index * 0.01);
+      particle.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  }, 16));
+}
+
+/**
+ * Initialize magnetic button effect
+ */
+function initMagneticButtons() {
+  const magneticElements = document.querySelectorAll('.btn, .hero-btn-primary, .hero-btn-secondary');
+  
+  magneticElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      el.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = '';
+    });
+  });
+}
+
+/**
+ * Initialize 3D tilt effect on cards
+ */
+function initTiltEffect() {
+  const tiltElements = document.querySelectorAll('.product-card, .feature-card');
+  
+  tiltElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+      
+      el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.02)`;
+    });
+    
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = '';
+      el.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    });
+    
+    el.addEventListener('mouseenter', () => {
+      el.style.transition = 'transform 0.1s ease';
+    });
+  });
+}
+
+/**
+ * Enhanced number counter with easing
+ */
+function easeOutExpo(t) {
+  return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
 }
