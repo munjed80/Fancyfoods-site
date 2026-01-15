@@ -732,7 +732,6 @@ function initParallaxEffects() {
     
     heroParticles.forEach((particle, index) => {
       const speed = 0.03 + (index * 0.01);
-      const currentTransform = particle.style.transform || '';
       particle.style.transform = `translateY(${scrollY * speed}px)`;
     });
   }, 16));

@@ -3248,6 +3248,15 @@ body {
     transition-duration: 0.01ms !important;
   }
   
+  /* Reduce backdrop-filter complexity for performance */
+  .header,
+  .page-home .hero-content,
+  .hero-products .page-hero-content,
+  .hero-contact .page-hero-content {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+  
   .about-image::before,
   .about-image-photo,
   .page-hero::after,
@@ -3259,6 +3268,7 @@ body {
   /* Hero background handled separately to keep zoom disabled when motion is reduced */
   .page-home .hero::after {
     transform: scale(1) !important;
+    filter: none !important;
   }
   
   .page-home .hero-content {
@@ -3267,11 +3277,26 @@ body {
     transform: none !important;
   }
   
+  .page-home .hero-content::before {
+    animation: none !important;
+  }
+  
   .page-home .hero-title,
   .page-home .hero-subtitle,
   .page-home .hero-description,
   .page-home .hero-buttons {
     animation: none !important;
+  }
+  
+  /* Disable particles for reduced motion */
+  .page-home .hero .hero-particles {
+    display: none !important;
+  }
+  
+  /* Disable cursor effects */
+  .cursor-dot,
+  .cursor-outline {
+    display: none !important;
   }
 }
 
