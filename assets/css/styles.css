@@ -23,6 +23,8 @@
   --accent-champagne: #F7E7CE;
   --luxury-black: #0D1117;
   --luxury-black-rgb: 13, 17, 23;
+  --footer-mid: #0D1318;
+  --footer-dark: #080B0E;
   
   /* Neutral Colors */
   --white: #FFFFFF;
@@ -1653,7 +1655,7 @@ ul, ol {
 
 /* ============ Footer - Elegant Dark Premium ============ */
 .footer {
-  background: linear-gradient(180deg, var(--primary-green-dark) 0%, #0D1318 50%, #080B0E 100%);
+  background: linear-gradient(180deg, var(--primary-green-dark) 0%, var(--footer-mid) 50%, var(--footer-dark) 100%);
   color: var(--white);
   padding: 110px 0 60px;
   margin-top: 100px;
@@ -1669,7 +1671,7 @@ ul, ol {
   right: 0;
   height: 4px;
   background: linear-gradient(90deg, transparent 2%, var(--gold-dark) 20%, var(--gold) 35%, var(--gold-light) 50%, var(--gold) 65%, var(--gold-dark) 80%, transparent 98%);
-  box-shadow: 0 2px 20px rgba(201, 162, 77, 0.4);
+  box-shadow: 0 2px 20px rgba(var(--gold-rgb), 0.4);
 }
 
 .footer::after {
@@ -1680,7 +1682,7 @@ ul, ol {
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(ellipse 60% 40%, rgba(201, 162, 77, 0.06) 0%, transparent 55%);
+  background: radial-gradient(ellipse 60% 40%, rgba(var(--gold-rgb), 0.06) 0%, transparent 55%);
   pointer-events: none;
 }
 
