@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all components
+  initWebPDetection();
   initPageLoader();
   initCustomCursor();
   initLanguage();
@@ -24,6 +25,22 @@ document.addEventListener('DOMContentLoaded', function() {
   initMagneticButtons();
   initTiltEffect();
 });
+
+/**
+ * Detect WebP support and add class to body
+ */
+function initWebPDetection() {
+  const webpImage = new Image();
+  webpImage.onload = function() {
+    // WebP is supported
+    document.documentElement.classList.add('webp');
+  };
+  webpImage.onerror = function() {
+    // WebP is NOT supported
+    document.documentElement.classList.add('no-webp');
+  };
+  webpImage.src = 'data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
+}
 
 /**
  * Initialize premium page loader
