@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
   initParallaxEffects();
   initMagneticButtons();
   initTiltEffect();
+  initProductFilter();
+
+  // Update copyright year dynamically
+  const yearEls = document.querySelectorAll('.copyright-year');
+  const currentYear = new Date().getFullYear();
+  yearEls.forEach(el => { el.textContent = currentYear; });
 });
 
 /**
@@ -54,7 +60,7 @@ function initPageLoader() {
     setTimeout(() => {
       loader.classList.add('hidden');
       document.body.style.overflow = '';
-    }, 800);
+    }, 250);
   });
   
   // Fallback: hide after 3 seconds max
@@ -85,26 +91,34 @@ function initCustomCursor() {
   let mouseX = 0, mouseY = 0;
   let outlineX = 0, outlineY = 0;
   
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    // Dot follows instantly
-    cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top = mouseY + 'px';
-  });
-  
-  // Smooth follow for outline
+  // Smooth follow for outline — only run RAF when mouse is moving
+  let rafRunning = false;
   function animateOutline() {
     outlineX += (mouseX - outlineX) * 0.15;
     outlineY += (mouseY - outlineY) * 0.15;
-    
     cursorOutline.style.left = outlineX + 'px';
     cursorOutline.style.top = outlineY + 'px';
-    
-    requestAnimationFrame(animateOutline);
+    if (rafRunning) requestAnimationFrame(animateOutline);
   }
-  animateOutline();
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+    if (!rafRunning) {
+      rafRunning = true;
+      requestAnimationFrame(animateOutline);
+    }
+  });
+  // Stop loop when tab is hidden, restart on return
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      rafRunning = false;
+    } else if (mouseX || mouseY) {
+      rafRunning = true;
+      requestAnimationFrame(animateOutline);
+    }
+  });
   
   // Hover effect on interactive elements
   const interactiveElements = document.querySelectorAll('a, button, .btn, .product-card, .feature-card, .nav-link');
@@ -167,6 +181,7 @@ function initMobileMenu() {
     mobileMenuBtn.addEventListener('click', function() {
       nav.classList.toggle('active');
       this.classList.toggle('active');
+      this.setAttribute('aria-expanded', nav.classList.contains('active') ? 'true' : 'false');
       
       // Animate nav links when menu opens
       if (nav.classList.contains('active')) {
@@ -188,6 +203,7 @@ function initMobileMenu() {
       if (!mobileMenuBtn.contains(e.target) && !nav.contains(e.target)) {
         nav.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
       }
     });
   }
@@ -428,6 +444,7 @@ function initFormValidation() {
  * Validate a form input
  */
 function validateInput(input) {
+  const lang = localStorage.getItem('fancyfoods-lang') || 'ar';
   const value = input.value.trim();
   let isValid = true;
   let message = '';
@@ -439,29 +456,36 @@ function validateInput(input) {
   
   if (input.required && !value) {
     isValid = false;
-    message = 'This field is required';
+    message = lang === 'ar' ? 'هذا الحقل مطلوب' : 'This field is required';
   } else if (input.type === 'email' && value) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(value)) {
       isValid = false;
-      message = 'Please enter a valid email address';
+      message = lang === 'ar' ? 'يرجى إدخال بريد إلكتروني صحيح' : 'Please enter a valid email address';
     }
   } else if (input.type === 'tel' && value) {
     const phoneRegex = /^[\d\s\-\+\(\)]+$/;
     if (!phoneRegex.test(value)) {
       isValid = false;
-      message = 'Please enter a valid phone number';
+      message = lang === 'ar' ? 'يرجى إدخال رقم هاتف صحيح' : 'Please enter a valid phone number';
     }
   }
   
   if (!isValid && message) {
     input.classList.add('error');
+    const feedbackId = input.name + '-feedback';
     const feedback = document.createElement('div');
+    feedback.id = feedbackId;
     feedback.className = 'form-feedback error';
+    feedback.setAttribute('role', 'alert');
     feedback.textContent = message;
     input.parentElement.appendChild(feedback);
+    input.setAttribute('aria-describedby', feedbackId);
+    input.setAttribute('aria-invalid', 'true');
   } else if (value) {
     input.classList.add('success');
+    input.removeAttribute('aria-describedby');
+    input.removeAttribute('aria-invalid');
   }
   
   return isValid || !input.required;
@@ -533,9 +557,7 @@ function initWhatsAppButton() {
     whatsappBtn.setAttribute('aria-label', tooltipText);
     whatsappBtn.innerHTML = `
       <span class="whatsapp-tooltip">${tooltipText}</span>
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><use href="#wa-icon"/></svg>
     `;
     document.body.appendChild(whatsappBtn);
   }
@@ -634,8 +656,10 @@ function setLanguage(lang) {
   langButtons.forEach(btn => {
     if (btn.dataset.lang === lang) {
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
     } else {
       btn.classList.remove('active');
+      btn.setAttribute('aria-pressed', 'false');
     }
   });
   
@@ -659,6 +683,33 @@ function setLanguage(lang) {
   if (whatsappTooltip) {
     whatsappTooltip.textContent = lang === 'ar' ? 'تواصل معنا عبر واتساب' : 'Chat with us on WhatsApp';
   }
+  // Update request type select options when language changes
+  const requestTypeSelect = document.getElementById('requestTypeSelect');
+  if (requestTypeSelect) {
+    const options = {
+      ar: [
+        ['', 'اختر نوع الطلب'],
+        ['catalog', 'طلب كتالوج المنتجات'],
+        ['quotation', 'طلب عرض سعر'],
+        ['samples', 'طلب عينات'],
+        ['partnership', 'شراكة توزيع'],
+        ['other', 'استفسار عام']
+      ],
+      en: [
+        ['', 'Select request type'],
+        ['catalog', 'Request Product Catalog'],
+        ['quotation', 'Request Price Quotation'],
+        ['samples', 'Request Product Samples'],
+        ['partnership', 'Distribution Partnership'],
+        ['other', 'General Inquiry']
+      ]
+    };
+    const currentVal = requestTypeSelect.value;
+    requestTypeSelect.innerHTML = options[lang].map(([val, text]) =>
+      `<option value="${val}"${val === currentVal ? ' selected' : ''}>${text}</option>`
+    ).join('');
+  }
+  document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
 }
 
 /**
@@ -805,6 +856,80 @@ function initTiltEffect() {
       el.style.transition = 'transform 0.1s ease';
     });
   });
+}
+
+/**
+ * Submit contact form via WhatsApp
+ */
+function submitWholesaleForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('wholesaleForm');
+  if (!form) return false;
+
+  const name = form.querySelector('[name="name"]').value.trim();
+  const company = form.querySelector('[name="company"]').value.trim();
+  const email = form.querySelector('[name="email"]').value.trim();
+  const phone = form.querySelector('[name="phone"]').value.trim();
+  const subject = form.querySelector('[name="subject"]').value.trim();
+  const message = form.querySelector('[name="message"]').value.trim();
+  const requestType = form.querySelector('[name="request_type"]').value;
+
+  const lang = localStorage.getItem('fancyfoods-lang') || 'ar';
+
+  let waText;
+  if (lang === 'ar') {
+    waText = `مرحباً فانسي فودز،\n\nالاسم: ${name}${company ? '\nالشركة: ' + company : ''}\nالبريد: ${email}${phone ? '\nالهاتف: ' + phone : ''}${requestType ? '\nنوع الطلب: ' + requestType : ''}\nالموضوع: ${subject}\n\n${message}`;
+  } else {
+    waText = `Hello Fancy Foods,\n\nName: ${name}${company ? '\nCompany: ' + company : ''}\nEmail: ${email}${phone ? '\nPhone: ' + phone : ''}${requestType ? '\nRequest Type: ' + requestType : ''}\nSubject: ${subject}\n\n${message}`;
+  }
+
+  const waUrl = 'https://wa.me/963988216431?text=' + encodeURIComponent(waText);
+  window.open(waUrl, '_blank');
+  return false;
+}
+
+/**
+ * Initialize product category filter
+ */
+function initProductFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const filter = this.dataset.filter;
+      const productCards = document.querySelectorAll('.product-card[data-category]');
+
+      productCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('filter-hidden');
+        } else {
+          card.classList.add('filter-hidden');
+        }
+      });
+
+      // Hide section headers that have no visible cards
+      document.querySelectorAll('.section').forEach(section => {
+        const cards = section.querySelectorAll('.product-card[data-category]');
+        if (!cards.length) return;
+        const anyVisible = Array.from(cards).some(c => !c.classList.contains('filter-hidden'));
+        section.style.display = anyVisible ? '' : 'none';
+      });
+    });
+  });
+
+  // Update filter button labels when language changes
+  function updateFilterLabels() {
+    const lang = localStorage.getItem('fancyfoods-lang') || 'ar';
+    filterBtns.forEach(btn => {
+      btn.textContent = lang === 'en' ? btn.dataset.langEn : btn.dataset.langAr;
+    });
+  }
+  updateFilterLabels();
+  document.addEventListener('langchange', updateFilterLabels);
 }
 
 /**

@@ -4,13 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Fancy Foods - We're here to serve you. WhatsApp, Email, or send us a message | اتصل بنا - فانسي فودز">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fancy-foods.com/contact.html">
+  <meta property="og:title" content="Contact Fancy Foods – Wholesale Inquiries">
+  <meta property="og:description" content="Contact our wholesale team via WhatsApp, email or inquiry form. We respond within 24 hours on business days.">
+  <meta property="og:image" content="https://fancy-foods.com/assets/images/optimized/logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Contact Us | اتصل بنا - Fancy Foods</title>
   
   <!-- Fonts - Optimized with display=swap for faster rendering -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"></noscript>
   
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -26,6 +32,12 @@
   </style>
 </head>
 <body class="rtl page-inner">
+<!-- SVG Sprite Definitions -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="wa-icon" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </symbol>
+</svg>
 
 <!-- Premium Page Loader -->
 <div class="page-loader" id="pageLoader">
@@ -59,7 +71,7 @@
       </a>
       
       <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -74,8 +86,8 @@
         
         <!-- Language Switcher -->
         <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="ar">عربي</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="ar" aria-pressed="true">عربي</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </nav>
     </div>
@@ -88,14 +100,14 @@
     <div class="page-hero-content">
       <!-- Arabic -->
       <div data-lang="ar">
-        <h1 class="page-title">اتصل بنا</h1>
-        <p class="page-subtitle">نحن هنا لخدمتك والإجابة على جميع استفساراتك</p>
+        <h1 class="page-title">تواصل معنا</h1>
+        <p class="page-subtitle">موردون متخصصون للمكسرات الفاخرة بالجملة — نرد على استفساراتكم بسرعة</p>
       </div>
       
       <!-- English -->
       <div data-lang="en" style="display:none;">
         <h1 class="page-title">Contact Us</h1>
-        <p class="page-subtitle">We're here to serve you and answer all your inquiries</p>
+        <p class="page-subtitle">Specialized wholesale premium nut supplier — we respond to your inquiries quickly</p>
       </div>
     </div>
   </div>
@@ -106,16 +118,47 @@
   <div class="container">
     <!-- Arabic Header -->
     <div class="section-header" data-lang="ar">
-      <span class="section-badge">تواصل معنا</span>
-      <h2 class="section-title">معلومات التواصل</h2>
-      <p class="section-desc">يمكنك التواصل معنا عبر أي من الطرق التالية</p>
+      <span class="section-badge">ابدأ الآن</span>
+      <h2 class="section-title">ماذا تريد اليوم؟</h2>
+      <p class="section-desc">اختر نوع طلبك وتواصل معنا مباشرة عبر الخيار الأنسب لك</p>
     </div>
     
     <!-- English Header -->
     <div class="section-header" data-lang="en" style="display:none;">
-      <span class="section-badge">Get in Touch</span>
-      <h2 class="section-title">Contact Information</h2>
-      <p class="section-desc">You can reach us through any of the following methods</p>
+      <span class="section-badge">Start Now</span>
+      <h2 class="section-title">What Do You Need Today?</h2>
+      <p class="section-desc">Choose your inquiry type and contact us directly via the most suitable option</p>
+    </div>
+
+    <!-- Quick action shortcuts -->
+    <div class="contact-shortcuts" data-lang="ar">
+      <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرجو%20إرسال%20الكتالوج%20الكامل" target="_blank" rel="noopener noreferrer" class="contact-shortcut-btn contact-shortcut-btn--wa-catalog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        طلب الكتالوج عبر واتساب
+      </a>
+      <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20في%20الحصول%20على%20عرض%20سعر%20لـ" target="_blank" rel="noopener noreferrer" class="contact-shortcut-btn contact-shortcut-btn--wa-quote">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        طلب عرض سعر عبر واتساب
+      </a>
+      <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20في%20طلب%20عينات%20من%20منتجاتكم" target="_blank" rel="noopener noreferrer" class="contact-shortcut-btn contact-shortcut-btn--wa-sample">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        طلب عينات عبر واتساب
+      </a>
+    </div>
+
+    <div class="contact-shortcuts" data-lang="en" style="display:none;">
+      <a href="https://wa.me/963988216431?text=Hello%20Fancy%20Foods,%20please%20send%20me%20your%20full%20product%20catalog" target="_blank" rel="noopener noreferrer" class="contact-shortcut-btn contact-shortcut-btn--wa-catalog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Request Catalog via WhatsApp
+      </a>
+      <a href="https://wa.me/963988216431?text=Hello%20Fancy%20Foods,%20I%20would%20like%20a%20price%20quotation%20for" target="_blank" rel="noopener noreferrer" class="contact-shortcut-btn contact-shortcut-btn--wa-quote">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        Request Quotation via WhatsApp
+      </a>
+      <a href="https://wa.me/963988216431?text=Hello%20Fancy%20Foods,%20I%20would%20like%20to%20request%20product%20samples" target="_blank" rel="noopener noreferrer" class="contact-shortcut-btn contact-shortcut-btn--wa-sample">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        Request Samples via WhatsApp
+      </a>
     </div>
     
     <div class="contact-info-grid">
@@ -128,8 +171,8 @@
         </div>
         <!-- Arabic -->
         <div data-lang="ar">
-          <h3>واتساب</h3>
-          <p>تواصل معنا مباشرة عبر الواتساب للاستفسارات السريعة</p>
+          <h3>واتساب — استجابة سريعة</h3>
+          <p>تواصل معنا مباشرة عبر الواتساب لطلبات الجملة والاستفسارات التجارية</p>
           <div class="contact-cta-group">
             <a class="contact-cta-btn contact-cta-btn--whatsapp" href="https://wa.me/971504690978" target="_blank" rel="noopener noreferrer" dir="ltr" aria-label="WhatsApp UAE +971504690978">
               <span class="contact-cta-icon" aria-hidden="true">
@@ -151,8 +194,8 @@
         </div>
         <!-- English -->
         <div data-lang="en" style="display:none;">
-          <h3>WhatsApp</h3>
-          <p>Contact us directly via WhatsApp for quick inquiries</p>
+          <h3>WhatsApp — Quick Response</h3>
+          <p>Contact us directly via WhatsApp for wholesale orders and business inquiries</p>
           <div class="contact-cta-group">
             <a class="contact-cta-btn contact-cta-btn--whatsapp" href="https://wa.me/971504690978" target="_blank" rel="noopener noreferrer" dir="ltr" aria-label="WhatsApp UAE +971504690978">
               <span class="contact-cta-icon" aria-hidden="true">
@@ -247,24 +290,31 @@
     <!-- Arabic Header -->
     <div class="section-header" data-lang="ar">
       <span class="section-badge">راسلنا</span>
-      <h2 class="section-title">أرسل رسالة</h2>
+      <h2 class="section-title">أرسل طلب جملة</h2>
       <p class="section-desc">املأ النموذج التالي وسنتواصل معك في أقرب وقت</p>
     </div>
     
     <!-- English Header -->
     <div class="section-header" data-lang="en" style="display:none;">
       <span class="section-badge">Message Us</span>
-      <h2 class="section-title">Send a Message</h2>
+      <h2 class="section-title">Send a Wholesale Inquiry</h2>
       <p class="section-desc">Fill out the form below and we'll contact you soon</p>
     </div>
     
-    <div class="card" style="max-width: 700px; margin: 0 auto; padding: 40px;">
-      <form action="mailto:info@fancy-foods.com" method="post" enctype="text/plain">
+    <div class="card card-padded">
+      <form id="wholesaleForm" onsubmit="return submitWholesaleForm(event)">
         <!-- Name Field -->
         <div class="form-group">
           <label class="form-label" data-lang="ar">الاسم الكامل</label>
           <label class="form-label" data-lang="en" style="display:none;">Full Name</label>
           <input type="text" name="name" class="form-input" placeholder="" required>
+        </div>
+
+        <!-- Company Field -->
+        <div class="form-group">
+          <label class="form-label" data-lang="ar">اسم الشركة / المحل</label>
+          <label class="form-label" data-lang="en" style="display:none;">Company / Business Name</label>
+          <input type="text" name="company" class="form-input" placeholder="">
         </div>
         
         <!-- Email Field -->
@@ -276,9 +326,23 @@
         
         <!-- Phone Field -->
         <div class="form-group">
-          <label class="form-label" data-lang="ar">رقم الهاتف</label>
-          <label class="form-label" data-lang="en" style="display:none;">Phone Number</label>
+          <label class="form-label" data-lang="ar">رقم الهاتف (واتساب)</label>
+          <label class="form-label" data-lang="en" style="display:none;">Phone Number (WhatsApp)</label>
           <input type="tel" name="phone" class="form-input" placeholder="">
+        </div>
+
+        <!-- Request Type Field -->
+        <div class="form-group">
+          <label class="form-label" data-lang="ar">نوع الطلب</label>
+          <label class="form-label" data-lang="en" style="display:none;">Request Type</label>
+          <select name="request_type" id="requestTypeSelect" class="form-select">
+            <option value="">اختر نوع الطلب</option>
+            <option value="catalog">طلب كتالوج المنتجات</option>
+            <option value="quotation">طلب عرض سعر</option>
+            <option value="samples">طلب عينات</option>
+            <option value="partnership">شراكة توزيع</option>
+            <option value="other">استفسار عام</option>
+          </select>
         </div>
         
         <!-- Subject Field -->
@@ -290,15 +354,15 @@
         
         <!-- Message Field -->
         <div class="form-group">
-          <label class="form-label" data-lang="ar">الرسالة</label>
-          <label class="form-label" data-lang="en" style="display:none;">Message</label>
+          <label class="form-label" data-lang="ar">الرسالة / تفاصيل الطلب</label>
+          <label class="form-label" data-lang="en" style="display:none;">Message / Order Details</label>
           <textarea name="message" class="form-textarea" placeholder="" required></textarea>
         </div>
         
         <!-- Submit Button -->
-        <div style="text-align: center; margin-top: 30px;">
-          <button type="submit" class="btn btn-green" data-lang="ar">إرسال الرسالة</button>
-          <button type="submit" class="btn btn-green" data-lang="en" style="display:none;">Send Message</button>
+        <div class="text-center-mt30">
+          <button type="submit" class="btn btn-green" data-lang="ar">إرسال الطلب</button>
+          <button type="submit" class="btn btn-green" data-lang="en" style="display:none;">Send Inquiry</button>
         </div>
       </form>
     </div>
@@ -308,7 +372,7 @@
 <!-- Working Hours Section -->
 <section class="section">
   <div class="container">
-    <div class="features-grid" style="max-width: 800px; margin: 0 auto;">
+    <div class="features-grid section-max-800">
       <!-- Working Hours -->
       <div class="feature-card" data-animate>
         <div class="feature-icon">
@@ -449,8 +513,8 @@
               </a>
             </div>
           </li>
-          <li data-lang="ar">📍 سوريا - دمشق</li>
-          <li data-lang="en" style="display:none;">📍 Damascus, Syria</li>
+          <li data-lang="ar"><span aria-hidden="true">📍</span> سوريا - دمشق</li>
+          <li data-lang="en" style="display:none;"><span aria-hidden="true">📍</span> Damascus, Syria</li>
         </ul>
         
         <!-- WhatsApp Order Button -->
@@ -475,8 +539,8 @@
         <a href="shipping-delivery.html" data-lang="ar">الشحن والتوصيل</a>
         <a href="shipping-delivery.html" data-lang="en" style="display:none;">Shipping & Delivery</a>
       </div>
-      <p data-lang="ar">© 2025 فانسي فودز – جميع الحقوق محفوظة</p>
-      <p data-lang="en" style="display:none;">© 2025 Fancy Foods – All Rights Reserved</p>
+      <p data-lang="ar">© <span class="copyright-year">2025</span> فانسي فودز – جميع الحقوق محفوظة</p>
+      <p data-lang="en" style="display:none;">© <span class="copyright-year">2025</span> Fancy Foods – All Rights Reserved</p>
     </div>
   </div>
 </footer>

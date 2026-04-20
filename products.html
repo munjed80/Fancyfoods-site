@@ -4,13 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Browse our wide collection of premium nuts and snacks - Pistachios, Cashews, Almonds, Seeds and more | تصفح مجموعتنا الواسعة من المكسرات والموالح الفاخرة">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fancy-foods.com/products.html">
+  <meta property="og:title" content="Product Catalog – Fancy Foods Premium Nuts">
+  <meta property="og:description" content="Browse over 20 varieties of premium nuts, seeds and snacks. Export-ready wholesale packaging for traders and distributors.">
+  <meta property="og:image" content="https://fancy-foods.com/assets/images/optimized/hero-section.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Products | المنتجات - Fancy Foods</title>
   
   <!-- Fonts - Optimized with display=swap for faster rendering -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"></noscript>
   
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -26,6 +32,12 @@
   </style>
 </head>
 <body class="rtl page-inner">
+<!-- SVG Sprite Definitions -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="wa-icon" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </symbol>
+</svg>
 
 <!-- Premium Page Loader -->
 <div class="page-loader" id="pageLoader">
@@ -59,7 +71,7 @@
       </a>
       
       <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -74,8 +86,8 @@
         
         <!-- Language Switcher -->
         <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="ar">عربي</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="ar" aria-pressed="true">عربي</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </nav>
     </div>
@@ -88,15 +100,40 @@
     <div class="page-hero-content">
       <!-- Arabic -->
       <div data-lang="ar">
-        <h1 class="page-title">مجموعة المنتجات</h1>
-        <p class="page-subtitle">اكتشف تشكيلتنا الواسعة من المكسرات والموالح الفاخرة بجودة استثنائية</p>
+        <h1 class="page-title">كتالوج المنتجات</h1>
+        <p class="page-subtitle">أكثر من 20 صنفاً من المكسرات والبزورات الفاخرة — تعبئة متعددة المقاسات جاهزة للتصدير والجملة</p>
+        <div class="hero-actions-row">
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرجو%20إرسال%20الكتالوج%20الكامل" target="_blank" rel="noopener noreferrer" class="btn btn-green btn-sm">طلب الكتالوج الكامل</a>
+          <a href="contact.html" class="btn btn-primary btn-sm">طلب عرض سعر</a>
+        </div>
       </div>
       
       <!-- English -->
       <div data-lang="en" style="display:none;">
-        <h1 class="page-title">Our Products</h1>
-        <p class="page-subtitle">Discover our wide selection of premium nuts and snacks with exceptional quality</p>
+        <h1 class="page-title">Product Catalog</h1>
+        <p class="page-subtitle">Over 20 varieties of premium nuts and seeds — multiple pack sizes ready for export and wholesale</p>
+        <div class="hero-actions-row">
+          <a href="https://wa.me/963988216431?text=Hello%20Fancy%20Foods,%20please%20send%20me%20your%20full%20catalog" target="_blank" rel="noopener noreferrer" class="btn btn-green btn-sm">Request Full Catalog</a>
+          <a href="contact.html" class="btn btn-primary btn-sm">Request Quotation</a>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Filter Bar -->
+<section class="filter-bar-section">
+  <div class="container">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all" data-lang-ar="الكل" data-lang-en="All">الكل</button>
+      <button class="filter-btn" data-filter="seeds" data-lang-ar="بزورات" data-lang-en="Seeds">بزورات</button>
+      <button class="filter-btn" data-filter="peanuts" data-lang-ar="فستق سوداني" data-lang-en="Peanuts">فستق سوداني</button>
+      <button class="filter-btn" data-filter="pistachios" data-lang-ar="فستق" data-lang-en="Pistachios">فستق</button>
+      <button class="filter-btn" data-filter="almonds" data-lang-ar="لوز" data-lang-en="Almonds">لوز</button>
+      <button class="filter-btn" data-filter="cashews" data-lang-ar="كاجو" data-lang-en="Cashews">كاجو</button>
+      <button class="filter-btn" data-filter="chickpeas" data-lang-ar="قضامة" data-lang-en="Chickpeas">قضامة</button>
+      <button class="filter-btn" data-filter="corn" data-lang-ar="ذرة" data-lang-en="Corn">ذرة</button>
+      <button class="filter-btn" data-filter="mix" data-lang-ar="مشكل" data-lang-en="Mixes">مشكل</button>
     </div>
   </div>
 </section>
@@ -119,7 +156,7 @@
     </div>
     
     <div class="cards-grid">
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="seeds">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Sunflower-Seeds.webp" type="image/webp">
@@ -135,10 +172,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Sunflower Seeds</h3>
           <p class="product-desc" data-lang="ar">بزر محمص ومملح بحبات كبيرة وطعم متوازن يناسب مختلف الأسواق.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Large roasted sunflower seeds with balanced seasoning for every market.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 450 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 450g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20بزر%20دوار%20الشمس" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="seeds">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Black-Seeds.webp" type="image/webp">
@@ -152,10 +196,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Black Seeds</h3>
           <p class="product-desc" data-lang="ar">بزر أسود محمص بقوام مقرمش وتعبئة مثالية للبيع بالجملة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Crunchy roasted black seeds packed for reliable wholesale supply.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 450 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 450g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20البزر%20الأسود" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="seeds">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/White-Seeds.webp" type="image/webp">
@@ -169,10 +220,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">White Seeds</h3>
           <p class="product-desc" data-lang="ar">بزر أبيض بحجم متجانس وتحميص متوازن مع تمليح دقيق.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Uniform white seeds with even roasting and precise seasoning.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 450 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 450g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20البزر%20الأبيض" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="seeds">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Squash-Seeds.webp" type="image/webp">
@@ -186,10 +244,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Squash Seeds</h3>
           <p class="product-desc" data-lang="ar">بزر كوسا طازج ومقرمش بتمليح مخصص للمحامص والمتاجر.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Fresh crunchy squash seeds with tailored seasoning for roasters and shops.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 450 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 450g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20بزر%20الكوسا" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="peanuts">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Smoked-Peanuts.webp" type="image/webp">
@@ -203,10 +268,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Smoked Peanuts</h3>
           <p class="product-desc" data-lang="ar">فستق سوداني مدخن برائحة غنية وتعبئة متقنة تحافظ على الطزاجة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Smoked peanuts with rich aroma and secure packaging to lock in freshness.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 450 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 450g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20الفستق%20المدخن" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="peanuts">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Peanuts-Krik.webp" type="image/webp">
@@ -220,10 +292,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Peanuts Krik</h3>
           <p class="product-desc" data-lang="ar">فستق سوداني كريك مقرمش بطعم غني ومفضل لعشاق الضيافة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Crunchy peanuts krik with rich taste, ideal for premium hospitality.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 450 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 450g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20فستق%20كريك" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="peanuts">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Smoked-Peanuts.webp" type="image/webp">
@@ -237,10 +316,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Salted Peanuts</h3>
           <p class="product-desc" data-lang="ar">تمليح متوازن ونكهة مستقرة لكل دفعة من الفستق السوداني المالح.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Balanced seasoning and consistent flavor in every batch of salted peanuts.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 450 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 450g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20الفستق%20المالح" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="pistachios">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Salted-Pistachios.webp" type="image/webp">
@@ -254,6 +340,13 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Aleppo Pistachios</h3>
           <p class="product-desc" data-lang="ar">فستق حلبي فاخر بحجم كبير ولون زاهي لرفوف العرض.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Premium Aleppo pistachios with large kernels and vibrant color for display.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 500 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 500g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20الفستق%20الحلبي" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
     </div>
@@ -261,7 +354,7 @@
 </section>
 
 <!-- Almonds, Cashews & Mixes Section -->
-<section class="section" style="background: var(--light-gray);">
+<section class="section section-light-bg">
   <div class="container">
     <!-- Arabic Header -->
     <div class="section-header" data-lang="ar">
@@ -278,7 +371,7 @@
     </div>
     
     <div class="cards-grid">
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="almonds">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Smoked-Almonds.webp" type="image/webp">
@@ -292,10 +385,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Smoked Almonds</h3>
           <p class="product-desc" data-lang="ar">لوز مدخن بطعم غني وقوام مقرمش معبأ بإحكام.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Smoked almonds with rich flavor and crunchy bite, packed securely.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">150 جم | 300 جم | 1 كجم</span><span data-lang="en" style="display:none;">150g | 300g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20اللوز%20المدخن" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="almonds">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Plain-Almonds.webp" type="image/webp">
@@ -309,10 +409,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Plain Almonds</h3>
           <p class="product-desc" data-lang="ar">لوز طبيعي كامل مثالي للتحميص أو المزج مع منتجات أخرى.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Whole natural almonds ideal for roasting or blending into other products.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">150 جم | 300 جم | 1 كجم</span><span data-lang="en" style="display:none;">150g | 300g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20اللوز%20السادة" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="almonds">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Plain-Almonds.webp" type="image/webp">
@@ -326,10 +433,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Salted Almonds</h3>
           <p class="product-desc" data-lang="ar">تحميص متقن وتمليح متوازن لمنتج مثالي للضيافة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Expert roasting and balanced salting delivering a hospitality-ready product.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">150 جم | 300 جم | 1 كجم</span><span data-lang="en" style="display:none;">150g | 300g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20اللوز%20المالح" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="almonds">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Green-Freek-Almonds.webp" type="image/webp">
@@ -343,10 +457,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Green Freek Almonds</h3>
           <p class="product-desc" data-lang="ar">لوز فريك بطعم طبيعي طازج يناسب العروض الموسمية.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Green freek almonds with fresh taste perfect for seasonal offerings.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">150 جم | 300 جم | 1 كجم</span><span data-lang="en" style="display:none;">150g | 300g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20لوز%20الفريك" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="cashews">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Smoked-Cashews.webp" type="image/webp">
@@ -360,10 +481,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Smoked Cashews</h3>
           <p class="product-desc" data-lang="ar">كاجو مدخن بخلطة عطرية تضيف قيمة للعلامات الخاصة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Smoked cashews with aromatic blend that elevates private-label lines.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">100 جم | 200 جم | 450 جم</span><span data-lang="en" style="display:none;">100g | 200g | 450g</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20الكاجو%20المدخن" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="cashews">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Plain-Cashews.webp" type="image/webp">
@@ -377,10 +505,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Plain Cashews</h3>
           <p class="product-desc" data-lang="ar">كاجو كامل ذو لون ذهبي مثالي للخلطات أو التعبئة المنفردة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Whole golden cashews ideal for mixes or stand-alone packs.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">100 جم | 200 جم | 450 جم</span><span data-lang="en" style="display:none;">100g | 200g | 450g</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20الكاجو%20السادة" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="cashews">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Cheese-Cashews.webp" type="image/webp">
@@ -394,10 +529,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Cheese Cashews</h3>
           <p class="product-desc" data-lang="ar">كاجو بخلطة جبنة جريئة يضيف نكهة مبتكرة لمجموعتك.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Cashews coated in a bold cheese blend that modernizes your lineup.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">100 جم | 200 جم | 450 جم</span><span data-lang="en" style="display:none;">100g | 200g | 450g</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20كاجو%20الجبنة" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="chickpeas">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Sugar-Coated-Chickpeas.webp" type="image/webp">
@@ -411,10 +553,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Sugar-Coated Chickpeas</h3>
           <p class="product-desc" data-lang="ar">قضامة مغلفة بالسكر بنكهة تقليدية محببة للأسواق الشعبية.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Sugar-coated chickpeas carrying the nostalgic flavor customers love.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 500 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 500g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20القضامة%20بالسكر" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="chickpeas">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Roasted-Chickpeas.webp" type="image/webp">
@@ -428,10 +577,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Roasted Chickpeas</h3>
           <p class="product-desc" data-lang="ar">قضامة محمصة بعناية مع قرمشة ثابتة وسهولة في التعبئة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Carefully roasted chickpeas with consistent crunch and easy packing.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 500 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 500g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20القضامة%20المحمصة" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="mix">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Soy-Nuts.webp" type="image/webp">
@@ -445,10 +601,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Soy Nuts</h3>
           <p class="product-desc" data-lang="ar">فول صويا مقرمش غني بالبروتين وخيار صحي للمتاجر.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Crunchy soy nuts packed with protein and perfect for health-focused shelves.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 500 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 500g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20فول%20الصويا" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="corn">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Crunchy-BBQ-Corn.webp" type="image/webp">
@@ -462,10 +625,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Crunchy BBQ Corn</h3>
           <p class="product-desc" data-lang="ar">ذرة هشة بنكهات باربيكيو مدخنة تلائم التسالي العائلية.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Crispy corn infused with smoky BBQ notes for family snacking.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">100 جم | 200 جم | 500 جم</span><span data-lang="en" style="display:none;">100g | 200g | 500g</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20الذرة%20الهشة%20باربيكيو" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="corn">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Crunchy-Cheese-Corn.webp" type="image/webp">
@@ -479,10 +649,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Crunchy Cheese Corn</h3>
           <p class="product-desc" data-lang="ar">ذرة مقرمشة بخلطة جبنة كريمية تضيف نكهة مبتكرة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Crunchy corn coated in creamy cheese seasoning for an innovative taste.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">100 جم | 200 جم | 500 جم</span><span data-lang="en" style="display:none;">100g | 200g | 500g</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20الذرة%20الهشة%20بالجبنة" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="mix">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Chinese-Nuts-Mix.webp" type="image/webp">
@@ -496,10 +673,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Chinese Nuts Mix</h3>
           <p class="product-desc" data-lang="ar">خليط مكسرات بطابع آسيوي يقدم نكهات مختلفة لعملائك.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Asian-inspired nut mix delivering unique flavors to your customers.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 500 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 500g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20المكسرات%20الصينية" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="mix">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Plain-Cashews.webp" type="image/webp">
@@ -513,10 +697,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Classic Mix</h3>
           <p class="product-desc" data-lang="ar">مزيج كلاسيكي متوازن من القلوبات والمكسرات اليومية.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Balanced classic mix of everyday seeds and nuts.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 500 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 500g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20المشكل%20الكلاسيك" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="mix">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Smoked-Cashews.webp" type="image/webp">
@@ -530,10 +721,17 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Mixed Seeds & Nuts</h3>
           <p class="product-desc" data-lang="ar">قلوبات مختارة بعناية لتعبئة اقتصادية أو فاخرة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Carefully selected mixed seeds and nuts for value or premium packs.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 500 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 500g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20القلوبات%20المشكلة" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
       
-      <div class="product-card" data-animate>
+      <div class="product-card" data-animate data-category="mix">
         <div class="product-card__media">
           <picture>
             <source srcset="assets/images/optimized/Smoked-Pistachios.webp" type="image/webp">
@@ -547,6 +745,13 @@
           <h3 class="product-title" data-lang="en" style="display:none;">Mixed Seeds with Pistachios</h3>
           <p class="product-desc" data-lang="ar">خليط قلوبات غني مضاف إليه فستق مختار لزيادة القيمة.</p>
           <p class="product-desc" data-lang="en" style="display:none;">Premium mixed seeds boosted with select pistachios for added value.</p>
+          <div class="product-packaging">
+            <span class="product-pack-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg><span data-lang="ar">200 جم | 500 جم | 1 كجم</span><span data-lang="en" style="display:none;">200g | 500g | 1kg</span></span>
+          </div>
+          <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20بالاستفسار%20عن%20القلوبات%20مع%20الفستق" target="_blank" rel="noopener noreferrer" class="product-inquiry-btn">
+            <svg width="15" height="15" fill="currentColor" aria-hidden="true"><use href="#wa-icon"/></svg>
+            <span data-lang="ar">استفسر عن السعر</span><span data-lang="en" style="display:none;">Request a Quote</span>
+          </a>
         </div>
       </div>
     </div>
@@ -561,16 +766,42 @@
       <div class="cta-content">
         <!-- Arabic -->
         <div data-lang="ar">
-          <h2 class="cta-title">هل أنت تاجر؟</h2>
-          <p class="cta-text">انضم إلى شبكة عملائنا واحصل على أفضل الأسعار وخدمة التوصيل السريعة</p>
-          <a href="contact.html" class="btn btn-primary">اتصل بنا الآن</a>
+          <h2 class="cta-title">مهتم بالطلب بالجملة؟</h2>
+          <p class="cta-text">تواصل معنا الآن للحصول على كتالوج المنتجات أو عرض سعر مخصص لكميتك</p>
+          <div class="cta-actions">
+            <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرجو%20إرسال%20الكتالوج" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-action-btn--catalog">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              طلب الكتالوج
+            </a>
+            <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20في%20عرض%20سعر" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-action-btn--quote">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              طلب عرض سعر
+            </a>
+            <a href="https://wa.me/963988216431?text=مرحباً%20فانسي%20فودز،%20أرغب%20في%20طلب%20عينات" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-action-btn--sample">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+              طلب عينات
+            </a>
+          </div>
         </div>
         
         <!-- English -->
         <div data-lang="en" style="display:none;">
-          <h2 class="cta-title">Are You a Trader?</h2>
-          <p class="cta-text">Join our network of clients and get the best prices and fast delivery service</p>
-          <a href="contact.html" class="btn btn-primary">Contact Us Now</a>
+          <h2 class="cta-title">Interested in Wholesale Orders?</h2>
+          <p class="cta-text">Contact us now for a product catalog or a custom quote for your required quantity</p>
+          <div class="cta-actions">
+            <a href="https://wa.me/963988216431?text=Hello%20Fancy%20Foods,%20please%20send%20me%20the%20catalog" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-action-btn--catalog">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Request Catalog
+            </a>
+            <a href="https://wa.me/963988216431?text=Hello%20Fancy%20Foods,%20I%20would%20like%20a%20price%20quotation" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-action-btn--quote">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              Request Quotation
+            </a>
+            <a href="https://wa.me/963988216431?text=Hello%20Fancy%20Foods,%20I%20would%20like%20product%20samples" target="_blank" rel="noopener noreferrer" class="cta-action-btn cta-action-btn--sample">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+              Request Samples
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -628,7 +859,7 @@
         <h4 data-lang="en" style="display:none;">Contact Us</h4>
         <ul>
           <li>
-            📱
+            <span aria-hidden="true">📱</span>
             <span data-lang="ar">
               <a href="tel:00971504690978" dir="ltr" class="phone-number">+971504690978</a>
               <span> | </span>
@@ -641,7 +872,7 @@
             </span>
           </li>
           <li>
-            📱
+            <span aria-hidden="true">📱</span>
             <span data-lang="ar">
               <a href="tel:+963988216431" dir="ltr" class="phone-number">+963988216431</a>
               <span> | </span>
@@ -653,9 +884,9 @@
               <a href="https://wa.me/963988216431" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </span>
           </li>
-          <li>📧 <a href="mailto:info@fancy-foods.com">info@fancy-foods.com</a></li>
-          <li data-lang="ar">📍 سوريا - دمشق</li>
-          <li data-lang="en" style="display:none;">📍 Damascus, Syria</li>
+          <li><span aria-hidden="true">📧</span> <a href="mailto:info@fancy-foods.com">info@fancy-foods.com</a></li>
+          <li data-lang="ar"><span aria-hidden="true">📍</span> سوريا - دمشق</li>
+          <li data-lang="en" style="display:none;"><span aria-hidden="true">📍</span> Damascus, Syria</li>
         </ul>
         
         <!-- WhatsApp Order Button -->
@@ -680,8 +911,8 @@
         <a href="shipping-delivery.html" data-lang="ar">الشحن والتوصيل</a>
         <a href="shipping-delivery.html" data-lang="en" style="display:none;">Shipping & Delivery</a>
       </div>
-      <p data-lang="ar">© 2025 فانسي فودز – جميع الحقوق محفوظة</p>
-      <p data-lang="en" style="display:none;">© 2025 Fancy Foods – All Rights Reserved</p>
+      <p data-lang="ar">© <span class="copyright-year">2025</span> فانسي فودز – جميع الحقوق محفوظة</p>
+      <p data-lang="en" style="display:none;">© <span class="copyright-year">2025</span> Fancy Foods – All Rights Reserved</p>
     </div>
   </div>
 </footer>

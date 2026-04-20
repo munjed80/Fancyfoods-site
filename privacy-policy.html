@@ -9,8 +9,8 @@
   <!-- Fonts - Optimized with display=swap for faster rendering -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"></noscript>
   
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.min.css">
@@ -46,7 +46,7 @@
       </a>
       
       <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -61,8 +61,8 @@
         
         <!-- Language Switcher -->
         <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="ar">عربي</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="ar" aria-pressed="true">عربي</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </nav>
     </div>
@@ -245,7 +245,7 @@
         <h4 data-lang="en" style="display:none;">Contact Us</h4>
         <ul>
           <li>
-            📱
+            <span aria-hidden="true">📱</span>
             <span data-lang="ar">
               <a href="tel:00971504690978" dir="ltr" class="phone-number">+971504690978</a>
               <span> | </span>
@@ -258,7 +258,7 @@
             </span>
           </li>
           <li>
-            📱
+            <span aria-hidden="true">📱</span>
             <span data-lang="ar">
               <a href="tel:+963988216431" dir="ltr" class="phone-number">+963988216431</a>
               <span> | </span>
@@ -270,9 +270,9 @@
               <a href="https://wa.me/963988216431" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </span>
           </li>
-          <li>📧 <a href="mailto:info@fancy-foods.com">info@fancy-foods.com</a></li>
-          <li data-lang="ar">📍 سوريا - دمشق</li>
-          <li data-lang="en" style="display:none;">📍 Damascus, Syria</li>
+          <li><span aria-hidden="true">📧</span> <a href="mailto:info@fancy-foods.com">info@fancy-foods.com</a></li>
+          <li data-lang="ar"><span aria-hidden="true">📍</span> سوريا - دمشق</li>
+          <li data-lang="en" style="display:none;"><span aria-hidden="true">📍</span> Damascus, Syria</li>
         </ul>
         
         <!-- WhatsApp Order Button -->
@@ -297,8 +297,8 @@
         <a href="shipping-delivery.html" data-lang="ar">الشحن والتوصيل</a>
         <a href="shipping-delivery.html" data-lang="en" style="display:none;">Shipping & Delivery</a>
       </div>
-      <p data-lang="ar">© 2025 فانسي فودز – جميع الحقوق محفوظة</p>
-      <p data-lang="en" style="display:none;">© 2025 Fancy Foods – All Rights Reserved</p>
+      <p data-lang="ar">© <span class="copyright-year">2025</span> فانسي فودز – جميع الحقوق محفوظة</p>
+      <p data-lang="en" style="display:none;">© <span class="copyright-year">2025</span> Fancy Foods – All Rights Reserved</p>
     </div>
   </div>
 </footer>

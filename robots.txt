@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fancy-foods.com/sitemap.xml
