@@ -4199,3 +4199,158 @@ body {
     padding: 20px 0;
   }
 }
+
+/* ============ Utility / Layout Helpers ============ */
+.hero-actions-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-sm {
+  font-size: 14px;
+  padding: 12px 28px;
+}
+
+.card-padded {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.section-max-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.text-center-mt30 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.text-center-mt50 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.section-light-bg {
+  background: var(--light-gray);
+}
+
+/* ============ Testimonials ============ */
+.testimonials-section {
+  background: var(--surface-cream);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--card-radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(201, 162, 77, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: var(--transition-normal);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201, 162, 77, 0.3);
+}
+
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-medium);
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray);
+}
+
+.testimonial-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-author-info strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.testimonial-author-info span {
+  font-size: 13px;
+  color: var(--medium-gray);
+}
+
+/* ============ Product Filter Bar ============ */
+.filter-bar-section {
+  background: var(--white);
+  border-bottom: 1px solid var(--gray);
+  padding: 20px 0;
+  position: sticky;
+  top: 80px;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: var(--btn-radius);
+  border: 1.5px solid var(--gray);
+  background: var(--white);
+  color: var(--text-medium);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: inherit;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+  background: rgba(31, 61, 43, 0.05);
+}
+
+.filter-btn.active {
+  background: var(--gradient-green);
+  color: var(--white);
+  border-color: var(--primary-green);
+}
+
+.product-card.filter-hidden {
+  display: none;
+}
