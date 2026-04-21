@@ -109,6 +109,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -117,7 +118,6 @@ body {
   color: var(--text-dark);
   line-height: 1.7;
   overflow-x: hidden;
-  position: relative;
 }
 
 /* Premium Page Loading Animation */
@@ -1657,7 +1657,7 @@ ul, ol {
 .footer {
   background: linear-gradient(180deg, var(--primary-green-dark) 0%, var(--footer-mid) 50%, var(--footer-dark) 100%);
   color: var(--white);
-  padding: 110px 0 60px;
+  padding: 110px 0 calc(60px + env(safe-area-inset-bottom, 0px));
   margin-top: 100px;
   position: relative;
   overflow: hidden;
@@ -2888,7 +2888,7 @@ ul, ol {
 /* ============ Floating WhatsApp Button ============ */
 .whatsapp-float {
   position: fixed;
-  bottom: 30px;
+  bottom: calc(30px + env(safe-area-inset-bottom, 0px));
   right: 30px;
   width: 60px;
   height: 60px;
@@ -2973,7 +2973,7 @@ ul, ol {
 /* ============ Back to Top Button ============ */
 .back-to-top {
   position: fixed;
-  bottom: 100px;
+  bottom: calc(100px + env(safe-area-inset-bottom, 0px));
   right: 30px;
   width: 50px;
   height: 50px;
